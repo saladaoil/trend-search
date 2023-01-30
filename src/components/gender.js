@@ -1,44 +1,3 @@
-/*
-import Age from "./age";
-
-const Gender = () => {
-  const value = '孫コンポーネントで使いたい値'
-  return <Age value={value}/>;
-};
-
-export default Gender;
-*/
-
-
-
-
-
-
-
-
-/*s
-
-
-
-import { useNavigate } from "react-router-dom"
-
-const ComponentA = () => {
-    const navigate = useNavigate()
-    return (
-        <div>
-            <p>ComponentA</p>
-            <button onClick={() => navigate('/componentb')}>画面遷移します！</button>
-        </div>
-    )
-}
-export default ComponentA
-
-
-
-
-import { useHistory } from 'react-router-dom';
-
-
 import React from 'react'
 import { useNavigate } from "react-router-dom"
 import Button from '@material-ui/core/Button';
@@ -62,18 +21,18 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.secondary
   }
 }));
-*/
 
-export default function App() {
+
+export default function Gender() {
   const classes = useStyles();
   const navigate = useNavigate()
   
 
   // データ
-  const genders = ['アイテム１', 'アイテム２', 'アイテム３', 'その他'];
+  const genders = ['男', '女'];
 
   // 選択した値を管理（初期値：ラジオ１）
-  const [val, setVal] = React.useState('アイテム１');
+  const [val, setVal] = React.useState('男');
 
   // ラジオボタンの値がチェンジされた時
   const handleChange = (e) => {
@@ -99,13 +58,11 @@ export default function App() {
           </Typography>
       </Grid>
 
-
       <Grid item xs={12}>
           <Typography variant="h6" className={classes.paper}>
             <p className="center">性別を選択してください</p>
           </Typography>
       </Grid>
-
 
       <Grid container spacing={1}>
         <Grid item xs={12}>
@@ -128,7 +85,6 @@ export default function App() {
                           </div>
                         );
                       })}
-
                       <p>選択したのは「{val}」です。</p>
                       {val === 'その他' && (
                         <p>
@@ -136,12 +92,11 @@ export default function App() {
                         </p>
                       )}
                     </div>
-
                   </>
                 </Typography>
+
             </Grid>
             <Grid item xs={6}>
-
             </Grid>
           </Grid>
         </Grid>
@@ -149,13 +104,9 @@ export default function App() {
 
         <Grid item xs={12}>
             <Typography variant="h6" className={classes.paper}>
-
               <Button variant="contained" color="primary" onClick={() => navigate('/age')}>
-
                 <h2>決定</h2>
-
               </Button>
-
             </Typography>
         </Grid>
 
