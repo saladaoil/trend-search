@@ -1,11 +1,11 @@
 import React from 'react'
 
-const price = () => {
+const GrandChild = ({ value }) => {
   return (
-    <div>price</div>
-  )
-}
-
-export default price
-
-//質問3（価格）
+      <div>
+        <h3>孫コンポーネント</h3>
+        {value}
+      </div>
+  );
+};
+export default GrandChild;

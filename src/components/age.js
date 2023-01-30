@@ -1,14 +1,20 @@
-import React from 'react'
+/*
+import GrandChild from "./price";
 
-const age = () => {
-  return (
-    <div>age</div>
-  )
-}
+const Age = ({ value }) => (
+  <div>
+    <h3>子コンポーネント</h3>
+    <GrandChild value={value} />
+  </div>
+);
 
-//test
+export default Age;
+*/
+import Age from "./gender";
 
+const Sample = () => {
+  const value = '孫コンポーネントで使いたい値'
+  return <Age value={value}/>;
+};
 
-export default age
-
-//質問2（年齢）
+export default Sample;
