@@ -1,8 +1,12 @@
-import { combineReducers } from 'redux';
-import text from './textreducer';
+import { combineReducers } from "redux";
+import genderReducer from "./Gender_rc";
+import ageReducer from "./Age_rc";
+import priceReducer from "./Price_rc";
 
-const reducer = combineReducers({
-  text,
-});
+const allReducers = combineReducers({
+    gender: genderReducer,
+    age: ageReducer,
+    price: priceReducer,
+})
 
-export default reducer;
+export default allReducers;

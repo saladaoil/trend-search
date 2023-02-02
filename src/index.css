@@ -11,19 +11,26 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.Header{
-  color:white;
-  background-color: rgb(255, 0, 0);
-  height: 3npm 0%;
-  font-size: 30px;
+
+.dropdown {
+  position:relative
 }
 
-.Footer{
-  color:white;
-  position: fixed;
-  bottom:0;
-  background-color: red;
-  width: 100%;
-  height: 4%;
-  font-size: 20px;
+.dropdown-toggle{
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 5px 0;
+  z-index: 1;
 }

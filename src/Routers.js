@@ -1,10 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Gender from "./components/gender";
-import Age from "./components/age";
-import ComponentB from "./ComponentB";
-import Price from "./components/price";
-import Qresult from "./components/Qresult";
-
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Gender from "./components/Gender";
+import Age from "./components/Age";
+import Price from "./components/Price";
+import Result from "./components/Result";
 
 const Routers = () => {
     return (
@@ -13,9 +11,7 @@ const Routers = () => {
                 <Route path="/" element={<Gender/>}/>
                 <Route path="/age" element={<Age/>}/>
                 <Route path="/price" element={<Price/>}/>
-                <Route path="/componentb" element={<ComponentB/>}/>
-                <Route path="/qresult" element={<Qresult/>}/>
-
+                <Route path="/result" element={<Result/>}/>
             </Routes>
         </BrowserRouter>
     )
