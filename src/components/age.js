@@ -9,14 +9,16 @@ const Age = () => {
     const age = useSelector((state) => state.age);
   
     return (
-      <div>
-        <h3>{age}</h3>
-        <button onClick={() => dispatch(age1())}>1~3</button>
-        <button onClick={() => dispatch(age2())}>4~7</button>
-        <button onClick={() => dispatch(age3())}>8~11</button>
-        <button onClick={() => dispatch(age4())}>12~15</button>
-        <button onClick={() => navigate('/price')}>決定</button>
-      </div>
+      <>
+        <div>{age[2]}</div>
+        <div>
+          <button onClick={() => dispatch(age1())}>1~3</button>
+          <button onClick={() => dispatch(age2())}>4~7</button>
+          <button onClick={() => dispatch(age3())}>8~11</button>
+          <button onClick={() => dispatch(age4())}>12~15</button>
+          <button onClick={() => navigate('/price')}>決定</button>
+        </div>
+      </>
     );
 }
 

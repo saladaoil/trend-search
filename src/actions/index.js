@@ -1,12 +1,18 @@
-export const man = () => {
+export const boy = () => {
     return{
-        type: "MAN",
+        type: "BOY",
     };
 }
 
-export const woman = () => {
+export const girl = () => {
     return{
-        type: "WOMAN",
+        type: "GIRL",
+    };
+}
+
+export const all = () => {
+    return{
+        type: "ALL",
     };
 }
 
@@ -51,9 +57,16 @@ export const price3= () => {
         type: "PRICE3",
     };
 }
+
 export const price4= () => {
     return{
         type: "PRICE4",
+    };
+}
+
+export const price5= () => {
+    return{
+        type: "PRICE5",
     };
 }
 
