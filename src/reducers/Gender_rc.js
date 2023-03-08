@@ -1,11 +1,11 @@
 const genderReducer = (state = [], action) => {
     switch(action.type) {
         case "BOY":
-            return state = [1,3,"男"];
+            return state = [1,3,4,"男"];
         case "GIRL":
-            return state = [2,3,"女"];
+            return state = [2,3,4,"女"];
         case "ALL":
-            return state = [3,0,"男女"];
+            return state = [0,0,0,"すべて"];
         default:
             return state;
     }

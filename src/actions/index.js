@@ -9,7 +9,6 @@ export const girl = () => {
         type: "GIRL",
     };
 }
-
 export const all = () => {
     return{
         type: "ALL",
@@ -37,6 +36,11 @@ export const age3 = () => {
 export const age4 = () => {
     return{
         type: "AGE4",
+    };
+}
+export const age5 = () => {
+    return{
+        type: "AGE5",
     };
 }
 
@@ -67,6 +71,36 @@ export const price4= () => {
 export const price5= () => {
     return{
         type: "PRICE5",
+    };
+}
+export const price6= () => {
+    return{
+        type: "PRICE6",
+    };
+}
+export const category1= () => {
+    return{
+        type: "CATEGORY1",
+    };
+}
+export const category2= () => {
+    return{
+        type: "CATEGORY2",
+    };
+}
+export const category3= () => {
+    return{
+        type: "CATEGORY3",
+    };
+}
+export const category4= () => {
+    return{
+        type: "CATEGORY4",
+    };
+}
+export const category5= () => {
+    return{
+        type: "CATEGORY5",
     };
 }
 
