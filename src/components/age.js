@@ -17,6 +17,8 @@ import {
   InputLabel,
 } from "@material-ui/core";
 
+  const homeUrl = process.env.PUBLIC_URL;
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1
@@ -24,7 +26,7 @@ import {
     paper: {
       padding: theme.spacing(1.2),
       textAlign: "center",
-      color: theme.palette.text.secondary
+      color: "black",
     }
   }));
 
@@ -37,7 +39,7 @@ import {
     const dispatch = useDispatch();
     const skip_handleClick = () => {
        dispatch(age5());
-       navigate('/price');
+       navigate(`${homeUrl}/price`);
     };
   
     const [selectedOption, setSelectedOption] = useState('');
@@ -90,7 +92,7 @@ import {
           </Grid>
   
           <Grid item xs={12}>
-            <InputLabel><h2>年齢を選択してください</h2></InputLabel>
+            <InputLabel><h2>孫の年齢を選択してください</h2></InputLabel>
             <Select value={selectedOption} onChange={handleChange}style={{ fontSize: '2.3em' }}>
               <MenuItem value='AGE1'><h2>1~3歳</h2></MenuItem>
               <MenuItem value='AGE2'><h2>4~7歳</h2></MenuItem>
@@ -110,7 +112,7 @@ import {
           <Grid item xs={12}>
             <Grid style={{ height: "100%" }}>
                 <Typography variant="h6" className={classes.paper}>
-                <Button variant="contained" color="error" onClick={() => navigate('/price')}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
+                <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/price`)}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
                 </Typography>
             </Grid>
           </Grid>
@@ -118,7 +120,7 @@ import {
           <Grid item xs={6}>
             <Grid style={{ height: "100%" }}>
                 <Typography variant="h6" className={classes.paper}>
-                <Button variant="contained" color="inherit" onClick={() => navigate('/')}style={{ fontSize: '1.1em' }}>　戻る　</Button>
+                <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)}style={{ fontSize: '1.1em' }}>　戻る　</Button>
                 </Typography>
             </Grid>
           </Grid>

@@ -17,6 +17,9 @@ import {
 
 } from "@material-ui/core";
 
+
+  const homeUrl = process.env.PUBLIC_URL;
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1
@@ -24,7 +27,7 @@ import {
     paper: {
       padding: theme.spacing(1.2),
       textAlign: "center",
-      color: theme.palette.text.secondary
+      color: 'black',
     }
   }));
 
@@ -86,7 +89,7 @@ import {
 
         <Grid item xs={12}>
           <InputLabel><>カテゴリーを選択してください</></InputLabel>
-          <Select value={selectedOption} onChange={handleChange}style={{ fontSize: '4em' }}>
+          <Select value={selectedOption} onChange={handleChange}style={{ fontSize: '2.3em' }}>
             <MenuItem value='CATEGORY1'><h2>おもちゃ</h2></MenuItem>
             <MenuItem value='CATEGORY2'><h2>ゲーム</h2></MenuItem>
             <MenuItem value='CATEGORY3'><h2>知育玩具</h2></MenuItem>
@@ -105,13 +108,13 @@ import {
 
         <Grid item xs={6}>
             <Typography variant="h6" className={classes.paper}>
-            <Button variant="contained" color="inherit" onClick={() => navigate('/price')}style={{ fontSize: '1.2em' }}>戻る</Button>
+            <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/price`)}style={{ fontSize: '1.2em' }}>戻る</Button>
             </Typography>
         </Grid>
 
         <Grid item xs={6}>
             <Typography variant="h6" className={classes.paper}>
-            <Button variant="contained" color="error" onClick={() => navigate('/category_result')}style={{ fontSize: '1.2em' }} disabled={!selectedOption}>決定</Button>
+            <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/category_result`)}style={{ fontSize: '1.2em' }} disabled={!selectedOption}>決定</Button>
             </Typography>
         </Grid>
 

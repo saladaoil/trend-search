@@ -12,6 +12,9 @@ import {
   Typography
 } from "@material-ui/core";
 
+
+  const homeUrl = process.env.PUBLIC_URL;
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1
@@ -19,7 +22,7 @@ import {
     paper: {
       padding: theme.spacing(1.6),
       textAlign: "center",
-      color: theme.palette.text.secondary
+      color: 'black',
     },
     listItem: {
       listStyle: 'none',
@@ -55,7 +58,7 @@ import {
         });
   
         let category_dis = category_filterResult.map(function(toy) {
-          return { name: toy.name, price: toy.price };
+          return { name: toy.name, price: toy.price, image_url: toy.image_url, page_url:toy.page_url };
         });
   
   
@@ -72,7 +75,7 @@ import {
 
   <Grid item xs={1}>
       <Typography variant="h1" className={classes.paper}>
-      <Button variant="contained" color="inherit"  onClick={(() => navigate('/result'))}>戻る</Button>
+      <Button variant="contained" color="inherit"  onClick={(() => navigate(`${homeUrl}/result`))}>戻る</Button>
       </Typography>
   </Grid>
 
@@ -85,7 +88,7 @@ import {
 </Grid>
     <Grid item xs={12}>
         <Typography variant="h6" className={classes.paper}>
-        <Button variant="contained" color="primary"  onClick={(() => navigate('/category'))}>絞り込み</Button>
+        <Button variant="contained" color="primary"  onClick={(() => navigate(`${homeUrl}/category`))}>絞り込み</Button>
         </Typography>
     </Grid>
     <div>
@@ -93,19 +96,21 @@ import {
       <ul>
         {category_dis.map(function (toy) {
             return (
-                    <li key={`${toy.name}-${toy.price}`} className={classes.listItem}>
-                      <Grid item xs={12} >
-                        <Typography variant="h8">
-                            <h3>{toy.name}</h3>
-                        </Typography>
-                      </Grid>
-                      <Grid item xs={12}>
-                        <Typography variant="h6">
-                          <div >{toy.price + "円"}</div>
-                        </Typography>
-                      </Grid> 
-                    </li>
-                    );
+              <li key={`${toy.name}-${toy.price}`} className={classes.listItem}>
+                <Grid item xs={10} >
+                  <Typography variant="h8" className={classes.paper}>
+                    <a 
+                      href={`${toy.page_url}`}
+                      target="_blank"
+                      rel="noopener noreferrer">
+                      <h3>{toy.name}</h3>
+                    </a>
+                      <h3>{toy.price}円</h3>
+                      <img src={toy.image_url} alt={toy.name} />
+                  </Typography>
+                </Grid>
+              </li>
+            );
         })}
       </ul>
     </div>

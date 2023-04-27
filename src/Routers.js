@@ -6,16 +6,18 @@ import Category from "./components/Category"
 import Result from "./components/Result";
 import CategoryResult from "./components/Category_Result"
 
+const homeUrl = process.env.PUBLIC_URL;
+
 const Routers = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path="/" element={<Gender/>}/>
-                <Route path="/age" element={<Age/>}/>
-                <Route path="/price" element={<Price/>}/>
-                <Route path="/result" element={<Result/>}/>
-                <Route path="/category" element={<Category/>}/>
-                <Route path="/category_result" element={<CategoryResult/>}/>
+                <Route path={`${homeUrl}/`} element={<Gender/>}/>
+                <Route path={`${homeUrl}/age`} element={<Age/>}/>
+                <Route path={`${homeUrl}/price`} element={<Price/>}/>
+                <Route path={`${homeUrl}/result`} element={<Result/>}/>
+                <Route path={`${homeUrl}/category`} element={<Category/>}/>
+                <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
             </Routes>
         </BrowserRouter>
     )

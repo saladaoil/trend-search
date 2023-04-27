@@ -17,6 +17,8 @@ import {
 } from "@material-ui/core";
 import { createTheme } from "@material-ui/core/styles";
 
+const homeUrl = process.env.PUBLIC_URL;
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
@@ -24,7 +26,8 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(1.2),
     textAlign: "center",
-    color: theme.palette.text.secondary
+    margin: "auto",
+    color: "black",
   }
 }));
 const theme = createTheme({
@@ -46,7 +49,7 @@ const Gender = () => {
   const dispatch = useDispatch();
   const skip_handleClick = () => {
     dispatch(all());
-    navigate('/age');
+    navigate(`${homeUrl}/age`);
   }
 
   const [selectedOption, setSelectedOption] = useState('');
@@ -74,7 +77,7 @@ const Gender = () => {
         style={{ backgroundColor: "#ffffff", height: "100vh" }}
       >
           <Grid container spacing={0}>
-<Grid item xs={12}>
+            <Grid item xs={12}>
               <Typography variant="h4" className={classes.paper}>
                 <h1>性別選択</h1>
               </Typography>
@@ -88,7 +91,7 @@ const Gender = () => {
             <Grid container spacing={0}>
 
             <Grid item xs={12}>
-              <InputLabel><h2>性別を選択してください</h2></InputLabel>
+              <InputLabel><h2>孫の性別を選択してください</h2></InputLabel>
               <Select value={selectedOption} onChange={handleChange} style={{ fontSize: '2.3em' }}>
                 <MenuItem value='BOY'><h2>男</h2></MenuItem>
                 <MenuItem value='GIRL'><h2>女</h2></MenuItem>
@@ -107,7 +110,7 @@ const Gender = () => {
 
             <Grid item xs={12}>
               <Typography variant="h6" className={classes.paper}>
-                <Button variant="contained" color="error" onClick={() => navigate('/age')} style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
+                <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/age`)} style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
               </Typography>
             </Grid>
 
@@ -118,7 +121,7 @@ const Gender = () => {
             </Grid>
 
 
-            <Grid item xs={6}>
+            <Grid item xs={12}>
               <Grid style={{ height: "100%" }}>
                 <Typography variant="h6" className={classes.paper}>
                   <Button variant="contained" color="inherit" onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>スキップ</Button>

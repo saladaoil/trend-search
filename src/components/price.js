@@ -18,6 +18,8 @@ import {
   InputLabel,
 } from "@material-ui/core";
 
+  const homeUrl = process.env.PUBLIC_URL;
+
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1
@@ -25,7 +27,7 @@ import {
     paper: {
       padding: theme.spacing(1.2),
       textAlign: "center",
-      color: theme.palette.text.secondary
+      color: "black",
     }
   }));
 
@@ -37,7 +39,7 @@ import {
       const dispatch = useDispatch();
       const skip_handleClick = () => {
         dispatch(price6());
-        navigate('/result');
+        navigate(`${homeUrl}/result`);
       };
   
       const [selectedOption, setSelectedOption] = useState('');
@@ -107,13 +109,13 @@ import {
   
           <Grid item xs={12}>
               <Typography variant="h6" className={classes.paper}>
-              <Button variant="contained" color="error"onClick={() => navigate('/result')}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
+              <Button variant="contained" color="error"onClick={() => navigate(`${homeUrl}/result`)}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
               </Typography>
           </Grid>
   
           <Grid item xs={6}>
               <Typography variant="h6" className={classes.paper}>
-              <Button variant="contained" color="inherit" onClick={() => navigate('/age')}style={{ fontSize: '1.1em' }}>　戻る　</Button>
+              <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1.1em' }}>　戻る　</Button>
               </Typography>
           </Grid>
   
