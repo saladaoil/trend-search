@@ -39,7 +39,7 @@ import {
     const dispatch = useDispatch();
     const skip_handleClick = () => {
        dispatch(age5());
-       navigate(`${homeUrl}/price`);
+       navigate(`${homeUrl}/result`);
     };
   
     const [selectedOption, setSelectedOption] = useState('');
@@ -67,6 +67,8 @@ import {
          break;
      }
    };
+
+   
   
   
   
@@ -100,6 +102,18 @@ import {
               <MenuItem value='AGE4'><h2>12~15歳</h2></MenuItem>
             </Select>
           </Grid>
+          
+
+              <Grid item xs={6}>
+                <Button
+                  variant={selectedOption} onChange={handleChange}style={{ fontSize: '2.3em' }}
+                  color="primary"
+                  onClick={() => handleChange('AGE1')}
+                  style={{ fontSize: '2.3em', width: "100%" }}
+                >
+                  <h2>1~3歳</h2>
+                </Button>
+              </Grid>
   
           <Grid item xs={6}>
               <Typography variant="h4" className={classes.paper}>
@@ -112,7 +126,7 @@ import {
           <Grid item xs={12}>
             <Grid style={{ height: "100%" }}>
                 <Typography variant="h6" className={classes.paper}>
-                <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/price`)}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
+                <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/result`)}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
                 </Typography>
             </Grid>
           </Grid>
@@ -120,7 +134,7 @@ import {
           <Grid item xs={6}>
             <Grid style={{ height: "100%" }}>
                 <Typography variant="h6" className={classes.paper}>
-                <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)}style={{ fontSize: '1.1em' }}>　戻る　</Button>
+                <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.1em' }}>　戻る　</Button>
                 </Typography>
             </Grid>
           </Grid>

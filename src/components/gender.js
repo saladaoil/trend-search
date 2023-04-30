@@ -49,7 +49,7 @@ const Gender = () => {
   const dispatch = useDispatch();
   const skip_handleClick = () => {
     dispatch(all());
-    navigate(`${homeUrl}/age`);
+    navigate(`${homeUrl}/description`);
   }
 
   const [selectedOption, setSelectedOption] = useState('');
@@ -97,10 +97,13 @@ const Gender = () => {
                 <MenuItem value='GIRL'><h2>女</h2></MenuItem>
               </Select>
             </Grid>
+            
 
             <Grid item xs={6}>
               <Typography variant="h6" className={classes.paper}>
                 <h2> </h2>
+                      <Button onChange={() => 'BOY'} style={{ fontSize: '1em' }}>男の子</Button>
+
               </Typography>
             </Grid>
 

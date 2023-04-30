@@ -39,7 +39,7 @@ import {
       const dispatch = useDispatch();
       const skip_handleClick = () => {
         dispatch(price6());
-        navigate(`${homeUrl}/result`);
+        navigate(`${homeUrl}/gender2`);
       };
   
       const [selectedOption, setSelectedOption] = useState('');
