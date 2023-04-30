@@ -1,133 +1,59 @@
 import React from 'react'
-import { useState } from 'react';
 import { useSelector, useDispatch} from "react-redux"
 import { price1, price2, price3, price4, price5, price6 } from "../actions"
 import { useNavigate } from "react-router-dom"
-import '../index.css';
 import { Button } from "@mui/material";
-
 import "./styles.css";
-import {
-  Container,
-  Grid,
-  makeStyles,
-  Paper,
-  Typography,
-  Select,
-  MenuItem,
-  InputLabel,
-} from "@material-ui/core";
 
-  const homeUrl = process.env.PUBLIC_URL;
-
-  const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1
-    },
-    paper: {
-      padding: theme.spacing(1.2),
-      textAlign: "center",
-      color: "black",
-    }
-  }));
+const homeUrl = process.env.PUBLIC_URL;
 
   const Price = () => {
 
-    const classes = useStyles();
-      const price = useSelector((state) => state.price);
-      const navigate = useNavigate();
-      const dispatch = useDispatch();
-      const skip_handleClick = () => {
-        dispatch(price6());
-        navigate(`${homeUrl}/result`);
-      };
-  
-      const [selectedOption, setSelectedOption] = useState('');
-  const handleChange = (event) => {
-        const selectedValue = event.target.value;
-        setSelectedOption(selectedValue);
-        switch (selectedValue) {
-          case 'PRICE1':
-            dispatch(price1());
-            break;
-          case 'PRICE2':
-            dispatch(price2());
-            break;
-          case 'PRICE3':
-            dispatch(price3());
-            break;
-          case 'PRICE4':
-            dispatch(price4());
-            break;
-          case 'PRICE5':
-            dispatch(price5());
-            break;
-          default:
-            break;
-        }
-      };
+    const gender = useSelector((state) => state.gender);
+    const age = useSelector((state) => state.age);
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const price1_handleClick = () => {
+      dispatch(price1());
+      navigate(`${homeUrl}/result`);
+    }
+    const price2_handleClick = () => {
+      dispatch(price2());
+      navigate(`${homeUrl}/result`);
+    }
+    const price3_handleClick = () => {
+      dispatch(price3());
+      navigate(`${homeUrl}/result`);
+    }
+    const price4_handleClick = () => {
+      dispatch(price4());
+      navigate(`${homeUrl}/result`);
+    }
+    const price5_handleClick = () => {
+      dispatch(price5());
+      navigate(`${homeUrl}/result`);
+    }
+    const skip_handleClick = () => {
+      dispatch(price6());
+      navigate(`${homeUrl}/result`);
+    }
   
   
       return (
-        <Container
-        maxWidth="xs"
-        style={{ backgroundColor: "#ffffff", height: "100vh" }}
-      >
-  <Grid container spacing={0}>
-  
-        <Grid item xs={12}>
-              <Typography variant="h4" className={classes.paper}>
-                <h1>価格設定</h1>
-              </Typography>
-          </Grid>
-  
-          <Grid item xs={12}>
-            <Typography variant="h4" className={classes.paper}>
-            <h4>選択中:{price[2]}</h4>
-            </Typography>
-          </Grid>
-  
-          <Grid item xs={12}>
-            <InputLabel><h2>価格を選択してください</h2></InputLabel>
-            <Select value={selectedOption} onChange={handleChange}style={{ fontSize: '2.3em' }}>
-              <MenuItem value='PRICE1'><h2>0~1500円</h2></MenuItem>
-              <MenuItem value='PRICE2'><h2>1500~3000円</h2></MenuItem>
-              <MenuItem value='PRICE3'><h2>3000~4500円
-  </h2></MenuItem>
-              <MenuItem value='PRICE4'><h2>4500~6000円</h2></MenuItem>
-              <MenuItem value='PRICE5'><h2>6000円~</h2></MenuItem>
-            </Select>
-          </Grid>
-
-          <Grid item xs={6}>
-              <Typography variant="h4" className={classes.paper}>
-                <h2> </h2>
-              </Typography>
-          </Grid>
-  
-          <Grid container spacing={7}>
-  
-          <Grid item xs={12}>
-              <Typography variant="h6" className={classes.paper}>
-              <Button variant="contained" color="error"onClick={() => navigate(`${homeUrl}/result`)}style={{ fontSize: '2.3em' }} disabled={!selectedOption}>　決定　</Button>
-              </Typography>
-          </Grid>
-  
-          <Grid item xs={6}>
-              <Typography variant="h6" className={classes.paper}>
-              <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1.1em' }}>　戻る　</Button>
-              </Typography>
-          </Grid>
-  
-  
-           <Grid item xs={6}>
-              <Typography variant="h6" className={classes.paper}>
-                 <Button variant="contained" color="inherit" onClick={() => skip_handleClick()}style={{ fontSize: '1em' }}>スキップ </Button>
-              </Typography>
-           </Grid>
-          </Grid>
-        </Grid>
-      </Container>
+        <>
+          <h3>選択されているもの</h3>
+          <h3>性別：{gender[3]}</h3>
+          <h3>学年：{age[2]}</h3>
+          <h2>価格選択</h2>
+          <Button onClick={() => price1_handleClick()} style={{ fontSize: '1em' }}>~1500円</Button>
+          <Button onClick={() => price2_handleClick()} style={{ fontSize: '1em' }}>1500~3000円</Button>
+          <Button onClick={() => price3_handleClick()} style={{ fontSize: '1em' }}>3000~4500円</Button>
+          <Button onClick={() => price4_handleClick()} style={{ fontSize: '1em' }}>4500円~6000円</Button>
+          <Button onClick={() => price5_handleClick()} style={{ fontSize: '1em' }}>6000円~</Button>
+          <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
+          <Button onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1em' }}>戻る</Button>
+        </>
       );
   }
   

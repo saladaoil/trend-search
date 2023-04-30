@@ -1,7 +1,7 @@
 const priceReducer = (state = [], action) => {
     switch(action.type) {
         case "PRICE1":
-            return state = [0,1500,"0~1500円"];
+            return state = [0,1500,"~1500円"];
         case "PRICE2":
             return state = [1500,3000,"1500~3000円"];
         case "PRICE3":
@@ -11,7 +11,7 @@ const priceReducer = (state = [], action) => {
         case "PRICE5":
             return state = [6000,100000,"6000~円"];
         case "PRICE6":
-            return state = [0,100000,"すべて"];
+            return state = [0,100000,"選択なし"];
         default:
             return state;
     }

@@ -1,15 +1,52 @@
 .App {
-    font-family: sans-serif;
-    text-align: center;
-  } 
-  button {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  font-family: sans-serif;
+  text-align: center;
+} 
+button {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.MuiList-root .MuiListItem-root {
+    list-style: none;
   }
 
-  .MuiList-root .MuiListItem-root {
-      list-style: none;
-    }
-    a {
-      color: black;
-      text-decoration: none;
-    }
+  h1{font-size: 40px; color: blue; padding-left: 0%;}
+
+ .one{color:black; background-color: red; }
+
+ .enabled{
+  background-color: red;
+ }
+
+ .disabled{
+  background-color: grey;
+  cursor: not-allowed;
+ }
+ a {
+  color: black;
+  text-decoration: none;
+}
+ button[disabled]:not(:focus) {
+  background-color: gray;
+  color: white;
+}
+
+li{
+  list-style: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  margin: 0 10px;
+}
+
+/* 選択されている場合のスタイル */
+button:not([disabled]) {
+  background-color: red;
+  color: white;
+}
