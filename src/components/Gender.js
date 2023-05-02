@@ -26,7 +26,7 @@ const Gender = () => {
 
   return (
     <>
-      <h2>性別選択</h2>
+      <h2>孫の性別選択</h2>
         <Button onClick={() => boy_handleClick()} style={{ fontSize: '1em' }}>男子</Button>
         <Button onClick={() => girl_handleClick()} style={{ fontSize: '1em' }}>女子</Button>
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
