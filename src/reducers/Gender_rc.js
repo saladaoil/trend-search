@@ -5,7 +5,7 @@ const genderReducer = (state = [], action) => {
         case "GIRL":
             return state = [2,3,4,"女"];
         case "ALL":
-            return state = [0,0,0,"すべて"];
+            return state = [0,0,0,"選択なし"];
         default:
             return state;
     }

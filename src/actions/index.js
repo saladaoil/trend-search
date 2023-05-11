@@ -43,6 +43,11 @@ export const age5 = () => {
         type: "AGE5",
     };
 }
+export const age6 = () => {
+    return{
+        type: "AGE6",
+    };
+}
 
 export const price1 = () => {
     return{

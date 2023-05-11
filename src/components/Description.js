@@ -51,7 +51,7 @@ const Gender = () => {
   const dispatch = useDispatch();
   const skip_handleClick = () => {
     dispatch(all());
-    navigate(`${homeUrl}/gender`);
+    navigate(`${homeUrl}/firstchoice`);
   }
 
   const [selectedOption, setSelectedOption] = useState('');
