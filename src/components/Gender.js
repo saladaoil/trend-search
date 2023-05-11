@@ -35,6 +35,7 @@ const Gender = () => {
 
   return (
     <>
+<<<<<<< HEAD:src/components/gender.js
           <Header />
         <br></br>
         <br></br>
@@ -49,6 +50,12 @@ const Gender = () => {
         <br></br>
 
         <img  onClick={() => boy_handleClick()} style={{ fontSize: '1em' }} src={選択しない} alt="アイコン" className="genderQ" />
+=======
+      <h2>孫の性別選択</h2>
+        <Button onClick={() => boy_handleClick()} style={{ fontSize: '1em' }}>男子</Button>
+        <Button onClick={() => girl_handleClick()} style={{ fontSize: '1em' }}>女子</Button>
+        <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
+>>>>>>> 666f31c682e371458ddf678fc33bc435ceb2226c:src/components/Gender.js
     </>
     );
 }
