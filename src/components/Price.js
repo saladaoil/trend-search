@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch} from "react-redux"
 import { price1, price2, price3, price4, price5, price6 } from "../actions"
 import { useNavigate } from "react-router-dom"
-import { Button } from "@mui/material";
+import { Button } from "@chakra-ui/react";
 import "./styles.css";
 
 const homeUrl = process.env.PUBLIC_URL;
