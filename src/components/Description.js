@@ -3,6 +3,7 @@ import './styles.css';
 import { useNavigate } from "react-router-dom"
 import '../index.css';
 import { Button } from '@chakra-ui/react';
+import TrendSearchIcon from './images/TrendSearchIcon.png'
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -14,6 +15,7 @@ const Description = () => {
   return (
     <>
     <h1>TrendSearch</h1>
+    <img src={TrendSearchIcon} alt="アイコン" className="icon" />
     <p>使用方法</p>
     <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1em', flexGrow: 25, flexBasis: '25%' }}>開始</Button>
     </>
