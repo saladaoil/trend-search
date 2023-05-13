@@ -1,13 +1,17 @@
-import { BrowserRouter,Routes, Route } from "react-router-dom";
-import Gender from "./components/Gender";
-import Age from "./components/Age";
-import Category from "./components/Category"
-import Price from "./components/Price"
-import Result from "./components/Result";
-import CategoryResult from "./components/Category_Result"
+import Firstchoice from "../Basic/Firstchoice";
+import Description from "../Basic/Description";
 
-import Firstchoice from "./components/Firstchoice";
-import Description from "./components/Description";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
+import Gender from "../components/Gender";
+import Age from "../components/Age";
+import Category from "../components/Category"
+import Price from "../components/Price"
+import Result from "../components/Result";
+import CategoryResult from "../components/Category_Result"
+
+
+import QestionSelect from "../preference/QuestionSelect";
+
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -24,6 +28,8 @@ const Routers = () => {
                 <Route path={`${homeUrl}/result`} element={<Result/>}/>
                 <Route path={`${homeUrl}/category`} element={<Category/>}/>
                 <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
+
+                <Route path={`${homeUrl}/qestionselect`} element={<QestionSelect/>}/>
             </Routes>
         </BrowserRouter>
     )

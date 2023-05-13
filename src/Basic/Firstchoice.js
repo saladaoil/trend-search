@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import './styles.css';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import './commonstyles.css';
 
 import {
   Container,
@@ -14,7 +14,7 @@ import {
   InputLabel,
 } from "@material-ui/core";
 
-import Op1 from './images/TrendSearch 流行 kari.png'
+import Op1 from './TrendSearch 流行 kari.png'
 
 const useStyles = makeStyles((theme) => ({
   root: {

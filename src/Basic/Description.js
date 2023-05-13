@@ -1,6 +1,6 @@
 import React from 'react';
-import './styles.css';
-import TrendSearchIcon from './images/TrendSearchIcon.png'
+import './commonstyles.css';
+import TrendSearchIcon from './TrendSearchIcon.png'
 import { useState } from 'react';
 import { useSelector, useDispatch} from "react-redux"
 import { boy, girl, all} from "../actions"
