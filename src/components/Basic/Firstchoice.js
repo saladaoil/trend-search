@@ -1,22 +1,11 @@
 import React from 'react';
-<<<<<<< HEAD:src/Basic/Firstchoice.js
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import './commonstyles.css';
-=======
 import { useNavigate } from "react-router-dom"
-import './styles.css';
 import { Button } from '@chakra-ui/react';
->>>>>>> de7550b05c8352bc933b475e47f36ae9f6a3c069:src/components/Firstchoice.js
 
 const homeUrl = process.env.PUBLIC_URL;
-
-<<<<<<< HEAD:src/Basic/Firstchoice.js
-import Op1 from './TrendSearch 流行 kari.png'
-=======
 const Firstchoice = () => {
   const navigate = useNavigate()
->>>>>>> de7550b05c8352bc933b475e47f36ae9f6a3c069:src/components/Firstchoice.js
 
 
   return (

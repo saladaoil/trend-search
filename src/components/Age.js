@@ -50,7 +50,7 @@ const Age = () => {
         <Button onClick={() => high_handleClick()} style={{ fontSize: '1em' }}>小学生（高学年）</Button>
         <Button onClick={() => junior_handleClick()} style={{ fontSize: '1em' }}>中学生</Button>
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
-        <Button onClick={() => navigate('/')}style={{ fontSize: '1em' }}>戻る</Button>
+        <Button onClick={() => navigate(`${homeUrl}/`)}style={{ fontSize: '1em' }}>戻る</Button>
     </>
   );
 }

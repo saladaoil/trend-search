@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch} from "react-redux"
-import {categoryqestion} from "../actions"
+import {categoryqestion} from "../../actions"
 import { useNavigate } from "react-router-dom"
-import { Button } from "@mui/material";
+import { Button } from "@chakra-ui/react";
 import { resultingClientExists } from 'workbox-core/_private';
 
 const homeUrl = process.env.PUBLIC_URL;

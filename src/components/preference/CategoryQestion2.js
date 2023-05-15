@@ -1,10 +1,9 @@
 import React from 'react'
 import { useState } from 'react';
 import { useSelector, } from 'react-redux';
-import toys_db from '../db/toy_db';
+import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
-import { Button } from "@mui/material";
-import "./styles.css";
+import { Button } from "@chakra-ui/react";
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -26,34 +25,28 @@ const homeUrl = process.env.PUBLIC_URL;
     const gender_val = useSelector((state) => state.gender);
     const age_val = useSelector((state) => state.age);
     const price_val = useSelector((state) => state.price);
-    const category_val = useSelector((state) => state.category)
   
     const [gender, common_gender,all_gender] = gender_val
     const [from_age, to_age] = age_val
     const [from_price, to_price] = price_val
-    const [category] = category_val
-
     let toy_filterResult = toys.filter( function (value) {
           return (value.gender === gender || value.gender === common_gender || value.gender > all_gender) &&
           !(value.min_age  > to_age || value.max_age < from_age) &&
           (from_price <= value.price && value.price <= to_price)
         })
   
-        let  category_filterResult = toy_filterResult.filter(function (value) {
-          return value.category === category;
-        });
-  
-        let category_dis = category_filterResult.map(function(toy) {
-          return { name: toy.name, price: toy.price, image_url: toy.image_url, page_url:toy.page_url };
+        let toy_dis = toy_filterResult.map(function(toy) {
+          return { name: toy.name, price: toy.price, image_url: toy.image_url, page_url:toy.page_url};
         });
 
-        const currentToyDis = category_dis.slice(startIndex, endIndex);
+        const currentToyDis = toy_dis.slice(startIndex, endIndex);
   
         return (
           <>
             <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)}>最初へ</Button>
-            <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/category`)}>戻る</Button>
+            <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/price`)}>戻る</Button>
             <h2>結果</h2>
+            <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button>
             <div>
               <ul>
                 {currentToyDis.map(function (toy) {

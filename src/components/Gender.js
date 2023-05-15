@@ -4,8 +4,6 @@ import { boy, girl, all} from "../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react';
 
-
-<<<<<<< HEAD
 import Header from './Header';
 import Footer from './Footer';
 
@@ -14,8 +12,6 @@ import 男 from "./images/男.png"
 import 女 from "./images/女.png"
 import 選択しない from "./images/選択しない.png"
 
-=======
->>>>>>> de7550b05c8352bc933b475e47f36ae9f6a3c069
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -41,7 +37,6 @@ const Gender = () => {
 
   return (
     <>
-<<<<<<< HEAD
           <Header />
         <br></br>
         <br></br>
@@ -57,7 +52,6 @@ const Gender = () => {
 
         <img  onClick={() => boy_handleClick()} style={{ fontSize: '1em' }} src={選択しない} alt="アイコン" className="genderQ" />
 
-=======
       <h1>性別選択</h1>
       <h2>選択されているもの</h2>
       <br></br>
@@ -65,7 +59,6 @@ const Gender = () => {
         <Button onClick={() => boy_handleClick()} style={{ fontSize: '1em' }}>男子</Button>
         <Button onClick={() => girl_handleClick()} style={{ fontSize: '1em' }}>女子</Button>
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
->>>>>>> de7550b05c8352bc933b475e47f36ae9f6a3c069
     </>
     );
 }

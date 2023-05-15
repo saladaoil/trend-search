@@ -1,17 +1,9 @@
 import React from 'react';
-<<<<<<< HEAD:src/Basic/Description.js
 import './commonstyles.css';
 import TrendSearchIcon from './TrendSearchIcon.png'
-import { useState } from 'react';
-import { useSelector, useDispatch} from "react-redux"
-import { boy, girl, all} from "../actions"
-=======
-import './styles.css';
->>>>>>> de7550b05c8352bc933b475e47f36ae9f6a3c069:src/components/Description.js
 import { useNavigate } from "react-router-dom"
-import '../index.css';
 import { Button } from '@chakra-ui/react';
-import TrendSearchIcon from './images/TrendSearchIcon.png'
+// import TrendSearchIcon from './images/TrendSearchIcon.png'
 
 const homeUrl = process.env.PUBLIC_URL;
 
