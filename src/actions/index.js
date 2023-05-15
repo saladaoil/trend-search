@@ -109,3 +109,12 @@ export const category5= () => {
     };
 }
 
+
+
+
+
+export const categoryqestion= () => {
+    return{
+        type: "CATEGORYQESTION",
+    };
+}

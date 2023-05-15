@@ -1,5 +1,5 @@
-import Firstchoice from "../Basic/Firstchoice";
-import Description from "../Basic/Description";
+import Firstchoice from "../basic/Firstchoice";
+import Description from "../basic/Description";
 
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Gender from "../components/Gender";
@@ -9,9 +9,10 @@ import Price from "../components/Price"
 import Result from "../components/Result";
 import CategoryResult from "../components/Category_Result"
 
-
-import QestionSelect from "../preference/QuestionSelect";
-
+//prefarence（好み）
+import PreferenceSelect from "../preference/PreferenceSelect";
+import CategoryQestion from "../preference/CategoryQestion";
+import CategoryQestion2 from "../preference/CategoryQestion2";
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -29,7 +30,10 @@ const Routers = () => {
                 <Route path={`${homeUrl}/category`} element={<Category/>}/>
                 <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
 
-                <Route path={`${homeUrl}/qestionselect`} element={<QestionSelect/>}/>
+                <Route path={`${homeUrl}/preferenceselect`} element={<PreferenceSelect/>}/>
+                <Route path={`${homeUrl}/categoryqestion`} element={<CategoryQestion/>}/>
+                <Route path={`${homeUrl}/categoryqestion2`} element={<CategoryQestion2/>}/>
+
             </Routes>
         </BrowserRouter>
     )

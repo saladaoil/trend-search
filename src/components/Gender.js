@@ -34,6 +34,8 @@ const Gender = () => {
     navigate(`${homeUrl}/age`);
   }
 
+  
+
   return (
     <>
           <Header />

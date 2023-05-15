@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import * as serviceWorkerRegistration from '../serviceWorkerRegistration';
-import reportWebVitals from '../reportWebVitals';
+import App from './common/App';
+import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
-import allReducers from '../reducers';
+import allReducers from './reducers';
 import { Provider } from "react-redux"
 
 export const store = createStore(
