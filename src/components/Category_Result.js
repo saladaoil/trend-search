@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useSelector, } from 'react-redux';
 import toys_db from '../db/toy_db';
 import { useNavigate, } from "react-router-dom"
-import { Button } from "@mui/material";
+import { Button } from '@chakra-ui/react';
 import "./styles.css";
 
 const homeUrl = process.env.PUBLIC_URL;

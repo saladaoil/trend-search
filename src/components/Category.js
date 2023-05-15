@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch} from "react-redux"
 import { category1, category2, category3, category4, category5 } from "../actions"
 import { useNavigate } from "react-router-dom"
-import { Button } from "@mui/material";
+import { Button } from '@chakra-ui/react';
 
 const homeUrl = process.env.PUBLIC_URL;
 
