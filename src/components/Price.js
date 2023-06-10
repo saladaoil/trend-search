@@ -52,7 +52,7 @@ const homeUrl = process.env.PUBLIC_URL;
           <Button onClick={() => price4_handleClick()} style={{ fontSize: '1em' }}>4500円~6000円</Button>
           <Button onClick={() => price5_handleClick()} style={{ fontSize: '1em' }}>6000円~</Button>
           <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
-          <Button onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1em' }}>戻る</Button>
+          <Button onClick={() => navigate(-1)}style={{ fontSize: '1em' }}>戻る</Button>
         </>
       );
   }

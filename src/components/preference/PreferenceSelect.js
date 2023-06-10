@@ -8,7 +8,7 @@ import { resultingClientExists } from 'workbox-core/_private';
 const homeUrl = process.env.PUBLIC_URL;
 
 
-  const Category = () => {
+  const PreferenceSelect = () => {
 
 
     const navigate = useNavigate();
@@ -32,4 +32,4 @@ const homeUrl = process.env.PUBLIC_URL;
     );
 }
 
-export default Category;
+export default PreferenceSelect;

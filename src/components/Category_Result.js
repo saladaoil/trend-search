@@ -52,7 +52,7 @@ const homeUrl = process.env.PUBLIC_URL;
         return (
           <>
             <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)}>最初へ</Button>
-            <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/category`)}>戻る</Button>
+            <Button variant="contained" color="inherit" onClick={() => navigate(-1)}>戻る</Button>
             <h2>結果</h2>
             <div>
               <ul>

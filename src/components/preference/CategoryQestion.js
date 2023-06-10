@@ -12,7 +12,7 @@ import { Button } from "@chakra-ui/react";
 
 const homeUrl = process.env.PUBLIC_URL;
 
-const Gender = () => {
+const CategoryQestion = () => {
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -51,4 +51,4 @@ const Gender = () => {
 //<Button onClick={() => girl_handleClick()} style={{ fontSize: '1em' }}>女子</Button>
 //<Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
 
-export default Gender;
+export default CategoryQestion;

@@ -9,7 +9,7 @@ import "./styles.css";
 const homeUrl = process.env.PUBLIC_URL;
 
 
-  const Result = () => {
+  const CategoryQResult = () => {
 
     const toys = toys_db;
 
@@ -77,4 +77,4 @@ const homeUrl = process.env.PUBLIC_URL;
         );
         
     }
-  export default Result;
+  export default CategoryQResult;

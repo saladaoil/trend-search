@@ -8,7 +8,7 @@ import { Button } from "@chakra-ui/react";
 const homeUrl = process.env.PUBLIC_URL;
 
 
-  const Result = () => {
+  const CategoryQestion2 = () => {
 
     const toys = toys_db;
 
@@ -70,4 +70,4 @@ const homeUrl = process.env.PUBLIC_URL;
         );
         
     }
-  export default Result;
+  export default CategoryQestion2;

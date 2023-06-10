@@ -42,7 +42,7 @@ const homeUrl = process.env.PUBLIC_URL;
           <Button onClick={() => category3_handleClick()} style={{ fontSize: '1em' }}>知育玩具</Button>
           <Button onClick={() => category4_handleClick()} style={{ fontSize: '1em' }}>スポーツ</Button>
           <Button onClick={() => category5_handleClick()} style={{ fontSize: '1em' }}>その他</Button>
-          <Button onClick={() => navigate(`${homeUrl}/result`)}style={{ fontSize: '1em' }}>戻る</Button>
+          <Button onClick={() => navigate(-1)}style={{ fontSize: '1em' }}>戻る</Button>
         </>
     );
 }
