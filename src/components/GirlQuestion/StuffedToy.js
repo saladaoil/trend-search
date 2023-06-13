@@ -79,6 +79,13 @@ const Stuffedtoy = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
 
+  useEffect(() => {
+    // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
+    return () => {
+      dispatch(resetCraft()); // resetCraftアクションをdispatchしてReduxストアの値をリセットする
+    };
+  }, [dispatch]);
+
   return (
     <>
       <h3>性別：{gender[3]}</h3>

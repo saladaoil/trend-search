@@ -83,6 +83,7 @@ const Doll = () => {
   useEffect(() => {
     return () => {
       dispatch(resetCraft());
+      dispatch(resetVehicle())
     };
   }, [dispatch]);
 

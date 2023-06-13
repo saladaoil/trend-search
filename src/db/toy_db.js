@@ -1,6 +1,6 @@
 const toys_db = [
     {gender:3,min_age: 4, max_age: 7, exercise:1, sport:"スポーツ", category :1,name:"トイ・ストーリー リアルサイズトーキングフィギュア バズ・ライトイヤー（リミックス版）", image_url: "https://www.toysrus.co.jp/i/6/8/8/688834800AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-688834800"},
-    {gender:3,min_age: 3, max_age: 6, exercise:2, sport:"その他", category :1,name:"トミカ 変形出動！ビッグファイヤー＆コマンドステーション",image_url: "https://www.toysrus.co.jp/i/7/3/2/732710200AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-732710200"},
+    {gender:3,min_age: 3, max_age: 6, exercise:1, sport:"その他", category :1,name:"トミカ 変形出動！ビッグファイヤー＆コマンドステーション",image_url: "https://www.toysrus.co.jp/i/7/3/2/732710200AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-732710200"},
     {gender:3,min_age: 1.5, max_age: 4, price: 935, exercise: 2, game:1, videogame:"ビデオゲーム", category :1,name:"はじめてトミカ パトロールカー",image_url: "https://www.toysrus.co.jp/i/7/2/0/720491400AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-720491400"},
     {gender:3,min_age: 3, max_age: 6, price: 5500, exercise: 2, game:1, videogame:"その他", category :1,name:"プラレール 夢中をキミに！プラレールベストセレクションセット",image_url: "https://www.toysrus.co.jp/i/7/3/2/732711000AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-732711000"},
     {gender:3,min_age: 8, max_age: 11, price: 1430, exercise: 2, game:2, craft:"工作", category :1,name:"1/144 HG ガンダムエアリアル",image_url: "https://www.toysrus.co.jp/i/7/4/0/740372000AM.jpg", page_url:"https://www.toysrus.co.jp/s/dsg-740372000"},

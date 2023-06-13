@@ -91,6 +91,7 @@ const Craft = () => {
   useEffect(() => {
     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
+      dispatch(resetDoll())
       dispatch(resetStuffedtoy()); // resetStuffedtoyアクションをdispatchしてReduxストアの値をリセットする
     };
   }, [dispatch]);
