@@ -69,7 +69,7 @@ const Game = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>ゲームが好きですか？</h3>
+      <h2>ゲームが好きですか？</h2>
       <Button onClick={() => game_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       <Button onClick={() => game_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
       <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1em' }}>戻る</Button>

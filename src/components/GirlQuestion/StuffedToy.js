@@ -83,7 +83,7 @@ const Stuffedtoy = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>ぬいぐるみが好きですか？</h3>
+      <h2>ぬいぐるみが好きですか？</h2>
       <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
       <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()}>戻る</Button>

@@ -97,7 +97,7 @@ const Vehicle = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>乗り物が好きですか？</h3>
+      <h2>乗り物が好きですか？</h2>
       {/* 「はい」ボタン */}
       <Button onClick={() => vehicle_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       {/* 「いいえ」ボタン */}

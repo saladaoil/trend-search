@@ -92,7 +92,7 @@ const Doll = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>人形が好きですか？</h3>
+      <h2>人形が好きですか？</h2>
       <Button onClick={doll_Yes_handleClick} style={{ fontSize: '1em' }}>はい</Button>
       <Button onClick={doll_No_handleClick} style={{ fontSize: '1em' }}>いいえ</Button>
       <Button onClick={doll_back_handleClick} style={{ fontSize: '1em' }}>戻る</Button>

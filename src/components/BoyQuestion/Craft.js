@@ -99,7 +99,7 @@ const Craft = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>工作が好きですか？</h3>
+      <h2>工作が好きですか？</h2>
       <Button onClick={() => craft_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       <Button onClick={() => craft_No_handleClick()} style={{fontSize: '1em'}}>いいえ</Button>
       <Button variant="contained" color="inherit" onClick={() => craft_back_handleClick()}>戻る</Button>
