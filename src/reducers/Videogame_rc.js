@@ -1,9 +1,9 @@
 const videogameReducer = (state = [], action) => {
     switch(action.type) {
         case "VIDEOGAME_YES":
-            return state = [1,"はい"];
+            return state = ["ビデオゲーム"];
         case "VIDEOGAME_NO":
-            return state = [2,"いいえ"];
+            return state = ["その他"];
         default:
             return state;
     }

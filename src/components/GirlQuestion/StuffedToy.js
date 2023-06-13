@@ -11,8 +11,6 @@ const Stuffedtoy = () => {
   // Reduxのstateから必要な値を取得するためのフック
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
-  const exercise = useSelector((state) => state.exercise);
-  const game = useSelector((state) => state.game);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
 
   // ページ遷移に使用するフック
@@ -23,35 +21,35 @@ const Stuffedtoy = () => {
   const navigateUrls = {
     0: {
       中学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       },         
       高学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       },         
       選択なし: {
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       }
     },                 
     2:{ 
       中学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし: {
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        ぬいぐるみ:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/doll`,
       }
     },
@@ -83,13 +81,9 @@ const Stuffedtoy = () => {
 
   return (
     <>
-      <h3>選択されているもの</h3>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>質問1：{exercise[1]}</h3>
-      <h3>ゲームが好きですか？：{game[1]}</h3>
-      <h2>ぬいぐるみが好きですか？</h2>
-
+      <h3>ぬいぐるみが好きですか？</h3>
       <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
       <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()}>戻る</Button>

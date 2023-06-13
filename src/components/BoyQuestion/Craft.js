@@ -11,9 +11,8 @@ const Craft = () => {
   // Reduxストアから状態を取得
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
-  const exercise = useSelector((state) => state.exercise);
-  const game = useSelector((state) => state.game);
   const craft = useSelector((state) => state.craft);
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,62 +20,62 @@ const Craft = () => {
   const navigateUrls = {
     0: {
       幼稚園:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/doll`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },         
       低学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/doll`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },   
       中学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/stuffedtoy`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/stuffedtoy`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし: {
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/stuffedtoy`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/doll`,
       }
     },                 
     1:{ 
       中学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし:{
-        1:`${homeUrl}/result`,
-        2:`${homeUrl}/result`,
+        工作:`${homeUrl}/result`,
+        その他:`${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },           
     },
   };
 
   // 「はい」ボタンがクリックされた時の処理
-  const vehicle_Yes_handleClick = () => {
+  const craft_Yes_handleClick = () => {
     dispatch(craft_Yes()); // craft_Yesアクションをdispatchする
   };
 
   // 「いいえ」ボタンがクリックされた時の処理
-  const vehicle_No_handleClick = () => {
+  const craft_No_handleClick = () => {
     dispatch(craft_No()); // craft_Noアクションをdispatchする
   };
   
   // 「戻る」ボタンがクリックされた時の処理
-  const vehicle_back_handleClick = () => {
+  const craft_back_handleClick = () => {
     dispatch(craft_Back()); // craft_Backアクションをdispatchする
     dispatch(resetVehicle()); // resetVehicleアクションをdispatchしてReduxストアの値をリセットする
     dispatch(resetDoll()); // resetDollアクションをdispatchしてReduxストアの値をリセットする
@@ -98,16 +97,12 @@ const Craft = () => {
 
   return (
     <>
-      <h3>選択されているもの</h3>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>質問1：{exercise[1]}</h3>
-      <h3>ゲームが好きですか？：{game[1]}</h3>
-      <h2>工作が好きですか？</h2>
-
-      <Button onClick={() => vehicle_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
-      <Button onClick={() => vehicle_No_handleClick()} style={{fontSize: '1em'}}>いいえ</Button>
-      <Button variant="contained" color="inherit" onClick={() => vehicle_back_handleClick()}>戻る</Button>
+      <h3>工作が好きですか？</h3>
+      <Button onClick={() => craft_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
+      <Button onClick={() => craft_No_handleClick()} style={{fontSize: '1em'}}>いいえ</Button>
+      <Button variant="contained" color="inherit" onClick={() => craft_back_handleClick()}>戻る</Button>
     </>
   );
 }

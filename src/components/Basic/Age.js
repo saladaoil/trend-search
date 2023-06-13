@@ -46,7 +46,6 @@ const Age = () => {
 
   return (
     <>
-      <h3>選択されているもの</h3>
       <h3>性別：{gender[3]}</h3>
       <h2>学年選択</h2>
       <Button onClick={() => kid_handleClick()} style={{ fontSize: '1em' }}>幼稚園</Button>

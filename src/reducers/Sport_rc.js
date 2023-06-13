@@ -1,9 +1,9 @@
 const sportReducer = (state = [], action) => {
     switch(action.type) {
         case "SPORT_YES":
-            return state = [1,"はい"];
+            return state = ["スポーツ"];
         case "SPORT_NO":
-            return state = [2,"いいえ"];
+            return state = ["その他"];
         case "RESET_SPORT":
            return [];
         default:

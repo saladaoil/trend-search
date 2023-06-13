@@ -11,8 +11,6 @@ const Vehicle = () => {
   // Reduxストアから状態を取得
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
-  const exercise = useSelector((state) => state.exercise);
-  const game = useSelector((state) => state.game);
   const vehicle = useSelector((state) => state.vehicle);
 
   const navigate = useNavigate();
@@ -22,45 +20,45 @@ const Vehicle = () => {
   const navigateUrls = {
     0: {
       幼稚園: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/doll`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/doll`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },
       中学年: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/stuffedtoy`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },
       高学年: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/stuffedtoy`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/doll`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       }
     },
     1: {
       幼稚園: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/result`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/result`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        1: `${homeUrl}/result`,
-        2: `${homeUrl}/craft`,
+        乗り物: `${homeUrl}/result`,
+        その他: `${homeUrl}/craft`,
         BACK: `${homeUrl}/game`,
       }
     },
@@ -97,13 +95,9 @@ const Vehicle = () => {
 
   return (
     <>
-      <h3>選択されているもの</h3>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
-      <h3>質問1：{exercise[1]}</h3>
-      <h3>ゲームが好きですか？：{game[1]}</h3>
-      <h2>乗り物が好きですか？</h2>
-
+      <h3>乗り物が好きですか？</h3>
       {/* 「はい」ボタン */}
       <Button onClick={() => vehicle_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
       {/* 「いいえ」ボタン */}

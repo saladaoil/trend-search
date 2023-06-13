@@ -1,9 +1,9 @@
 const dollReducer = (state = [], action) => {
     switch(action.type) {
         case "DOLL_YES":
-            return state = ["doll"];
+            return state = ["人形"];
         case "DOLL_NO":
-            return state = [2];
+            return state = ["その他"];
         case "DOLL_BACK":
             return state = ["BACK"];
         case "RESET_DOLL":
