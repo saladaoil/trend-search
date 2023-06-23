@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch} from "react-redux"
-import { category1, category2, category3, category4, category5 } from "../actions"
+import { category1, category2, category3, category4, category5 } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react';
 

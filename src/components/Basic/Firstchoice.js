@@ -17,7 +17,7 @@ const Firstchoice = () => {
           </div>
         </div>
         <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1em' }}>流行から選ぶ</Button>
-        <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1em' }}>好みから選ぶ</Button>
+        <Button onClick={() => navigate(`${homeUrl}/characterkeyword`)}style={{ fontSize: '1em' }}>好みから選ぶ</Button>
       </div>
     </div>
   );

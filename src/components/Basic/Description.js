@@ -15,9 +15,15 @@ const Description = () => {
   return (
     <>
     <h1>TrendSearch</h1>
+    <br/>
+    <br/>
     <img src={TrendSearchIcon} alt="アイコン" className="icon" />
-    <p>使用方法</p>
-    <Button variant="contained" color="error" onClick={() => navigate(`${homeUrl}/gender`)} style={{ fontSize: '1em', flexGrow: 25, flexBasis: '25%' }}>開始</Button>
+    {/* <p>使用方法</p> */}
+    <div>
+      <br/>
+      <br/>
+      <Button onClick={() => navigate(`${homeUrl}/gender`)} style={{ fontSize: '2em', flexGrow: 25, flexBasis: '25%' }} className="ButtonRadius">開始</Button>
+    </div>
     </>
   );
 }

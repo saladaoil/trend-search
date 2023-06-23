@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { kid, lowGrade, middleGrade, highGrade, notSelect_Age, } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
-import "../styles.css";
+import "./styles.css";
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -48,12 +48,23 @@ const Age = () => {
     <>
       <h3>性別：{gender[3]}</h3>
       <h2>学年選択</h2>
-      <Button onClick={() => kid_handleClick()} style={{ fontSize: '1em' }}>幼稚園</Button>
-      <Button onClick={() => low_handleClick()} style={{ fontSize: '1em' }}>小学生（低学年）</Button>
-      <Button onClick={() => middle_handleClick()} style={{ fontSize: '1em' }}>小学生（中学年）</Button>
-      <Button onClick={() => high_handleClick()} style={{ fontSize: '1em' }}>小学生（高学年）</Button>
-      <Button onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>選択しない</Button>
-      <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1em' }}>戻る</Button>
+      <div>
+        <Button onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
+      </div>
+      <br/>
+        <Button onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
+      <br/>
+      <br/>
+        <Button onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
+      <br/>
+      <br/>
+        <Button onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
+      <br/>
+      <br/>
+      <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
+      <br/>
+      <br/>
+      <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }

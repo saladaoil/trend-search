@@ -11,6 +11,8 @@ import vehicleReducer from "./Vehicle_rc";
 import dollReducer from "./Doll_rc";
 import craftReducer from "./Craft_rc";
 import stuffedtoyReducer from "./StuffedToy_rc";
+import otherReducer from "./Other_rc";
+import resultReducer from "./Result_rc";
 
 const allReducers = combineReducers({
     gender: genderReducer,
@@ -24,7 +26,9 @@ const allReducers = combineReducers({
     vehicle: vehicleReducer,
     doll: dollReducer,
     craft: craftReducer,
-    stuffedtoy: stuffedtoyReducer
+    stuffedtoy: stuffedtoyReducer,
+    other: otherReducer,
+    result: resultReducer
 })
 
 export default allReducers;

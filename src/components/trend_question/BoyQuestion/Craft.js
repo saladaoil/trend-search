@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { craft_Back, craft_No, craft_Yes, resetDoll, resetStuffedtoy, resetVehicle } from "../../actions";
+import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetStuffedtoy, resetVehicle } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import "../styles.css";
@@ -72,6 +72,7 @@ const Craft = () => {
   // 「いいえ」ボタンがクリックされた時の処理
   const craft_No_handleClick = () => {
     dispatch(craft_No()); // craft_Noアクションをdispatchする
+    dispatch(other())
   };
   
   // 「戻る」ボタンがクリックされた時の処理
@@ -83,7 +84,7 @@ const Craft = () => {
 
   useEffect(() => {
     // craftの状態に応じて適切なURLに遷移する
-    const navigateUrl = navigateUrls[gender[0]][age[2]][craft[0]] || navigateUrls[gender[0]][age[2]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][craft] || navigateUrls[gender[0]][age[2]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [craft]);
@@ -101,9 +102,11 @@ const Craft = () => {
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>工作が好きですか？</h2>
-      <Button onClick={() => craft_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
-      <Button onClick={() => craft_No_handleClick()} style={{fontSize: '1em'}}>いいえ</Button>
-      <Button variant="contained" color="inherit" onClick={() => craft_back_handleClick()}>戻る</Button>
+      <Button onClick={() => craft_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
+      <Button onClick={() => craft_No_handleClick()} style={{fontSize: '1.5em'}}>いいえ</Button>
+      <br/>
+      <br/>
+        <Button variant="contained" color="inherit" onClick={() => craft_back_handleClick()} style={{fontSize: '1.5em'}}>戻る</Button>
     </>
   );
 }

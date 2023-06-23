@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { resetCraft, resetDoll, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../actions"
+import { other, resetCraft, resetDoll, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "../styles.css";
@@ -63,6 +63,7 @@ const Stuffedtoy = () => {
   //「いいえ」ボタンがクリックされた時の処理
   const stuffedtoy_No_handleClick = () => {
     dispatch(stuffedtoy_No());
+    dispatch(other())
   };
 
   //「戻る」ボタンがクリックされた時の処理
@@ -74,7 +75,7 @@ const Stuffedtoy = () => {
 
    // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
   useEffect(() => {
-    const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy[0]] || navigateUrls[gender[0]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy] || navigateUrls[gender[0]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
@@ -91,14 +92,120 @@ const Stuffedtoy = () => {
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>ぬいぐるみが好きですか？</h2>
-      <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
-      <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
-      <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()}>戻る</Button>
+      <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
+      <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1.5em' }}>いいえ</Button>
+      <br/>
+      <br/>
+      <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }
 
 export default Stuffedtoy;
+
+
+// import React, { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { other, resetCraft, resetDoll, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
+// import { useNavigate, } from "react-router-dom"
+// import { Button } from '@chakra-ui/react'
+// import "../styles.css";
+
+// const homeUrl = process.env.PUBLIC_URL;
+
+// const Stuffedtoy = () => {
+//   // Reduxのstateから必要な値を取得するためのフック
+//   const gender = useSelector((state) => state.gender);
+//   const age = useSelector((state) => state.age);
+//   const stuffedtoy = useSelector((state) => state.stuffedtoy);
+
+//   // ページ遷移に使用するフック
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+
+//   // ナビゲーションのURLマッピング
+//   const navigateUrls = {
+//     0: {
+//       中学年:{
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/craft`,
+//       },         
+//       高学年:{
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/craft`,
+//       },         
+//       選択なし: {
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/craft`,
+//       }
+//     },                 
+//     2:{ 
+//       中学年:{
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/game`,
+//       },      
+//       高学年:{
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/game`,
+//       },           
+//       選択なし: {
+//         ぬいぐるみ:`${homeUrl}/result`,
+//         その他:`${homeUrl}/result`,
+//         BACK: `${homeUrl}/doll`,
+//       }
+//     },
+//   };
+
+//   //「はい」ボタンがクリックされた時の処理
+//   const stuffedtoy_Yes_handleClick = () => {
+//     dispatch(stuffedtoy_Yes());
+//   };
+
+//   //「いいえ」ボタンがクリックされた時の処理
+//   const stuffedtoy_No_handleClick = () => {
+//     dispatch(stuffedtoy_No());
+//     dispatch(other())
+//   };
+
+//   //「戻る」ボタンがクリックされた時の処理
+//   const stuffedtoy_back_handleClick = () => {
+//     dispatch(stuffedtoy_Back());
+//     dispatch(resetDoll());
+//     dispatch(resetCraft());
+//   };
+
+//    // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
+//   useEffect(() => {
+//     const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy] || navigateUrls[gender[0]];
+//     navigate(navigateUrl);
+//   // eslint-disable-next-line react-hooks/exhaustive-deps
+//   }, [stuffedtoy]);
+
+//   useEffect(() => {
+//     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
+//     return () => {
+//       dispatch(resetCraft()); // resetCraftアクションをdispatchしてReduxストアの値をリセットする
+//     };
+//   }, [dispatch]);
+
+//   return (
+//     <>
+//       <h3>性別：{gender[3]}</h3>
+//       <h3>学年：{age[2]}</h3>
+//       <h2>ぬいぐるみが好きですか？</h2>
+//       <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
+//       <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
+//       <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()}>戻る</Button>
+//     </>
+//   );
+// }
+
+// export default Stuffedtoy;
 
 
 // import React from 'react'

@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
-import { sport_Yes, sport_No } from "../../actions";
+import { sport_Yes, sport_No, other } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
-import "../styles.css";
+import "./styles.css";
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -26,6 +26,7 @@ const Sport = () => {
   // 「いいえ」ボタンがクリックされた時の処理
   const sport_No_handleClick = () => {
     dispatch(sport_No()); // sport_Noアクションをdispatchする
+    dispatch(other())
     navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
   }
 
@@ -34,9 +35,11 @@ const Sport = () => {
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>スポーツが好きですか？</h2>
-      <Button onClick={() => sport_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
-      <Button onClick={() => sport_No_handleClick()} style={{ fontSize: '1em' }}>いいえ</Button>
-      <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1em' }}>戻る</Button>
+      <Button onClick={() => sport_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
+      <Button onClick={() => sport_No_handleClick()} style={{ fontSize: '1.5em' }}>いいえ</Button>
+      <br/>
+      <br/>
+      <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }

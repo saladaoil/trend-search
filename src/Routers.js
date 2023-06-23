@@ -1,20 +1,35 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
-import Gender from "./components/Basic/Gender"
-import Age from "./components/Basic/Age";
-import Category from "./components/Category"
-import Result from "./components/Result";
-import CategoryResult from "./components/Category_Result"
 import Firstchoice from "./components/Basic/Firstchoice";
 import Description from "./components/Basic/Description";
-import Price from "./components/Price"
-import Exercise from "./components/Basic/Exercise";
-import Sport from "./components/Basic/Sport";
-import Game from "./components/Basic/Game";
-import Videogame from "./components/Basic/Videogame";
-import Doll from "./components/GirlQuestion/Doll";
-import Craft from "./components/BoyQuestion/Craft";
-import StuffedToy from "./components/GirlQuestion/StuffedToy";
-import Vehicle from "./components/BoyQuestion/Vehicle";
+import Gender from "./components/trend_question/Gender";
+import Age from "./components/trend_question/Age";
+import Category from "./components/trend_question/Category";
+import Result from "./components/trend_question/Result";
+import CategoryResult from "./components/trend_question/Category_Result";
+import Price from "./components/trend_question/Price";
+import Exercise from "./components/trend_question/Exercise";
+import Sport from "./components/trend_question/Sport";
+import Game from "./components/trend_question/Game";
+import Videogame from "./components/trend_question/Videogame";
+import Vehicle from "./components/trend_question/BoyQuestion/Vehicle";
+import Craft from "./components/trend_question/BoyQuestion/Craft";
+import Doll from "./components/trend_question/GirlQuestion/Doll";
+import StuffedToy from "./components/trend_question/GirlQuestion/StuffedToy"
+import CharacterKeyword from "./components/preference_question/CharacterKeyword"
+// import Gender from "./components/Basic/Gender"
+// import Age from "./components/Basic/Age";
+// import Category from "./components/Category"
+// import Result from "./components/Result";
+// import CategoryResult from "./components/Category_Result"
+// import Price from "./components/Price"
+// import Exercise from "./components/Basic/Exercise";
+// import Sport from "./components/Basic/Sport";
+// import Game from "./components/Basic/Game";
+// import Videogame from "./components/Basic/Videogame";
+// import Doll from "./components/GirlQuestion/Doll";
+// import Craft from "./components/BoyQuestion/Craft";
+// import StuffedToy from "./components/GirlQuestion/StuffedToy";
+// import Vehicle from "./components/BoyQuestion/Vehicle";
 
 
 const homeUrl = process.env.PUBLIC_URL;
@@ -39,6 +54,7 @@ const Routers = () => {
                 <Route path={`${homeUrl}/category`} element={<Category/>}/>
                 <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
                 <Route path={`${homeUrl}/price`} element={<Price/>}/>
+                <Route path={`${homeUrl}/characterkeyword`} element={<CharacterKeyword/>}/>
             </Routes>
         </BrowserRouter>
     )

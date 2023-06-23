@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import { exercise_Yes , exercise_No } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
-import "../styles.css";
+import "./styles.css";
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -35,9 +35,13 @@ const Exercise = () => {
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>体を動かすのが好きですか？</h2>
-      <Button onClick={() => exercise_Yes_handleClick()} style={{ fontSize: '1em' }}>はい</Button>
-      <Button onClick={() => exercise_No_handleClick()} style={{fontSize: '1em'}}>いいえ</Button>
-      <Button onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1em' }}>戻る</Button>
+      <Button onClick={() => exercise_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
+      <Button onClick={() => exercise_No_handleClick()} style={{fontSize: '1.5em'}}>いいえ</Button>
+      <br/>
+      <br/>
+      <div>
+        <Button onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1.5em' }}>戻る</Button>
+      </div>
     </>
   );
 }
