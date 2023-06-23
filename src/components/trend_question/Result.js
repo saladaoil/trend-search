@@ -151,8 +151,8 @@ const Result = () => {
 
   return (
     <>
-      <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.2em' }}>最初へ</Button>
-      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.2em' }}>戻る</Button>
+      <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>
+      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
       <h2>結果</h2>
       {/* <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button> */}
       <div>
