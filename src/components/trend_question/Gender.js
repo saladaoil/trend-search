@@ -44,7 +44,7 @@ const Gender = () => {
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
         <br/>
         <br/>
-        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }}>戻る</Button>
       </div>
     </>
   );
