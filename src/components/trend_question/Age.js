@@ -14,6 +14,7 @@ const Age = () => {
 
   const gender = useSelector((state) => state.gender); // 性別を取得する
 
+
   // 幼稚園が選択された時の処理
   const kid_handleClick = () => {
     dispatch(kid()); // 4,6,「幼稚園」という値を取得する
