@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { other, resetCraft, resetDoll, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
+import { other, resetCraft, resetDoll, resetOther, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "../styles.css";
@@ -84,8 +84,11 @@ const Stuffedtoy = () => {
     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
       dispatch(resetCraft()); // resetCraftアクションをdispatchしてReduxストアの値をリセットする
+      dispatch(resetOther())
     };
   }, [dispatch]);
+
+  console.log(stuffedtoy)
 
   return (
     <>

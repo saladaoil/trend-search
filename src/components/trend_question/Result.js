@@ -149,6 +149,9 @@ const Result = () => {
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
 
+  console.log(vehicle)
+  console.log(doll)
+
   return (
     <>
       <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>

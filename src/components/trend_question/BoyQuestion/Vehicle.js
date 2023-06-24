@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { vehicle_Yes, vehicle_No, resetDoll, vehicle_Back, other, } from "../../../actions"
+import { vehicle_Yes, vehicle_No, resetDoll, vehicle_Back, other, resetOther, } from "../../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "../styles.css";
@@ -91,8 +91,11 @@ const Vehicle = () => {
     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
       dispatch(resetDoll()); // resetDollアクションをdispatchしてReduxストアの値をリセットする
+      dispatch(resetOther())
     };
   }, [dispatch]);
+
+  console.log(vehicle)
 
 
   return (

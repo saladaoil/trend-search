@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import { game_Yes, game_No, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetVideogame } from "../../actions"
+import { game_Yes, game_No, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetVideogame, resetOther } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "./styles.css";
@@ -63,6 +63,7 @@ const Game = () => {
       dispatch(resetCraft()); // craftの値を空にする
       dispatch(resetDoll()); // dollの値を空にする
       dispatch(resetStuffedtoy()); // stuffedtoyの値を空にする
+      dispatch(resetOther())
     };
   }, [dispatch]);
 

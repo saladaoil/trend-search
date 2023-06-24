@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other } from "../../../actions";
+import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other, resetOther } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import "../styles.css";
@@ -13,6 +13,7 @@ const Doll = () => {
   const gender = useSelector((state) => state.gender); // 性別
   const age = useSelector((state) => state.age); // 学年
   const doll = useSelector((state) => state.doll); // 人形好きかどうかの回答
+  const vehcle = useSelector((state) => state.vehcle);
 
   // React Routerのnavigate関数とReduxのdispatch関数を取得する
   const navigate = useNavigate();
@@ -85,10 +86,14 @@ const Doll = () => {
     return () => {
       dispatch(resetCraft());
       dispatch(resetVehicle())
+      dispatch(resetOther())
     };
   }, [dispatch]);
 
+  
+
   console.log(doll);
+  console.log(vehcle);
 
   return (
     <>

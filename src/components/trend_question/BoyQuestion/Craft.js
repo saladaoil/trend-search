@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetStuffedtoy, resetVehicle } from "../../../actions";
+import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetOther, resetStuffedtoy, resetVehicle } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import "../styles.css";
@@ -94,8 +94,11 @@ const Craft = () => {
     return () => {
       dispatch(resetDoll())
       dispatch(resetStuffedtoy()); // resetStuffedtoyアクションをdispatchしてReduxストアの値をリセットする
+      dispatch(resetOther())
     };
   }, [dispatch]);
+
+  console.log(craft)
 
   return (
     <>
