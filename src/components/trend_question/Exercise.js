@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
-import { exercise_Yes , exercise_No } from "../../actions"
+import { exercise_Yes , exercise_No, resetVideogame, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetOther, resetSport } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "./styles.css";
@@ -28,6 +28,19 @@ const Exercise = () => {
     dispatch(exercise_No()); // 2と運動の好み（いいえ）を取得する　（2はresultのfilterで比較する時に使用）
     navigate(`${homeUrl}/game`); // ゲームの質問ページに遷移
   }
+
+  // コンポーネントのアンマウント時に実行される処理
+  useEffect(() => {
+    return () => {
+      dispatch(resetVideogame()) //videogameの値を空にする
+      dispatch(resetVehicle()); // vehicleの値を空にする
+      dispatch(resetCraft()); // craftの値を空にする
+      dispatch(resetDoll()); // dollの値を空にする
+      dispatch(resetStuffedtoy()); // stuffedtoyの値を空にする
+      dispatch(resetOther())
+      dispatch(resetSport())
+    };
+  }, [dispatch]);
   
 
   return (
