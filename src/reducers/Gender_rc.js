@@ -14,6 +14,8 @@ const genderReducer = (state = [], action) => {
 export default genderReducer;
 
 
+
+
 // const genderReducer = (state = [], action) => {
 //     switch(action.type) {
 //         case "BOY":

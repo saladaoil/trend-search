@@ -22,7 +22,7 @@ const Description = () => {
     <div>
       <br/>
       <br/>
-      <Button onClick={() => navigate(`${homeUrl}/gender`)} style={{ fontSize: '2em', flexGrow: 25, flexBasis: '25%' }} className="ButtonRadius">開始</Button>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '2em', flexGrow: 25, flexBasis: '25%' }} className="ButtonRadius">開始</Button>
     </div>
     </>
   );

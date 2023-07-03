@@ -15,7 +15,10 @@ import Vehicle from "./components/trend_question/BoyQuestion/Vehicle";
 import Craft from "./components/trend_question/BoyQuestion/Craft";
 import Doll from "./components/trend_question/GirlQuestion/Doll";
 import StuffedToy from "./components/trend_question/GirlQuestion/StuffedToy"
-import CharacterKeyword from "./components/preference_question/CharacterKeyword"
+import Pregender from "./components/preference_question/Pre_gender"
+import Preselect from "./components/preference_question/Pre_select"
+import Pregenre from "./components/preference_question/Pre_genre"
+
 // import Gender from "./components/Basic/Gender"
 // import Age from "./components/Basic/Age";
 // import Category from "./components/Category"
@@ -54,7 +57,10 @@ const Routers = () => {
                 <Route path={`${homeUrl}/category`} element={<Category/>}/>
                 <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
                 <Route path={`${homeUrl}/price`} element={<Price/>}/>
-                <Route path={`${homeUrl}/characterkeyword`} element={<CharacterKeyword/>}/>
+                <Route path={`${homeUrl}/pregender`} element={<Pregender/>}/>
+                <Route path={`${homeUrl}/preselect`} element={<Preselect/>}/>
+                <Route path={`${homeUrl}/pregenre`} element={<Pregenre/>}/>
+
             </Routes>
         </BrowserRouter>
     )
