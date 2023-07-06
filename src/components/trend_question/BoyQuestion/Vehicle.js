@@ -8,13 +8,19 @@ import "../styles.css";
 const homeUrl = process.env.PUBLIC_URL;
 
 const Vehicle = () => {
-  // Reduxストアから状態を取得
+
+  // 画面遷移を行うための関数
+  const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
+  const dispatch = useDispatch();
+
+
+  // Reduxストアからステートを取得する
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const vehicle = useSelector((state) => state.vehicle);
 
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   // ナビゲーションのURLマッピング
   const navigateUrls = {
@@ -66,18 +72,18 @@ const Vehicle = () => {
 
   // 「はい」ボタンがクリックされた時の処理
   const vehicle_Yes_handleClick = () => {
-    dispatch(vehicle_Yes()); // vehicle_Yesアクションをdispatchする
+    dispatch(vehicle_Yes()); // Reduxストアのvehicleに"乗り物"という文字列を保持させる
   };
 
   // 「いいえ」ボタンがクリックされた時の処理
   const vehicle_No_handleClick = () => {
-    dispatch(vehicle_No()); // vehicle_Noアクションをdispatchする
-    dispatch(other())
+    dispatch(vehicle_No()); // Reduxストアのvehicleに"その他"という文字列を保持させる(画面遷移に使用する)
+    dispatch(other())       // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
   };
 
   // 「戻る」ボタンがクリックされた時の処理
   const vehicle_back_handleClick = () => {
-    dispatch(vehicle_Back()); // vehicle_Backアクションをdispatchする
+    dispatch(vehicle_Back()); // Reduxストアのvehicleに"BACK"という文字列を保持させる(画面遷移に使用する)
   };
 
   useEffect(() => {
@@ -87,11 +93,11 @@ const Vehicle = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicle]);
 
+  // クリーンアップ関数
   useEffect(() => {
-    // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
-      dispatch(resetDoll()); // Reduxストアのdollの値をリセットする
-      dispatch(resetOther()) // Reduxストアのotherの値をリセットする
+      dispatch(resetDoll()); // Reduxストアのdollをリセットする
+      dispatch(resetOther()) // Reduxストアのotherをリセットする
     };
   }, [dispatch]);
 

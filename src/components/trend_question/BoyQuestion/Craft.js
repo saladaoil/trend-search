@@ -15,7 +15,7 @@ const Craft = () => {
   // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
   
-  // Reduxストアから状態を取得
+  // Reduxストアからステートを取得する
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const craft = useSelector((state) => state.craft);
@@ -70,20 +70,20 @@ const Craft = () => {
 
   // 「はい」ボタンがクリックされた時の処理
   const craft_Yes_handleClick = () => {
-    dispatch(craft_Yes()); // craft_yesアクションをdispatchしstoreに"工作"という文字列を保持させる
+    dispatch(craft_Yes()); // Reduxストアのcraftに"工作"という文字列を保持させる
   };
 
   // 「いいえ」ボタンがクリックされた時の処理
   const craft_No_handleClick = () => {
-    dispatch(craft_No()); // craft_noアクションをdispatchしstoreに"その他"という文字列を保持させる(useEffectで使用する)
-    dispatch(other());    // otherアクションをdispatchしstoreに"その他"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(craft_No()); // Reduxストアのcraftに"その他"という文字列を保持させる(画面遷移に使用する)
+    dispatch(other());    // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
   };
   
   // 「戻る」ボタンがクリックされた時の処理
   const craft_back_handleClick = () => {
-    dispatch(craft_Back()); // craft_Backアクションをdispatchしstoreに"BACK"という文字列を保持させる
-    dispatch(resetVehicle()); // resetVehicleアクションをdispatchしReduxストアのvehicleをリセットする
-    dispatch(resetDoll()); // resetDollアクションをdispatchしてReduxストアのdollをリセットする
+    dispatch(craft_Back());   // Reduxストアのcraftに"BACK"という文字列を保持させる
+    dispatch(resetVehicle()); // Reduxストアのvehicleをリセットする
+    dispatch(resetDoll());    // Reduxストアのdollをリセットする
   };
 
   useEffect(() => {
@@ -96,9 +96,9 @@ const Craft = () => {
   //クリーンアップ関数
   useEffect(() => {
     return () => {
-      dispatch(resetDoll())        // resetDollアクションをdispatchしてReduxストアのdollをリセットする
-      dispatch(resetStuffedtoy()); // resetStuffedtoyアクションをdispatchしてReduxストアのstuffedtoyをリセットする
-      dispatch(resetOther())       // resetOtherアクションをdispatchしてReduxストアのotherをリセットする
+      dispatch(resetDoll())        // Reduxストアのdollをリセットする
+      dispatch(resetStuffedtoy()); // Reduxストアのstuffedtoyをリセットする
+      dispatch(resetOther())       // Reduxストアのotherをリセットする
     };
   }, [dispatch]);
 
