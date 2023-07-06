@@ -5,29 +5,27 @@ import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import "./styles.css";
 
-// ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
 
 const Sport = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Reduxストアから状態を取得
-  const gender = useSelector((state) => state.gender); //性別
-  const age = useSelector((state) => state.age); //学年
+  const gender = useSelector((state) => state.gender);
+  const age = useSelector((state) => state.age);
 
 
   // 「はい」ボタンがクリックされた時の処理
   const sport_Yes_handleClick = () => {
-    dispatch(sport_Yes()); // sport_Yesアクションをdispatchする
-    navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
+    dispatch(sport_Yes());
+    navigate(`${homeUrl}/result`);
   }
 
   // 「いいえ」ボタンがクリックされた時の処理
   const sport_No_handleClick = () => {
-    dispatch(sport_No()); // sport_Noアクションをdispatchする
+    dispatch(sport_No());
     dispatch(other())
-    navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
+    navigate(`${homeUrl}/result`);
   }
 
   return (

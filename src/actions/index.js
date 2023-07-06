@@ -249,52 +249,59 @@ export const categoryqestion= () => {
 
 
 
-export const price1 = () => {
-    return{
-        type: "PRICE1",
-    };
-}
-
-export const price2 = () => {
-    return{
-        type: "PRICE2",
-    };
-}
-
-export const price3= () => {
-    return{
-        type: "PRICE3",
-    };
-}
-
-export const price4= () => {
-    return{
-        type: "PRICE4",
-    };
-}
-
-export const price5= () => {
-    return{
-        type: "PRICE5",
-    };
-}
-export const price6= () => {
-    return{
-        type: "PRICE6",
-    };
-}
 
 export const character= () => {
     return{
-        type: "Character",
+        type: "CHARACTER",
     };
 }
 
 export const brand= () => {
     return{
-        type: "Brand",
+        type: "BRAND",
     };
 }
 
+export const setGenre = (genre) => {
+    return {
+      type: 'SET_GENRE',
+      payload: genre,
+    };
+  };
 
+
+// export const price1 = () => {
+//     return{
+//         type: "PRICE1",
+//     };
+// }
+
+// export const price2 = () => {
+//     return{
+//         type: "PRICE2",
+//     };
+// }
+
+// export const price3= () => {
+//     return{
+//         type: "PRICE3",
+//     };
+// }
+
+// export const price4= () => {
+//     return{
+//         type: "PRICE4",
+//     };
+// }
+
+// export const price5= () => {
+//     return{
+//         type: "PRICE5",
+//     };
+// }
+// export const price6= () => {
+//     return{
+//         type: "PRICE6",
+//     };
+// }
   

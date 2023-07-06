@@ -8,7 +8,7 @@ import "./styles.css";
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
 
-const CharacterOrBrand = () => {
+const Pre_select = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -24,11 +24,6 @@ const CharacterOrBrand = () => {
     navigate(`${homeUrl}/pregender`); // 年齢選択のページに遷移する
   }
 
-  // 選択しないボタンがクリックされた時の処理
-  const skip_handleClick = () => {
-    navigate(`${homeUrl}`); // 年齢選択のページに遷移する
-  }
-
   return (
     <>
       <br/>
@@ -40,13 +35,11 @@ const CharacterOrBrand = () => {
       <br/>
       <br/>
       <div>
-        <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
         <br/>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
       </div>
     </>
   );
 }
 
-export default CharacterOrBrand;
+export default Pre_select;

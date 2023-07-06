@@ -18,6 +18,7 @@ import StuffedToy from "./components/trend_question/GirlQuestion/StuffedToy"
 import Pregender from "./components/preference_question/Pre_gender"
 import Preselect from "./components/preference_question/Pre_select"
 import Pregenre from "./components/preference_question/Pre_genre"
+import Preresult from "./components/preference_question/pre_result"
 
 // import Gender from "./components/Basic/Gender"
 // import Age from "./components/Basic/Age";
@@ -60,6 +61,7 @@ const Routers = () => {
                 <Route path={`${homeUrl}/pregender`} element={<Pregender/>}/>
                 <Route path={`${homeUrl}/preselect`} element={<Preselect/>}/>
                 <Route path={`${homeUrl}/pregenre`} element={<Pregenre/>}/>
+                <Route path={`${homeUrl}/preresult`} element={<Preresult/>}/>
 
             </Routes>
         </BrowserRouter>

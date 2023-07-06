@@ -90,8 +90,8 @@ const Vehicle = () => {
   useEffect(() => {
     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
-      dispatch(resetDoll()); // resetDollアクションをdispatchしてReduxストアの値をリセットする
-      dispatch(resetOther())
+      dispatch(resetDoll()); // Reduxストアのdollの値をリセットする
+      dispatch(resetOther()) // Reduxストアのotherの値をリセットする
     };
   }, [dispatch]);
 

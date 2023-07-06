@@ -47,8 +47,8 @@ const Result = () => {
     const vehicleValue = vehicle; // vehicleの値を一時的に保持
     const craftValue = craft; // vehicleの値を一時的に保持
     const dollValue = doll; // vehicleの値を一時的に保持
-    const stuffedtoyValue = stuffedtoy; // vehicleの値を一時的に保持
-    const otherValue = other; // vehicleの値を一時的に保持
+    const stuffedtoyValue = stuffedtoy; // の値を一時的に保持
+    const otherValue = other; // の値を一時的に保持
   
     dispatch(result_Back());
 
@@ -107,6 +107,7 @@ const Result = () => {
   const toys = toys_db; 
   
   // おもちゃをフィルタリングする
+  
 
   let toy_filterResult = toys.filter(function (value) {
     return (
@@ -148,9 +149,6 @@ const Result = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-
-  console.log(vehicle)
-  console.log(doll)
 
   return (
     <>

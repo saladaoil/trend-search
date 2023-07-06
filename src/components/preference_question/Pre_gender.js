@@ -8,7 +8,7 @@ import "./styles.css";
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
 
-const Gender = () => {
+const Pre_gender = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -44,10 +44,10 @@ const Gender = () => {
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
         <br/>
         <br/>
-        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+        <Button onClick={() => navigate(`${homeUrl}/preselect`)} style={{ fontSize: '1.5em' }}>戻る</Button>
       </div>
     </>
   );
 }
 
-export default Gender;
+export default Pre_gender;

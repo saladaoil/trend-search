@@ -1,9 +1,9 @@
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
-const toys_db = [
-    {gender:21,type:3,name:"ウルトラマン",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_ultraman.jpg?autoresize=on",page_url:`${homeUrl}/exercise`},
-    {gender:1,type:1,name:"王様戦隊キングオージャー",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kingohjya.jpg?autoresize=on"},
-    {gender:1,type:1,name:"おさるのジョージ",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_osarunogeorge.png?autoresize=on"},
+const genre_db = [
+    {gender:1,type:1,name:"ウルトラマン", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_ultraman.jpg?autoresize=on",page_url:`${homeUrl}/exercise`},
+    {gender:1,type:1,name:"王様戦隊キングオージャー", genre: "王様戦隊キングオージャー", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kingohjya.jpg?autoresize=on"},
+    {gender:1,type:1,name:"おさるのジョージ", genre: "おさるのジョージ", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_osarunogeorge.png?autoresize=on"},
     {gender:1,type:1,name:"仮面ライダーギーツ",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-brand_geets.jpg?autoresize=on"},
     {gender:1,type:1,name:"鬼滅の刃",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kimetsu.png?autoresize=on"},
     {gender:1,type:1,name:"ゴー！ゴー！びーくるずー",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_vehiclezoo.jpg?autoresize=on"},
@@ -54,6 +54,6 @@ const toys_db = [
     {gender:2,type:2,name:"My Story",image_url:"https://www.toysrus.co.jp/static/top/img/brand/logo-brand_mystory_v2.jpg?autoresize=on"},
     {gender:2,type:2,name:"レゴ(R)ブロック",image_url:"https://www.toysrus.co.jp/static/top/img/brand/logo-brand_lego.png?autoresize=on"},    ];
 
-export default toys_db;
+export default genre_db;
 
 

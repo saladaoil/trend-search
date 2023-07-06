@@ -13,6 +13,8 @@ import craftReducer from "./Craft_rc";
 import stuffedtoyReducer from "./StuffedToy_rc";
 import otherReducer from "./Other_rc";
 import resultReducer from "./Result_rc";
+import genreReducer from "./Genre_rc";
+import genreTypeReducer from "./GenreType_rc";
 
 const allReducers = combineReducers({
     gender: genderReducer,
@@ -28,7 +30,9 @@ const allReducers = combineReducers({
     craft: craftReducer,
     stuffedtoy: stuffedtoyReducer,
     other: otherReducer,
-    result: resultReducer
+    result: resultReducer,
+    genre: genreReducer,
+    genreType: genreTypeReducer
 })
 
 export default allReducers;
