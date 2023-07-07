@@ -55,9 +55,6 @@ const Routers = () => {
                 <Route path={`${homeUrl}/doll`} element={<Doll/>}/>
                 <Route path={`${homeUrl}/stuffedtoy`} element={<StuffedToy/>}/>
                 <Route path={`${homeUrl}/result`} element={<Result/>}/>
-                <Route path={`${homeUrl}/category`} element={<Category/>}/>
-                <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
-                <Route path={`${homeUrl}/price`} element={<Price/>}/>
                 <Route path={`${homeUrl}/pregender`} element={<Pregender/>}/>
                 <Route path={`${homeUrl}/preselect`} element={<Preselect/>}/>
                 <Route path={`${homeUrl}/pregenre`} element={<Pregenre/>}/>

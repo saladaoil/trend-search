@@ -30,7 +30,7 @@ const Pre_genre = () => {
     );
   });
 
-
+  
   const back_handleClick = () => {
     navigate(`${homeUrl}/pregender`)
   };

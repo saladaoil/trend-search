@@ -93,7 +93,7 @@ const Vehicle = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicle]);
 
-  // クリーンアップ関数
+  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
   useEffect(() => {
     return () => {
       dispatch(resetDoll()); // Reduxストアのdollをリセットする

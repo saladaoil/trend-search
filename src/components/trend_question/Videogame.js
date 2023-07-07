@@ -9,23 +9,29 @@ import "./styles.css";
 const homeUrl = process.env.PUBLIC_URL;
 
 const Videogame = () => {
-  // Reduxストアから状態を取得
-  const gender = useSelector((state) => state.gender); //性別
-  const age = useSelector((state) => state.age); //学年
 
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
+
+
+  // Reduxストアからステートを取得する
+  const gender = useSelector((state) => state.gender);
+  const age = useSelector((state) => state.age); 
+
 
   // 「はい」ボタンがクリックされた時の処理
   const videogame_Yes_handleClick = () => {
-    dispatch(videogame_Yes()); // videogame_Yesアクションをdispatchする
+    dispatch(videogame_Yes());     // Reduxストアのvideogameに"ビデオゲーム"という文字列を保持させる
     navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
   }
 
   // 「いいえ」ボタンがクリックされた時の処理
   const videogame_No_handleClick = () => {
-    dispatch(videogame_No()); // videogame_Noアクションをdispatchする
-    dispatch(other())
+    dispatch(videogame_No());      // Reduxストアのvideogameに"その他"という文字列を保持させる
+    dispatch(other())              // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
     navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
   }
 

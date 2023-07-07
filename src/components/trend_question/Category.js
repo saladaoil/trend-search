@@ -37,12 +37,12 @@ const homeUrl = process.env.PUBLIC_URL;
     return (
       <>
           <h2>カテゴリー選択</h2>
-          <Button onClick={() => category1_handleClick()} style={{ fontSize: '1em' }}>おもちゃ</Button>
-          <Button onClick={() => category2_handleClick()} style={{ fontSize: '1em' }}>ゲーム</Button>
-          <Button onClick={() => category3_handleClick()} style={{ fontSize: '1em' }}>知育玩具</Button>
-          <Button onClick={() => category4_handleClick()} style={{ fontSize: '1em' }}>スポーツ</Button>
-          <Button onClick={() => category5_handleClick()} style={{ fontSize: '1em' }}>その他</Button>
-          <Button onClick={() => navigate(-1)}style={{ fontSize: '1em' }}>戻る</Button>
+          <Button onClick={() => category1_handleClick()} style={{ fontSize: '1em' }} className='BottomRadius'>おもちゃ</Button>
+          <Button onClick={() => category2_handleClick()} style={{ fontSize: '1em' }} className='BottomRadius'>ゲーム</Button>
+          <Button onClick={() => category3_handleClick()} style={{ fontSize: '1em' }} className='BottomRadius'>知育玩具</Button>
+          <Button onClick={() => category4_handleClick()} style={{ fontSize: '1em' }} className='BottomRadius'>スポーツ</Button>
+          <Button onClick={() => category5_handleClick()} style={{ fontSize: '1em' }} className='BottomRadius'>その他</Button>
+          <Button onClick={() => navigate(-1)}style={{ fontSize: '1em' }} className='BottomRadius'>戻る</Button>
         </>
     );
 }

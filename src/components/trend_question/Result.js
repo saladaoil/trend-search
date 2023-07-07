@@ -4,16 +4,19 @@ import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
 import { Button } from '@chakra-ui/react';
 import "./styles.css";
-import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
+import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame,} from '../../actions';
 
 const homeUrl = process.env.PUBLIC_URL;
 
 const Result = () => {
   
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
-  // Reduxのstateから必要な値を取得するためのフック
+  // Reduxストアからステートを取得する
   const gender_val = useSelector((state) => state.gender);
   const age_val = useSelector((state) => state.age);
   const sport = useSelector((state) => state.sport);
@@ -28,6 +31,7 @@ const Result = () => {
   const [gender, common_gender ,all_gender] = gender_val;
   const [from_age, to_age] = age_val;
 
+  // ナビゲーションのURLマッピング
   const navigateUrls = {
     BACK:{
           スポーツ: `${homeUrl}/sport`,
@@ -40,32 +44,32 @@ const Result = () => {
     } 
   };
 
-
-  const back_handleClick = () => {
-    const sportValue = sport; // vehicleの値を一時的に保持
-    const videogameValue = videogame; // vehicleの値を一時的に保持
-    const vehicleValue = vehicle; // vehicleの値を一時的に保持
-    const craftValue = craft; // vehicleの値を一時的に保持
-    const dollValue = doll; // vehicleの値を一時的に保持
-    const stuffedtoyValue = stuffedtoy; // の値を一時的に保持
-    const otherValue = other; // の値を一時的に保持
   
-    dispatch(result_Back());
+  // 「戻る」ボタンがクリックされた時の処理
+  const back_handleClick = () => {
+    const sportValue = sport;           // sportの値を一時的に保持
+    const videogameValue = videogame;   // videogameの値を一時的に保持
+    const vehicleValue = vehicle;       // vehicleの値を一時的に保持
+    const craftValue = craft;           // craftの値を一時的に保持
+    const dollValue = doll;             // dollの値を一時的に保持
+    const stuffedtoyValue = stuffedtoy; // stuffedtoyの値を一時的に保持
+    const otherValue = other;           // otherの値を一時的に保持
+  
 
     const resetActions = [
-      resetSport(),
-      resetVideogame(),
-      resetVehicle(),
-      resetCraft(),
-      resetDoll(),
-      resetStuffedtoy(),
-      resetOther(),
+      resetSport(),      // Reduxストアのsportをリセットする
+      resetVideogame(),  // Reduxストアのvideogameをリセットする
+      resetVehicle(),    // Reduxストアのvehicleをリセットする
+      resetCraft(),      // Reduxストアのcraftをリセットする
+      resetDoll(),       // Reduxストアのdollをリセットする
+      resetStuffedtoy(), // Reduxストアのstuffedtoyをリセットする
+      resetOther(),      // Reduxストアのotherをリセットする
     ];
   
+    // resetActionsの中身を実行する
     resetActions.forEach(action => dispatch(action));
 
-  
-    // resetVehicle()の後にナビゲート先のURLを取得
+    // 遷移先URLを判断し、適切なページに遷移
     const navigateUrl =
       navigateUrls.BACK[sportValue] ||
       navigateUrls.BACK[videogameValue] ||
@@ -75,7 +79,7 @@ const Result = () => {
       navigateUrls.BACK[stuffedtoyValue] ||
       navigateUrls.BACK[otherValue];
   
-    navigate(navigateUrl);
+      navigate(navigateUrl);
   };
   
 
@@ -107,8 +111,6 @@ const Result = () => {
   const toys = toys_db; 
   
   // おもちゃをフィルタリングする
-  
-
   let toy_filterResult = toys.filter(function (value) {
     return (
       (value.gender === gender || value.gender === common_gender || value.gender > all_gender) &&
@@ -138,8 +140,6 @@ const Result = () => {
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
-  // ページ遷移に使用するフック
-  
   // 次のページに移動する関数
   const goToNextPage = () => setPageNumber(pageNumber + 1);
   
@@ -153,19 +153,19 @@ const Result = () => {
   return (
     <>
       <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>
-      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
+      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
       <h2>結果</h2>
       {/* <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button> */}
       <div>
-        <ul>
+        <ul className='Ul'>
           {/* 現在のページのおもちゃの表示データをマップして表示 */}
           {currentToyDis.map(function (toy) {
             return (
-              <li key={`${toy.name}-${toy.price}`}>
+              <li className='list' key={`${toy.name}-${toy.price}`}>
                 <a href={toy.page_url} target="_blank" rel="noopener noreferrer">
                   <h3 className='toyname'>{toy.name}</h3>
                   <h3>{toy.price}円</h3>
-                  <img src={toy.image_url} alt={toy.name} />
+                  <img className='Img' src={toy.image_url} alt={toy.name} />
                 </a>
               </li>
             );
@@ -173,8 +173,8 @@ const Result = () => {
         </ul>
         <div className="pagination">
           {/* ページネーションのボタンを表示 */}
-          {/* <Button variant="contained" color="inherit" onClick={goToPrevPage} disabled={pageNumber === 1}>前のページ</Button> */}
-          {/* <Button variant="contained" color="inherit" onClick={goToNextPage} disabled={currentToyDis.length < itemsPerPage}>次のページ</Button> */}
+          <Button variant="contained" color="inherit" onClick={goToPrevPage} disabled={pageNumber === 1} className='BottomRadius'>前のページ</Button>
+          <Button variant="contained" color="inherit" onClick={goToNextPage} disabled={currentToyDis.length < itemsPerPage} className='BottomRadius'>次のページ</Button>
         </div>
       </div>
     </>

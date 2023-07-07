@@ -9,62 +9,66 @@ import "./styles.css";
 const homeUrl = process.env.PUBLIC_URL;
 
 const Game = () => {
+
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
-  // useSelectorフックを使ってReduxストアから状態を取得
-  const gender = useSelector((state) => state.gender); // 性別
-  const age = useSelector((state) => state.age); // 学年
+  // Reduxストアからステートを取得する
+  const gender = useSelector((state) => state.gender);
+  const age = useSelector((state) => state.age); 
 
   // 遷移先URLのマッピング
   const navigateUrls = {
     0: {
-      幼稚園: `${homeUrl}/vehicle`, // 男性、幼稚園
-      低学年: `${homeUrl}/vehicle`, // 男性、小学生
-      中学年: `${homeUrl}/craft`, // 男性、中学生
-      高学年: `${homeUrl}/craft`, // 男性、高学年
-      選択なし: `${homeUrl}/vehicle` //すべて当てはまる
+      幼稚園: `${homeUrl}/vehicle`, 
+      低学年: `${homeUrl}/vehicle`, 
+      中学年: `${homeUrl}/craft`,
+      高学年: `${homeUrl}/craft`,
+      選択なし: `${homeUrl}/vehicle`
     },
     1: {
-      幼稚園: `${homeUrl}/vehicle`, // 男性、幼稚園
-      低学年: `${homeUrl}/vehicle`, // 男性、小学生
-      中学年: `${homeUrl}/craft`, // 男性、中学生
-      高学年: `${homeUrl}/craft`, // 男性、高学年
-      選択なし: `${homeUrl}/vehicle`  //すべて当てはまる
+      幼稚園: `${homeUrl}/vehicle`,
+      低学年: `${homeUrl}/vehicle`, 
+      中学年: `${homeUrl}/craft`, 
+      高学年: `${homeUrl}/craft`, 
+      選択なし: `${homeUrl}/vehicle` 
     },
     2: {
-      幼稚園: `${homeUrl}/doll`, // 女性、幼稚園
-      低学年: `${homeUrl}/doll`, // 女性、小学生
-      中学年: `${homeUrl}/stuffedtoy`, // 女性、中学生
-      高学年: `${homeUrl}/stuffedtoy`, // 女性、高学年
-      選択なし: `${homeUrl}/doll`, //すべて当てはまる
+      幼稚園: `${homeUrl}/doll`, 
+      低学年: `${homeUrl}/doll`, 
+      中学年: `${homeUrl}/stuffedtoy`, 
+      高学年: `${homeUrl}/stuffedtoy`, 
+      選択なし: `${homeUrl}/doll`, 
     },
   };
 
     // 「はい」ボタンがクリックされた時の処理
   const game_Yes_handleClick = () => {
-    dispatch(game_Yes()); // game_Yesアクションをdispatchする
+    dispatch(game_Yes()); // Reduxストアのgameに1とはい（ゲームの好み）を取得する （1はresultのfilterで比較する時に使用）
     navigate(`${homeUrl}/videogame`); // ビデオゲームのページに遷移
   }
 
     // 「いいえ」ボタンがクリックされた時の処理
   const game_No_handleClick = () => {
-    dispatch(game_No()); // game_Noアクションをdispatchする
+    dispatch(game_No()); // Reduxストアのgameに2といいえ（ゲームの好み）を取得する （2はresultのfilterで比較する時に使用）
     // 遷移先URLを判断し、適切なページに遷移
     const navigateUrl = navigateUrls[gender[0]][age[2]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
   }
 
-  // コンポーネントのアンマウント時に実行される処理
+  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
   useEffect(() => {
     return () => {
-      dispatch(resetVideogame()) //videogameの値を空にする
-      dispatch(resetVehicle()); // vehicleの値を空にする
-      dispatch(resetCraft()); // craftの値を空にする
-      dispatch(resetDoll()); // dollの値を空にする
-      dispatch(resetStuffedtoy()); // stuffedtoyの値を空にする
-      dispatch(resetOther())
-      dispatch(resetSport())
+      dispatch(resetVideogame())   // Reduxストアのvideogameをリセットする
+      dispatch(resetVehicle());    // Reduxストアのvehicleをリセットする
+      dispatch(resetCraft());      // Reduxストアのcraftをリセットする
+      dispatch(resetDoll());       // Reduxストアのdollをリセットする
+      dispatch(resetStuffedtoy()); // Reduxストアのstuffedtoyをリセットする
+      dispatch(resetOther())       // Reduxストアのotherをリセットする
+      dispatch(resetSport())       // Reduxストアのsportをリセットする
     };
   }, [dispatch]);
 
@@ -74,10 +78,10 @@ const Game = () => {
       <h3>学年：{age[2]}</h3>
       <h2>ゲームが好きですか？</h2>
       <Button onClick={() => game_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
-      <Button onClick={() => game_No_handleClick()} style={{ fontSize: '1.5em' }}>いいえ</Button>
+      <Button onClick={() => game_No_handleClick()} style={{ fontSize: '1.5em' }} className='BottomRadius'>いいえ</Button>
       <br/>
       <br/>
-      <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+      <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
     </>
   );
 }

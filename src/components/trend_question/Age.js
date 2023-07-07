@@ -9,40 +9,45 @@ import "./styles.css";
 const homeUrl = process.env.PUBLIC_URL;
 
 const Age = () => {
+  
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
-  const gender = useSelector((state) => state.gender); // 性別を取得する
+  // Reduxストアからステートを取得する
+  const gender = useSelector((state) => state.gender);
 
 
   // 幼稚園が選択された時の処理
   const kid_handleClick = () => {
-    dispatch(kid()); // 4,6,「幼稚園」という値を取得する
-    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+    dispatch(kid());                 // Reduxストアのageに4,6,"幼稚園"という値を保持させる
+    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
   }
   
   // 小学生（低学年）が選択された時の処理
   const low_handleClick = () => {
-    dispatch(lowGrade()); // 6,8,「低学年」という値を取得する
-    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+    dispatch(lowGrade());            // Reduxストアのageに6,8,"低学年"という値を保持させる
+    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
   }
   
   // 小学生（中学年）が選択された時の処理
   const middle_handleClick = () => {
-    dispatch(middleGrade()); // 8,10,「中学年」という値を取得する
-    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+    dispatch(middleGrade());         // Reduxストアのageに8,10,"中学年"という値を保持させる
+    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
   }
   
   // 小学生（高学年）が選択された時の処理
   const high_handleClick = () => {
-    dispatch(highGrade()); // 10,12.「高学年」という値を取得する
-    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+    dispatch(highGrade());           // Reduxストアのageに10,12,"高学年"という値を保持させる
+    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
   }
   
   // 選択しないが選択された時の処理
   const skip_handleClick = () => {
-    dispatch(notSelect_Age()); // 1,15,「選択なし」という値を取得する
-    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+    dispatch(notSelect_Age());       // Reduxストアのageに1,15,"選択なし"という値を保持させる
+    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
   }
 
   return (
@@ -50,22 +55,22 @@ const Age = () => {
       <h3>性別：{gender[3]}</h3>
       <h2>学年選択</h2>
       <div>
-        <Button onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
+        <Button className='BottomRadius' onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
       </div>
       <br/>
-        <Button onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
+        <Button className='BottomRadius' onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
       <br/>
       <br/>
-        <Button onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
+        <Button className='BottomRadius' onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
       <br/>
       <br/>
-        <Button onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
+        <Button className='BottomRadius' onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
       <br/>
       <br/>
-      <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
+      <Button className='BottomRadius' onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
       <br/>
       <br/>
-      <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
+      <Button className='BottomRadius' onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }

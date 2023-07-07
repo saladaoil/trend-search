@@ -14,19 +14,19 @@ const Gender = () => {
 
   // 男のボタンがクリックされた時の処理
   const boy_handleClick = () => {
-    dispatch(boy()); // boyアクションをdispatchする
+    dispatch(boy());            // Reduxストアのgenderに1,3,4,"男"を取得する （数字はresultのfilterで比較する時に使用）
     navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
   }
 
   // 女のボタンがクリックされた時の処理
   const girl_handleClick = () => {
-    dispatch(girl()); // girlアクションをdispatchする
+    dispatch(girl());           // Reduxストアのgenderに2,3,4,"女"を取得する （数字はresultのfilterで比較する時に使用）
     navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
   }
 
   // 選択しないボタンがクリックされた時の処理
   const skip_handleClick = () => {
-    dispatch(all()); // allアクションをdispatchする
+    dispatch(all());            // Reduxストアのgenderに0,0,0,"選択なし"を取得する （数字はresultのfilterで比較する時に使用）
     navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
   }
 
@@ -35,8 +35,8 @@ const Gender = () => {
       <br/>
       <h2>孫の性別選択</h2>
       <br/>
-      <Button onClick={() => boy_handleClick()} style={{ fontSize: '2.5em' }} className='boyButton'>男</Button>
-      <Button onClick={() => girl_handleClick()} style={{ fontSize: '2.5em' }} className='girlButton'>女</Button>
+      <Button onClick={() => boy_handleClick()} style={{ fontSize: '2em' }} className='boyButton'>　男　</Button>
+      <Button onClick={() => girl_handleClick()} style={{ fontSize: '2em' }} className='girlButton'>　女　</Button>
       <br/>
       <br/>
       <br/>
@@ -44,7 +44,7 @@ const Gender = () => {
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
         <br/>
         <br/>
-        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
       </div>
     </>
   );

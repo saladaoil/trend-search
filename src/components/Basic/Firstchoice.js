@@ -16,8 +16,9 @@ const Firstchoice = () => {
             <h1>どちらかを選択<br></br>してください</h1>
           </div>
         </div>
-        <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1em' }}>流行から選ぶ</Button>
-        <Button onClick={() => navigate(`${homeUrl}/preselect`)}style={{ fontSize: '1em' }}>好みから選ぶ</Button>
+        <Button className='BottomRadius' onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1em' }}>流行から選ぶ</Button>
+        <br></br><br></br>
+        <Button className='BottomRadius' onClick={() => navigate(`${homeUrl}/preselect`)}style={{ fontSize: '1em' }}>好みから選ぶ</Button>
       </div>
     </div>
   );

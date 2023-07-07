@@ -93,7 +93,7 @@ const Craft = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [craft]);
 
-  //クリーンアップ関数
+  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
   useEffect(() => {
     return () => {
       dispatch(resetDoll())        // Reduxストアのdollをリセットする
