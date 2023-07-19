@@ -2,8 +2,22 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { game_Yes, game_No, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetVideogame, resetOther, resetSport } from "../../actions"
 import { useNavigate } from "react-router-dom"
-import { Button } from '@chakra-ui/react'
 import "./styles.css";
+import AppBar from './AppBar_trend';
+import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../Basic/help.css'
+
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -73,15 +87,75 @@ const Game = () => {
   }, [dispatch]);
 
   return (
-    <>
-      <h3>性別：{gender[3]}</h3>
-      <h3>学年：{age[2]}</h3>
-      <h2>ゲームが好きですか？</h2>
-      <Button onClick={() => game_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
-      <Button onClick={() => game_No_handleClick()} style={{ fontSize: '1.5em' }} className='BottomRadius'>いいえ</Button>
+    <>      <AppBar />
+
+<Center>
+  <Box position='fixed' bottom='67%'>
+    <Text fontSize='35px' width='260px' as='b'>
+    ゲームは<br />好きですか?
+    </Text>
+  </Box>
+</Center>
+
+
+<Box position='fixed' bottom='48%' left='10%'>
+  <Button height='60px' width='140px' colorScheme='twitter' onClick={() => game_Yes_handleClick()}>
+    <Text as='b' fontSize='35px' >はい</Text>
+  </Button>
+</Box>
+
+<Box position='fixed' bottom='48%' right='10%'>
+  <Button height='60px' width='140px' colorScheme='twitter' onClick={() => game_No_handleClick()}>
+    <Text as='b' fontSize='35px' >いいえ</Text>
+  </Button>
+</Box>
       <br/>
-      <br/>
-      <Button onClick={() => navigate(`${homeUrl}/exercise`)} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
+      <Box position='fixed' bottom='20px' left='5%' >
+        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/exercise`)} variant='outline'>
+          <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
+        </Button>
+      </Box>
+            <Box position='fixed' bottom='20px' left='50%' transform='translateX(-50%)'>
+        <Popover>
+          <PopoverTrigger>
+            <Button height='50px' width='90px' colorScheme='twitter' variant='outline'>
+              <Text as='i' fontSize='20px' >選択中</Text>
+            </Button>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton />
+            <PopoverHeader>選択中</PopoverHeader>
+            <PopoverBody>性別：{gender[3]}</PopoverBody>
+            <PopoverBody>学年：{age[2]}</PopoverBody>
+          </PopoverContent>
+        </Popover>
+      </Box>
+
+      <Box position='fixed' bottom='20px' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='20px' right='5%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='30px'>質問の回答を選択肢から選んでください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/質問画面" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
+
     </>
   );
 }

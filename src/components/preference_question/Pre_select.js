@@ -2,8 +2,23 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { character, brand } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
 import "./styles.css";
+import AppBar_pre from './AppBar_pre';
+import { Box, Heading, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../Basic/help.css'
+
+
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -26,18 +41,62 @@ const Pre_select = () => {
 
   return (
     <>
-      <br/>
-      <h2>キャラクターまたはブランドの選択</h2>
-      <br/>
-      <Button onClick={() => character_handleClick()} style={{ fontSize: '2.5em' }} className='characterButton'>キャラクター</Button>
-      <Button onClick={() => brand_handleClick()} style={{ fontSize: '2.5em' }} className='brandButton'>ブランド</Button>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div>
+      <AppBar_pre />
+
+      <Center>
+        <Box position='fixed' bottom='67%'>
+          <Text fontSize='35px' width='260px' as='b'>
+            探し方を選択<br />してください
+          </Text>
+        </Box>
+      </Center>
+
+      <Box position='fixed' bottom='48%' left='50%' transform='translateX(-50%)'>
+      <Button height='60px' width='290px' colorScheme='twitter' onClick={() => character_handleClick()}>
+          <Text as='b' fontSize='30px' >キャラクター</Text><Text as='i' fontSize='20px' >から探す</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='33%' left='50%' transform='translateX(-50%)'>
+      <Button height='60px' width='290px' colorScheme='twitter' onClick={() => brand_handleClick()}>
+        <Text as='b' fontSize='30px' >ブランド</Text><Text as='i' fontSize='20px' >から探す</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='19%' left='50%' transform='translateX(-50%)'>
+      <Button height='60px' width='290px' colorScheme='twitter' onClick={() => brand_handleClick()}>
+        <Text as='b' fontSize='30px' >すべて</Text><Text as='i' fontSize='20px' >から探す</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='20px' left='5%' >
+        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/firstchoice`)} variant='outline'>
+          <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
+        </Button>
+      </Box>
+      <Box position='fixed' bottom='20px' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='20px' right='5%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+          <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='30px'>探し方を選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/検索方法決定" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
     </>
   );
 }

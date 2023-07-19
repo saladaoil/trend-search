@@ -1,18 +1,41 @@
-.icon {
-    width: 100px;
-    height: 100px;
-  }
+body, #root {
+  height: 0%;
+  margin: 0;
+  padding: 0;
+  overflow:hidden;
+}
 
-  .op1 {
-    width: 70%;
-    height: 70%;
-  }
+
+.center-container {
   
-  .ButtonRadius{
-    border-radius: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   
-  .YesButton{
-    border-radius: 10px;
-    margin-right: 20px;
-  }
+}
+
+.center-content {
+  text-align: center;
+}
+
+.icon {
+  /* Center the image horizontally and vertically within its parent container */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box{
+	display:table;
+}
+
+.img_box{
+	display:table-cell;
+}
+img {
+  max-width: 200%;
+  height: atuo;
+}

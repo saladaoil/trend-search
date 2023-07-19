@@ -2,8 +2,22 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { other, resetCraft, resetDoll, resetOther, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
-import { Button } from '@chakra-ui/react'
 import "../styles.css";
+import AppBar from '../AppBar_trend';
+
+import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../../Basic/help.css'
 
 const homeUrl = process.env.PUBLIC_URL;
 

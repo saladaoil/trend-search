@@ -2,8 +2,22 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other, resetOther } from "../../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
 import "../styles.css";
+import AppBar from '../AppBar_trend';
+
+import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../../Basic/help.css'
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;

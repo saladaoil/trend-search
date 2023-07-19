@@ -2,8 +2,25 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
 import "./styles.css";
+import AppBar from './AppBar_trend';
+import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import '../Basic/help.css'
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../Basic/help.css'
+
+
+
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -32,20 +49,64 @@ const Gender = () => {
 
   return (
     <>
-      <br/>
-      <h2>孫の性別選択</h2>
-      <br/>
-      <Button onClick={() => boy_handleClick()} style={{ fontSize: '2em' }} className='boyButton'>　男　</Button>
-      <Button onClick={() => girl_handleClick()} style={{ fontSize: '2em' }} className='girlButton'>　女　</Button>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
-        <br/>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
-      </div>
+      <AppBar />
+
+      <Center>
+        <Box position='fixed' bottom='67%'>
+          <Text fontSize='35px' width='260px' as='b'>
+          お孫さんの性別を<br />選択してください
+          </Text>
+        </Box>
+      </Center>
+
+
+      <Box position='fixed' bottom='48%' left='10%'>
+        <Button height='60px' width='140px' colorScheme='messenger' onClick={() => boy_handleClick()}>
+          <Text as='b' fontSize='35px' >男</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='48%' right='10%'>
+        <Button height='60px' width='140px' colorScheme='red' onClick={() => girl_handleClick()}>
+          <Text as='b' fontSize='35px' >女</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='37%' left='50%' transform='translateX(-50%)'>
+        <Button height='45px' width='150px' colorScheme='gray' onClick={() => skip_handleClick()}>
+          <Text as='b' fontSize='25px' >選択しない</Text>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='20px' left='5%' >
+        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/firstchoice`)} variant='outline'>
+          <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
+        </Button>
+
+      </Box>
+      <Box position='fixed' bottom='20px' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='20px' right='5%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+          <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='30px'>お孫さんの性別を回答してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='30px'>タップをすることで選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/性別選択画面" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
     </>
   );
 }

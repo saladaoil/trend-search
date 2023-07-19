@@ -1,7 +1,7 @@
 const toys_db = [
     {gender:1,min_age:5,max_age:8,category:"スポーツ", type:"ウルトラマン", name:"スポーツ キックターゲット 高さ60×幅120×奥行き60cm ボール1個付き【クリアランス】", price:2298,page_url:"https://www.toysrus.co.jp/s/dsg-654017101",image_url:"https://www.toysrus.co.jp/i/6/5/4/654017101ALL.jpg"},
     {gender:3,min_age:12,max_age:15,category:"ビデオゲーム", genre:"おさるのジョージ",name:"【ビデオゲームソフト】ゼルダの伝説 Tears of the Kingdom", price:7699,page_url:"https://www.toysrus.co.jp/s/dsg-752818300",image_url:"https://www.toysrus.co.jp/i/7/5/2/752818300ALL.jpg"},
-    {gender:3,min_age:5,max_age:12,category:"その他", name:"マリオカート レーシング デラックス｜立体サーキット 6種類のアクションギミック ラップカウンター", price:5499,page_url:"https://www.toysrus.co.jp/s/dsg-711148701",image_url:"https://www.toysrus.co.jp/i/7/1/1/711148701ALL.jpg"},
+    {gender:3,min_age:5,max_age:12,category:"その他", name:"マリオカート レーシング｜立体サーキット 6種類のアクションギミック", price:5499,page_url:"https://www.toysrus.co.jp/s/dsg-711148701",image_url:"https://www.toysrus.co.jp/i/7/1/1/711148701ALL.jpg"},
     {gender:3,min_age:3,max_age:6,category:"乗り物", name:"トイザらス オリジナル 乗り物 トヨタ 86", price:819,page_url:"https://www.toysrus.co.jp/s/dsg-766061800",image_url:"https://www.toysrus.co.jp/i/7/6/6/766061800ALL.jpg"},
     {gender:2,min_age:3,max_age:6,category:"人形", name:"テラスのおしゃれなあこがれのお家 ギフトセット", price:10999,page_url:"https://www.toysrus.co.jp/s/dsg-713286700",image_url:"https://www.toysrus.co.jp/i/7/1/3/713286700ALL.jpg"},
     {gender:2,min_age:3,max_age:6,category:"ぬいぐるみ", name:"ディズニープリンセス おままごとキッチン【クリアランス】", price:4998,page_url:"https://www.toysrus.co.jp/s/dsg-695044200",image_url:"https://www.toysrus.co.jp/i/6/9/5/695044200ALL.jpg"},
