@@ -157,7 +157,7 @@ const Result = () => {
       </Box>
 
       <Box mt="80px" mb="80px" px="1">
-        <Stack spacing={1} align='stretch'>
+        {/* <Stack spacing={1} align='stretch'> */}
           {currentToyDis.map((toy) => (
             <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
               <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>
@@ -172,19 +172,19 @@ const Result = () => {
                   _hover={{ cursor: 'pointer' }}
                 >
                   <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
-                  <Stack align='flex-start' px={2}>
+                  {/* <Stack align='flex-start' px={2}> */}
                     <Text fontSize='17' textAlign='left' as='b'>
                       {toy.name}
                     </Text>
                     <Text fontSize='16'>
                       {toy.price}円
                     </Text>
-                  </Stack>
+                  {/* </Stack> */}
                 </Flex>
               </a>
             </Box>
           ))}
-        </Stack>
+        {/* </Stack> */}
 
         <Box position='fixed' bottom='3%' left='50%' transform='translateX(-50%)'>
         <Flex alignItems='center'>
