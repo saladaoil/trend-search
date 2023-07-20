@@ -4,7 +4,7 @@ import toys_db from '../../db/toy_db';
 import './css.css'
 import { useNavigate, } from "react-router-dom"
 import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame,} from '../../actions';
-import { Box, Text, Button, Center, Image, Flex,VStack } from '@chakra-ui/react';
+import { Box, Text, Button, Center, Image, Flex,Stack } from '@chakra-ui/react';
 import {
   Popover,
   PopoverTrigger,
@@ -157,7 +157,7 @@ const Result = () => {
       </Box>
 
       <Box mt="80px" mb="80px" px="1">
-        <VStack spacing={1} align='stretch'>
+        <Stack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
             <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
               <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>
@@ -172,19 +172,19 @@ const Result = () => {
                   _hover={{ cursor: 'pointer' }}
                 >
                   <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
-                  <VStack align='flex-start' px={2}>
+                  <Stack align='flex-start' px={2}>
                     <Text fontSize='17' textAlign='left' as='b'>
                       {toy.name}
                     </Text>
                     <Text fontSize='16'>
                       {toy.price}円
                     </Text>
-                  </VStack>
+                  </Stack>
                 </Flex>
               </a>
             </Box>
           ))}
-        </VStack>
+        </Stack>
 
         <Box position='fixed' bottom='3%' left='50%' transform='translateX(-50%)'>
         <Flex alignItems='center'>
