@@ -66,15 +66,15 @@ const Pre_genre = () => {
 
   return (
     <>
-      <AppBar_result />
+      {/* <AppBar_result /> */}
       <Box mt="80px"> {/* Add margin-top to create space for the AppBar_result */}
         <ul>
           {/* ジャンルのデータをマップして表示 */}
           {currentGenre.map(function (genre) {
             return (
-              <Card key={genre.name}> {/* Add key prop here */}
+              // <Card key={genre.name}> {/* Add key prop here */}
                 <img src={genre.image_url} alt={genre.name} onClick={() => result_handleClick(genre)} />
-              </Card>
+              //{/* </Card> */}
             );
           })}
         </ul>
