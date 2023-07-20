@@ -43,9 +43,9 @@ const Pre_genre = () => {
     navigate(`${homeUrl}/pregender`);
   };
 
-  // おもちゃをフィルタリングする
+  // ジャンルをフィルタリングする
 
-  // フィルタリングされたおもちゃの表示データを作成する
+  // フィルタリングされたジャンルのデータを作成する
   let genre_dis = genre_filterResult.map(function (genre) {
     return { name: genre.name, gender: genre.gender, image_url: genre.image_url };
   });
@@ -56,7 +56,7 @@ const Pre_genre = () => {
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  // 現在のページのおもちゃの表示データを取得
+  // ジャンルのデータを取得
   const currentGenre = genre_dis.slice(startIndex, endIndex);
 
   const result_handleClick = (genre) => {
@@ -69,7 +69,7 @@ const Pre_genre = () => {
       <AppBar_result />
       <Box mt="80px"> {/* Add margin-top to create space for the AppBar_result */}
         <ul>
-          {/* 現在のページのおもちゃの表示データをマップして表示 */}
+          {/* ジャンルのデータをマップして表示 */}
           {currentGenre.map(function (genre) {
             return (
               <Card key={genre.name}> {/* Add key prop here */}
