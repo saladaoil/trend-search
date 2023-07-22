@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import App from './App';
-import * as serviceWorkerRegistration from './serviceWorkerRegistration';
+// import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -25,9 +25,8 @@ createRoot(root).render(
   
 );
 
-serviceWorkerRegistration.unregister();
+// serviceWorkerRegistration.unregister();
 reportWebVitals();
-
 
 
 
