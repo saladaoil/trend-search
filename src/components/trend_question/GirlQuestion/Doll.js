@@ -3,20 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other, resetOther } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
-import AppBar from '../AppBar_trend';
-
-import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react';
 import '../../Basic/help.css'
 
 // ホームのURL
@@ -34,8 +21,6 @@ const Doll = () => {
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const doll = useSelector((state) => state.doll);
-  const vehcle = useSelector((state) => state.vehcle); 
-
 
   // ナビゲーションのURLマッピング
   const navigateUrls = {

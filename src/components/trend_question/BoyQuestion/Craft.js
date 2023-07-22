@@ -3,18 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetOther, resetStuffedtoy, resetVehicle } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import "../styles.css";
-import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+import { Button } from '@chakra-ui/react';
 import '../../Basic/help.css'
 
 

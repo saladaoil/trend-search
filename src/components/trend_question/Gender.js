@@ -4,19 +4,19 @@ import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import AppBar from './AppBar_trend';
-import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
-import '../Basic/help.css'
-import {
+import { 
+  Box, 
+  Text, 
+  Button, 
+  Center,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import '../Basic/help.css'
 
 
@@ -61,25 +61,25 @@ const Gender = () => {
 
 
       <Box position='fixed' bottom='48%' left='10%'>
-        <Button height='60px' width='140px' colorScheme='messenger' onClick={() => boy_handleClick()}>
+        <Button height='60px' width='140px' colorscheme='messenger' onClick={() => boy_handleClick()}>
           <Text as='b' fontSize='35px' >男</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='48%' right='10%'>
-        <Button height='60px' width='140px' colorScheme='red' onClick={() => girl_handleClick()}>
+        <Button height='60px' width='140px' colorscheme='red' onClick={() => girl_handleClick()}>
           <Text as='b' fontSize='35px' >女</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='37%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='150px' colorScheme='gray' onClick={() => skip_handleClick()}>
+        <Button height='45px' width='150px' colorscheme='gray' onClick={() => skip_handleClick()}>
           <Text as='b' fontSize='25px' >選択しない</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='20px' left='5%' >
-        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/firstchoice`)} variant='outline'>
+        <Button height='50px' width='80px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/firstchoice`)} variant='outline'>
           <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
         </Button>
 
@@ -88,7 +88,7 @@ const Gender = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -100,8 +100,8 @@ const Gender = () => {
             <PopoverBody><Text fontSize='30px'>お孫さんの性別を回答してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>タップをすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/性別選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/性別選択画面" target="_blank" rel="noopener noreferrer">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

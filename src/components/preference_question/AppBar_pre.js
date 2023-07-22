@@ -3,7 +3,7 @@ import './../Basic/AppBar.css';
 import { Box, Text,} from '@chakra-ui/react';
 
 
-const CustomAppBar = () => {
+const AppBarpre = () => {
   return (
     <div className="custom-appbar">
       <div className="appbar-content">
@@ -19,4 +19,4 @@ const CustomAppBar = () => {
   );
 };
 
-export default CustomAppBar;
+export default AppBarpre ;

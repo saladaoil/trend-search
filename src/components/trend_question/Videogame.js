@@ -4,18 +4,19 @@ import { videogame_Yes, videogame_No, other } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
 import AppBar from './AppBar_trend';
-import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
-import {
+import { 
+  Box, 
+  Text, 
+  Button, 
+  Center,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import '../Basic/help.css'
 
 // ホームのURL
@@ -62,26 +63,26 @@ const Videogame = () => {
 
 
 <Box position='fixed' bottom='48%' left='10%'>
-  <Button height='60px' width='140px' colorScheme='twitter' onClick={() => videogame_Yes_handleClick()}>
+  <Button height='60px' width='140px' colorscheme='twitter' onClick={() => videogame_Yes_handleClick()}>
     <Text as='b' fontSize='35px' >はい</Text>
   </Button>
 </Box>
 
 <Box position='fixed' bottom='48%' right='10%'>
-  <Button height='60px' width='140px' colorScheme='twitter' onClick={() => videogame_No_handleClick()}>
+  <Button height='60px' width='140px' colorscheme='twitter' onClick={() => videogame_No_handleClick()}>
     <Text as='b' fontSize='35px' >いいえ</Text>
   </Button>
 </Box>
       <br/>
       <Box position='fixed' bottom='20px' left='5%' >
-        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/game`)} variant='outline'>
+        <Button height='50px' width='80px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/game`)} variant='outline'>
           <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
         </Button>
       </Box>
             <Box position='fixed' bottom='20px' left='50%' transform='translateX(-50%)'>
         <Popover>
           <PopoverTrigger>
-            <Button height='50px' width='90px' colorScheme='twitter' variant='outline'>
+            <Button height='50px' width='90px' colorscheme='twitter' variant='outline'>
               <Text as='i' fontSize='20px' >選択中</Text>
             </Button>
           </PopoverTrigger>
@@ -98,7 +99,7 @@ const Videogame = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -110,8 +111,8 @@ const Videogame = () => {
             <PopoverBody><Text fontSize='30px'>質問の回答を選択肢から選んでください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/質問画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/質問画面" target="_blank" rel="noopener noreferrer">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

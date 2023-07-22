@@ -1,5 +1,3 @@
-// ホームのURL
-const homeUrl = process.env.PUBLIC_URL;
 const toys_db = [
     {gender:"1",type:"1",name:"ウルトラマン",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_ultraman.jpg?autoresize=on"},
     {gender:"1",type:"1",name:"王様戦隊キングオージャー",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kingohjya.jpg?autoresize=on"},

@@ -42,7 +42,7 @@ const Description = () => {
       </Box>
 
       <Box position='fixed' bottom='95px' left='50%' transform='translateX(-50%)'>
-        <Button fontSize='45px' height='70px' width='250px' colorScheme='teal'>
+        <Button fontSize='45px' height='70px' width='250px' colorscheme='teal'>
         <h1 className='BottomRadius' onClick={() => navigate(`${homeUrl}/description2`)}>次へ</h1>
         </Button>
       </Box>

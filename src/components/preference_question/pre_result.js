@@ -1,23 +1,21 @@
 import { useState } from 'react';
-import { useDispatch, useSelector,} from 'react-redux';
+import { useSelector,} from 'react-redux';
 import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
 import "./styles.css";
-import AppBar_type from './AppBar_type';
-import { Box, Text, Button, Center, Image, VStack,Flex } from '@chakra-ui/react';
+import AppBartype from './AppBar_type';
+import { Box, Text, Button, Image, VStack,Flex } from '@chakra-ui/react';
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
 } from '@chakra-ui/react'
 import '../Basic/help.css'
-import AppBar from './AppBar_result';
+// import AppBar from './AppBar_result';
 import FooBar from '../trend_question/AppBar_foot';
 
 
@@ -85,13 +83,13 @@ const Pre_result = () => {
 
   return (
     <>
-      <AppBar_type />
+      <AppBartype />
 
       {totalNumberOfCards >7 && (
       <FooBar />
           )}
       <Box position='fixed' top='2%' right='2%'>
-        <Button height='40px' width='120px' colorScheme='gray' onClick={() => navigate(`${homeUrl}/firstchoice`)}>
+        <Button height='40px' width='120px' colorscheme='gray' onClick={() => navigate(`${homeUrl}/firstchoice`)}>
           <Text as='i' fontSize='18px' >やりなおす</Text>
         </Button>
       </Box>
@@ -126,13 +124,25 @@ const Pre_result = () => {
           ))}
         </VStack>
 
+        <Box position="fixed" bottom="20px" left="5%">
+          <Button height="50px" width="80px" colorscheme="twitter" onClick={() => back_handleClick()} variant="outline">
+            <Text as="b" fontSize="20px">
+              ◀
+            </Text>
+            <Text as="i" fontSize="20px">
+              戻る
+            </Text>
+          </Button>
+        </Box>
+
         <Box position='fixed' bottom='3%' left='50%' transform='translateX(-50%)'>
         <Flex alignItems='center'>
+
           {pageNumber >= 2 && (
             <Button
               right='50%'
               variant='outline'
-              colorScheme="twitter"
+              colorscheme="twitter"
               onClick={goToPrevPage}
               className='BottomRadius'
             >
@@ -148,7 +158,7 @@ const Pre_result = () => {
             <Button
               left='50%'
               variant='outline'
-              colorScheme="twitter"
+              colorscheme="twitter"
               onClick={goToNextPage}
               disabled={currentToyDis.length < itemsPerPage}
               className='BottomRadius'
@@ -165,7 +175,7 @@ const Pre_result = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -177,8 +187,8 @@ const Pre_result = () => {
             <PopoverBody><Text fontSize='30px'>商品一覧です。<br />やり直したい場合は右上のボタンを押してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>タップで商品の詳細を確認できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/商品一覧画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/質問画面" target="_blank" rel="noopener noreferrer">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

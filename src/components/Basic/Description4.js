@@ -46,7 +46,7 @@ const Description = () => {
       </Box>
 
       <Box position='fixed' bottom='65px' left='50%' transform='translateX(-50%)'>
-        <Button fontSize='30px' height='50px' width='250px' colorScheme='twitter'>
+        <Button fontSize='30px' height='50px' width='250px' colorscheme='twitter'>
         <h1 className='BottomRadius' onClick={() => navigate(`${homeUrl}/firstchoice`)}>開始</h1>
         </Button>
       </Box>

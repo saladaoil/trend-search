@@ -1,11 +1,10 @@
 import React from 'react';
 import './../Basic/AppBar.css';
 import { Box, Text,} from '@chakra-ui/react';
-import { useDispatch, useSelector,} from 'react-redux';
+import { useSelector,} from 'react-redux';
 
-const CustomAppBar = () => {
-  const gender = useSelector((state) => state.gender);
-  const type = useSelector((state) => state.genreType);
+const AppBartype = () => {
+
   const genre = useSelector((state) => state.genre.genre);
 
   return (
@@ -25,4 +24,4 @@ const CustomAppBar = () => {
   );
 };
 
-export default CustomAppBar;
+export default AppBartype;

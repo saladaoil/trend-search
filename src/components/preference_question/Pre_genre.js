@@ -4,18 +4,16 @@ import genre_db from '../../db/Genre_db';
 import { useNavigate } from 'react-router-dom';
 import './styles.css';
 import { setGenre } from '../../actions';
-import AppBar_result from './AppBar_result';
-import { Box, Text, Button, Center, Image, Stack, Card } from '@chakra-ui/react';
+import AppBarresult from './AppBar_result';
+import { Box, Text, Button, Card, Flex } from '@chakra-ui/react';
 import {
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
 } from '@chakra-ui/react'
 import '../Basic/help.css'
 
@@ -59,6 +57,14 @@ const Pre_genre = () => {
   // ジャンルのデータを取得
   const currentGenre = genre_dis.slice(startIndex, endIndex);
 
+  // 次のページに移動する関数
+  const goToNextPage = () => setPageNumber(pageNumber + 1);
+  
+  // 前のページに移動する関数
+  const goToPrevPage = () => setPageNumber(pageNumber - 1);
+
+  const totalNumberOfCards = currentGenre.length;
+
   const result_handleClick = (genre) => {
     dispatch(setGenre(genre.name));
     navigate(`${homeUrl}/preresult`);
@@ -66,7 +72,7 @@ const Pre_genre = () => {
 
   return (
     <>
-      <AppBar_result />
+      <AppBarresult />
       <Box mt="80px"> {/* Add margin-top to create space for the AppBar_result */}
         <ul>
           {/* ジャンルのデータをマップして表示 */}
@@ -81,7 +87,7 @@ const Pre_genre = () => {
       </Box>
 
       <Box position="fixed" bottom="20px" left="5%">
-        <Button height="50px" width="80px" colorScheme="twitter" onClick={() => back_handleClick()} variant="outline">
+        <Button height="50px" width="80px"  onClick={() => back_handleClick()} variant="outline">
           <Text as="b" fontSize="20px">
             ◀
           </Text>
@@ -91,11 +97,45 @@ const Pre_genre = () => {
         </Button>
       </Box>
 
+      <Box position='fixed' bottom='3%' left='50%' transform='translateX(-50%)'>
+        <Flex alignItems='center'>
+
+          {pageNumber >= 2 && (
+            <Button
+              right='50%'
+              variant='outline'
+              colorscheme="twitter"
+              onClick={goToPrevPage}
+              className='BottomRadius'
+            >
+              前のページ
+            </Button>
+          )}
+
+
+
+          
+
+          {pageNumber * itemsPerPage <= totalNumberOfCards && (
+            <Button
+              left='50%'
+              variant='outline'
+              colorscheme="twitter"
+              onClick={goToNextPage}
+              disabled={currentGenre.length < itemsPerPage}
+              className='BottomRadius'
+            >
+              次のページ
+            </Button>
+          )}
+        </Flex>
+      </Box>
+
             <Box position='fixed' bottom='20px' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px'  className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -108,8 +148,8 @@ const Pre_genre = () => {
           {type === 1 && "キャラクター"}{type === 2 && "ブランド"}一覧から選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/ジャンル選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/ジャンル選択画面" target="_blank" rel="noopener noreferrer">
+                <Button >ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

@@ -3,20 +3,20 @@ import { useSelector, useDispatch } from "react-redux"
 import { kid, lowGrade, middleGrade, highGrade, notSelect_Age, } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import "./styles.css";
-import { Box, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
-import {
+import { 
+  Box, 
+  Text, 
+  Button, 
+  Center,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 import AppBar from './AppBar_trend';
-
 import '../Basic/help.css'
 
 
@@ -81,7 +81,7 @@ const Age = () => {
 
 
       <Box position='fixed' bottom='55%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorScheme='twitter' onClick={() => kid_handleClick()}>
+        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => kid_handleClick()}>
           <Text as='b' fontSize='28px' >幼稚園</Text><Text as='b' fontSize='20px' >　(3歳~6歳)</Text>
         </Button>
       </Box>
@@ -89,31 +89,31 @@ const Age = () => {
 
 
       <Box position='fixed' bottom='46%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorScheme='twitter' onClick={() => low_handleClick()}>
+        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => low_handleClick()}>
           <Text as='b' fontSize='28px' >低学年</Text><Text as='b' fontSize='20px' >　(6歳~8歳)</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='37%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorScheme='twitter' onClick={() => middle_handleClick()}>
+        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => middle_handleClick()}>
           <Text as='b' fontSize='28px' >中学年</Text><Text as='b' fontSize='20px' >　(8歳~10歳)</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='28%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorScheme='twitter' onClick={() => high_handleClick()}>
+        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => high_handleClick()}>
           <Text as='b' fontSize='28px' >高学年</Text><Text as='b' fontSize='20px' >　(10歳~12歳)</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='18%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='200px' colorScheme='gray' onClick={() => high_handleClick()}>
+        <Button height='45px' width='200px' colorscheme='gray' onClick={() => skip_handleClick()}>
           <Text as='b' fontSize='25px' >選択しない</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='20px' left='5%' >
-        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/gender`)} variant='outline'>
+        <Button height='50px' width='80px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/gender`)} variant='outline'>
           <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
         </Button>
       </Box>
@@ -121,7 +121,7 @@ const Age = () => {
       <Box position='fixed' bottom='20px' left='50%' transform='translateX(-50%)'>
         <Popover>
           <PopoverTrigger>
-            <Button height='50px' width='90px' colorScheme='twitter' variant='outline'>
+            <Button height='50px' width='90px' colorscheme='twitter' variant='outline'>
               <Text as='i' fontSize='20px' >選択中</Text>
             </Button>
           </PopoverTrigger>
@@ -139,7 +139,7 @@ const Age = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -151,8 +151,8 @@ const Age = () => {
             <PopoverBody><Text fontSize='30px'>お孫さんの年齢を回答してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/年齢選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/年齢選択画面" target="_blank" rel="noopener noreferrer">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

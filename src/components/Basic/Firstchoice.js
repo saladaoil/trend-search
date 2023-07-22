@@ -35,19 +35,19 @@ const Description = () => {
       </Center>
 
       <Box position='fixed' bottom='48%' left='50%' transform='translateX(-50%)'>
-        <Button height='60px' width='260px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/gender`)}>
+        <Button height='60px' width='260px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/gender`)}>
           <Text as='b' fontSize='40px' >流行</Text><Text as='i' fontSize='30px' >から選ぶ</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='33%' left='50%' transform='translateX(-50%)'>
-        <Button height='60px' width='260px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/preselect`)}>
+        <Button height='60px' width='260px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/preselect`)}>
           <Text as='b' fontSize='40px' >好み</Text><Text as='i' fontSize='30px' >から探す</Text>
         </Button>
       </Box>
 
       <Box position='fixed' bottom='3%' left='5%' >
-        <Button height='50px' width='80px' colorScheme='twitter' onClick={() => navigate(`${homeUrl}/description1`)} variant='outline'>
+        <Button height='50px' width='80px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/description1`)} variant='outline'>
           <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
         </Button>
       </Box>
@@ -57,7 +57,7 @@ const Description = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -70,7 +70,7 @@ const Description = () => {
             <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/検索方法選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
