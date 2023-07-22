@@ -2,10 +2,8 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetOther, resetStuffedtoy, resetVehicle } from "../../../actions";
 import { useNavigate } from "react-router-dom";
-import "../styles.css";
 import { Button } from '@chakra-ui/react';
-import '../../Basic/help.css'
-
+import "../styles.css";
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -95,7 +93,7 @@ const Craft = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [craft]);
 
-  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
+  //クリーンアップ関数
   useEffect(() => {
     return () => {
       dispatch(resetDoll())        // Reduxストアのdollをリセットする

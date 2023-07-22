@@ -2,25 +2,22 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other, resetOther } from "../../../actions";
 import { useNavigate } from "react-router-dom";
-import "../styles.css";
 import { Button } from '@chakra-ui/react';
-import '../../Basic/help.css'
+import "../styles.css";
 
-// ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
 
+// 人形コンポーネント
 const Doll = () => {
+  // Reduxストアから必要なステートを取得する
+  const gender = useSelector((state) => state.gender); // 性別
+  const age = useSelector((state) => state.age); // 学年
+  const doll = useSelector((state) => state.doll); // 人形好きかどうかの回答
+  const vehcle = useSelector((state) => state.vehcle);
 
-  // 画面遷移を行うための関数
+  // React Routerのnavigate関数とReduxのdispatch関数を取得する
   const navigate = useNavigate();
-
-  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
-
-  // Reduxストアからステートを取得する
-  const gender = useSelector((state) => state.gender);
-  const age = useSelector((state) => state.age);
-  const doll = useSelector((state) => state.doll);
 
   // ナビゲーションのURLマッピング
   const navigateUrls = {
@@ -62,19 +59,19 @@ const Doll = () => {
 
   // 「はい」ボタンがクリックされたときの処理
   const doll_Yes_handleClick = () => {
-    dispatch(doll_Yes()); // Reduxストアのdollに"人形"という文字列を保持させる
+    dispatch(doll_Yes()); // doll_Yesアクションをdispatchする
   };
 
   // 「いいえ」ボタンがクリックされたときの処理
   const doll_No_handleClick = () => {
-    dispatch(doll_No()); // Reduxストアのdollに"その他"という文字列を保持させる(画面遷移に使用する)
-    dispatch(other())    // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(doll_No()); // doll_Noアクションをdispatchする
+    dispatch(other())
   };
 
   // 「戻る」ボタンがクリックされたときの処理
   const doll_back_handleClick = () => {
-    dispatch(doll_Back());    // Reduxストアのdollに"BACK"という文字列を保持させる(画面遷移に使用する)
-    dispatch(resetVehicle()); // Reduxストアのvehicleをリセットする
+    dispatch(doll_Back()); // doll_Backアクションをdispatchする
+    dispatch(resetVehicle()); // resetVehicleアクションをdispatchしてReduxストアの値をリセットする
   };
 
   // dollのステートが変更されるたびに適切なURLに遷移する
@@ -84,27 +81,30 @@ const Doll = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doll]);
 
-  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
+  // コンポーネントがアンマウントされるときにresetCraftアクションをdispatchしてcraftの値をリセットする
   useEffect(() => {
     return () => {
-      dispatch(resetCraft());   // Reduxストアのcraftをリセットする
-      dispatch(resetVehicle())  // Reduxストアのvehicleをリセットする
-      dispatch(resetOther())    // Reduxストアのotherをリセットする
+      dispatch(resetCraft());
+      dispatch(resetVehicle())
+      dispatch(resetOther())
     };
   }, [dispatch]);
 
   
+
+  console.log(doll);
+  console.log(vehcle);
 
   return (
     <>
       <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>人形が好きですか？</h2>
-      <Button  onClick={doll_Yes_handleClick} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
-      <Button onClick={doll_No_handleClick} style={{ fontSize: '1.5em' }} className='BottomRadius'>いいえ</Button>
+      <Button onClick={doll_Yes_handleClick} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
+      <Button onClick={doll_No_handleClick} style={{ fontSize: '1.5em' }}>いいえ</Button>
       <br/>
       <br/>
-      <Button onClick={doll_back_handleClick} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
+      <Button onClick={doll_back_handleClick} style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 };

@@ -2,162 +2,70 @@ import React from 'react'
 import { useSelector, useDispatch } from "react-redux"
 import { kid, lowGrade, middleGrade, highGrade, notSelect_Age, } from "../../actions"
 import { useNavigate } from "react-router-dom"
+import { Button } from '@chakra-ui/react'
 import "./styles.css";
-import { 
-  Box, 
-  Text, 
-  Button, 
-  Center,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-} from '@chakra-ui/react';
-import AppBar from './AppBar_trend';
-import '../Basic/help.css'
-
-
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
 
 const Age = () => {
-
-  // 画面遷移を行うための関数
   const navigate = useNavigate();
-
-  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
-  // Reduxストアからステートを取得する
-  const gender = useSelector((state) => state.gender);
+  const gender = useSelector((state) => state.gender); // 性別を取得する
 
 
   // 幼稚園が選択された時の処理
   const kid_handleClick = () => {
-    dispatch(kid());                 // Reduxストアのageに4,6,"幼稚園"という値を保持させる
-    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
+    dispatch(kid()); // 4,6,「幼稚園」という値を取得する
+    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   }
-
+  
   // 小学生（低学年）が選択された時の処理
   const low_handleClick = () => {
-    dispatch(lowGrade());            // Reduxストアのageに6,8,"低学年"という値を保持させる
-    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
+    dispatch(lowGrade()); // 6,8,「低学年」という値を取得する
+    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   }
-
+  
   // 小学生（中学年）が選択された時の処理
   const middle_handleClick = () => {
-    dispatch(middleGrade());         // Reduxストアのageに8,10,"中学年"という値を保持させる
-    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
+    dispatch(middleGrade()); // 8,10,「中学年」という値を取得する
+    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   }
-
+  
   // 小学生（高学年）が選択された時の処理
   const high_handleClick = () => {
-    dispatch(highGrade());           // Reduxストアのageに10,12,"高学年"という値を保持させる
-    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
+    dispatch(highGrade()); // 10,12.「高学年」という値を取得する
+    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   }
-
+  
   // 選択しないが選択された時の処理
   const skip_handleClick = () => {
-    dispatch(notSelect_Age());       // Reduxストアのageに1,15,"選択なし"という値を保持させる
-    navigate(`${homeUrl}/exercise`); // 体を動かすのが好きかどうかを質問するページに遷移
+    dispatch(notSelect_Age()); // 1,15,「選択なし」という値を取得する
+    navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   }
 
   return (
     <>
-      <AppBar />
-
-      <Center>
-        <Box position='fixed' bottom='67%'>
-          <Text fontSize='35px' width='260px' as='b'>
-          お孫さんの年齢を<br />選択してください
-          </Text>
-        </Box>
-      </Center>
-
-
-
-      <Box position='fixed' bottom='55%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => kid_handleClick()}>
-          <Text as='b' fontSize='28px' >幼稚園</Text><Text as='b' fontSize='20px' >　(3歳~6歳)</Text>
-        </Button>
-      </Box>
-
-
-
-      <Box position='fixed' bottom='46%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => low_handleClick()}>
-          <Text as='b' fontSize='28px' >低学年</Text><Text as='b' fontSize='20px' >　(6歳~8歳)</Text>
-        </Button>
-      </Box>
-
-      <Box position='fixed' bottom='37%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => middle_handleClick()}>
-          <Text as='b' fontSize='28px' >中学年</Text><Text as='b' fontSize='20px' >　(8歳~10歳)</Text>
-        </Button>
-      </Box>
-
-      <Box position='fixed' bottom='28%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='300px' colorscheme='twitter' onClick={() => high_handleClick()}>
-          <Text as='b' fontSize='28px' >高学年</Text><Text as='b' fontSize='20px' >　(10歳~12歳)</Text>
-        </Button>
-      </Box>
-
-      <Box position='fixed' bottom='18%' left='50%' transform='translateX(-50%)'>
-        <Button height='45px' width='200px' colorscheme='gray' onClick={() => skip_handleClick()}>
-          <Text as='b' fontSize='25px' >選択しない</Text>
-        </Button>
-      </Box>
-
-      <Box position='fixed' bottom='20px' left='5%' >
-        <Button height='50px' width='80px' colorscheme='twitter' onClick={() => navigate(`${homeUrl}/gender`)} variant='outline'>
-          <Text as='b' fontSize='20px' > ◀ </Text><Text as='i' fontSize='20px' >戻る</Text>
-        </Button>
-      </Box>
-
-      <Box position='fixed' bottom='20px' left='50%' transform='translateX(-50%)'>
-        <Popover>
-          <PopoverTrigger>
-            <Button height='50px' width='90px' colorscheme='twitter' variant='outline'>
-              <Text as='i' fontSize='20px' >選択中</Text>
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton />
-            <PopoverHeader>選択中</PopoverHeader>
-            <PopoverBody>性別：{gender[3]}</PopoverBody>
-            <PopoverBody>年齢：  /  </PopoverBody>
-          </PopoverContent>
-        </Popover>
-      </Box>
-
-      <Box position='fixed' bottom='20px' right='5%' >
-        <Popover>
-          <PopoverTrigger>
-            <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
-                <Text as='b' fontSize='20px' > ? </Text>
-              </button>
-            </Box>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>お孫さんの年齢を回答してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
-            <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/年齢選択画面" target="_blank" rel="noopener noreferrer">
-                <Button colorscheme='twitter'>ヘルプページ</Button>
-              </a>
-            </PopoverHeader>
-          </PopoverContent>
-        </Popover>
-      </Box>
+      <h3>性別：{gender[3]}</h3>
+      <h2>学年選択</h2>
+      <div>
+        <Button onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
+      </div>
+      <br/>
+        <Button onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
+      <br/>
+      <br/>
+        <Button onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
+      <br/>
+      <br/>
+        <Button onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
+      <br/>
+      <br/>
+      <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
+      <br/>
+      <br/>
+      <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }

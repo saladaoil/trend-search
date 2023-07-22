@@ -2,24 +2,20 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { other, resetCraft, resetDoll, resetOther, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
+import { Button } from '@chakra-ui/react'
 import "../styles.css";
-import {Button, } from '@chakra-ui/react';
-import '../../Basic/help.css'
 
 const homeUrl = process.env.PUBLIC_URL;
 
 const Stuffedtoy = () => {
-
-  // 画面遷移を行うための関数
-  const navigate = useNavigate();
-
-  // Reduxのアクションをディスパッチするための関数
-  const dispatch = useDispatch();
-
-  // Reduxストアからステートを取得する
+  // Reduxのstateから必要な値を取得するためのフック
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
+
+  // ページ遷移に使用するフック
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // ナビゲーションのURLマッピング
   const navigateUrls = {
@@ -61,20 +57,20 @@ const Stuffedtoy = () => {
 
   //「はい」ボタンがクリックされた時の処理
   const stuffedtoy_Yes_handleClick = () => {
-    dispatch(stuffedtoy_Yes()); // Reduxストアのstuffedtoyに"ぬいぐるみ"という文字列を保持させる
+    dispatch(stuffedtoy_Yes());
   };
 
   //「いいえ」ボタンがクリックされた時の処理
   const stuffedtoy_No_handleClick = () => {
-    dispatch(stuffedtoy_No()); // Reduxストアのstuffedtoyに"その他"という文字列を保持させる(画面遷移に使用する)
-    dispatch(other())          // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(stuffedtoy_No());
+    dispatch(other())
   };
 
   //「戻る」ボタンがクリックされた時の処理
   const stuffedtoy_back_handleClick = () => {
-    dispatch(stuffedtoy_Back()); // Reduxストアのstuffedtoyに"BACK"という文字列を保持させる
-    dispatch(resetDoll());       // Reduxストアのdollをリセットする
-    dispatch(resetCraft());      // Reduxストアのcraftをリセットする
+    dispatch(stuffedtoy_Back());
+    dispatch(resetDoll());
+    dispatch(resetCraft());
   };
 
    // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
@@ -84,14 +80,15 @@ const Stuffedtoy = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
 
-  // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
   useEffect(() => {
+    // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
-      dispatch(resetCraft()); // Reduxストアのcraftをリセットする
-      dispatch(resetOther()); // Reduxストアのotherをリセットする
+      dispatch(resetCraft()); // resetCraftアクションをdispatchしてReduxストアの値をリセットする
+      dispatch(resetOther())
     };
   }, [dispatch]);
 
+  console.log(stuffedtoy)
 
   return (
     <>
@@ -99,10 +96,10 @@ const Stuffedtoy = () => {
       <h3>学年：{age[2]}</h3>
       <h2>ぬいぐるみが好きですか？</h2>
       <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
-      <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1.5em' }} className='BottomRadius'>いいえ</Button>
+      <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1.5em' }}>いいえ</Button>
       <br/>
       <br/>
-      <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()} style={{ fontSize: '1.5em' }} className='BottomRadius'>戻る</Button>
+      <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
     </>
   );
 }

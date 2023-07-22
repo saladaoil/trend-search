@@ -1,24 +1,9 @@
 import { useState } from 'react';
-import { useSelector,} from 'react-redux';
+import { useDispatch, useSelector,} from 'react-redux';
 import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
+import { Button } from '@chakra-ui/react';
 import "./styles.css";
-import AppBartype from './AppBar_type';
-import { Box, Text, Button, Image, VStack,Flex } from '@chakra-ui/react';
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-} from '@chakra-ui/react'
-import '../Basic/help.css'
-// import AppBar from './AppBar_result';
-import FooBar from '../trend_question/AppBar_foot';
-
-
 
 
 const homeUrl = process.env.PUBLIC_URL;
@@ -78,123 +63,34 @@ const Pre_result = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-  const totalNumberOfCards = toy_dis.length;
-
 
   return (
     <>
-      <AppBartype />
-
-      {totalNumberOfCards >7 && (
-      <FooBar />
-          )}
-      <Box position='fixed' top='2%' right='2%'>
-        <Button height='40px' width='120px' colorscheme='gray' onClick={() => navigate(`${homeUrl}/firstchoice`)}>
-          <Text as='i' fontSize='18px' >やりなおす</Text>
-        </Button>
-      </Box>
-
-      <Box mt="80px" mb="80px" px="1">
-        <VStack spacing={1} align='stretch'>
-          {currentToyDis.map((toy) => (
-            <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
-              <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>
-                <Flex
-                  key={`${toy.name}-${toy.price}`}
-                  borderWidth='1px'
-                  borderRadius='lg'
-                  boxShadow='md'
-                  alignItems='center'
-                  justifyContent='flex-start'
-                  mb={1}
-                  _hover={{ cursor: 'pointer' }}
-                >
-                  <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
-                  <VStack align='flex-start' px={2}>
-                    <Text fontSize='17' textAlign='left' as='b'>
-                      {toy.name}
-                    </Text>
-                    <Text fontSize='16'>
-                      {toy.price}円
-                    </Text>
-                  </VStack>
-                </Flex>
-              </a>
-            </Box>
-          ))}
-        </VStack>
-
-        <Box position="fixed" bottom="20px" left="5%">
-          <Button height="50px" width="80px" colorscheme="twitter" onClick={() => back_handleClick()} variant="outline">
-            <Text as="b" fontSize="20px">
-              ◀
-            </Text>
-            <Text as="i" fontSize="20px">
-              戻る
-            </Text>
-          </Button>
-        </Box>
-
-        <Box position='fixed' bottom='3%' left='50%' transform='translateX(-50%)'>
-        <Flex alignItems='center'>
-
-          {pageNumber >= 2 && (
-            <Button
-              right='50%'
-              variant='outline'
-              colorscheme="twitter"
-              onClick={goToPrevPage}
-              className='BottomRadius'
-            >
-              前のページ
-            </Button>
-          )}
-
-
-
-          
-
-          {pageNumber * itemsPerPage <= totalNumberOfCards && (
-            <Button
-              left='50%'
-              variant='outline'
-              colorscheme="twitter"
-              onClick={goToNextPage}
-              disabled={currentToyDis.length < itemsPerPage}
-              className='BottomRadius'
-            >
-              次のページ
-            </Button>
-          )}
-        </Flex>
-      </Box>
-
-      
-      </Box>
-           <Box position='fixed' bottom='20px' right='5%' >
-        <Popover>
-          <PopoverTrigger>
-            <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
-                <Text as='b' fontSize='20px' > ? </Text>
-              </button>
-            </Box>
-          </PopoverTrigger>
-          <PopoverContent>
-            <PopoverArrow />
-            <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>商品一覧です。<br />やり直したい場合は右上のボタンを押してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>タップで商品の詳細を確認できます</Text></PopoverBody>
-            <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/質問画面" target="_blank" rel="noopener noreferrer">
-                <Button colorscheme='twitter'>ヘルプページ</Button>
-              </a>
-            </PopoverHeader>
-          </PopoverContent>
-        </Popover>
-      </Box>
-
+      <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>
+      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
+      <h2>結果</h2>
+      {/* <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button> */}
+      <div>
+        <ul>
+          {/* 現在のページのおもちゃの表示データをマップして表示 */}
+          {currentToyDis.map(function (toy) {
+            return (
+              <li key={`${toy.name}-${toy.price}`}>
+                <a href={toy.page_url} target="_blank" rel="noopener noreferrer">
+                  <h3 className='toyname'>{toy.name}</h3>
+                  <h3>{toy.price}円</h3>
+                  <img src={toy.image_url} alt={toy.name} />
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="pagination">
+          {/* ページネーションのボタンを表示 */}
+          {/* <Button variant="contained" color="inherit" onClick={goToPrevPage} disabled={pageNumber === 1}>前のページ</Button> */}
+          {/* <Button variant="contained" color="inherit" onClick={goToNextPage} disabled={currentToyDis.length < itemsPerPage}>次のページ</Button> */}
+        </div>
+      </div>
     </>
   );
 }

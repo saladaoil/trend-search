@@ -1,10 +1,6 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
-import Description1 from "./components/Basic/Description1";
-import Description2 from "./components/Basic/Description2";
-import Description3 from "./components/Basic/Description3";
-import Description4 from "./components/Basic/Description4";
-import Splash from "./components/Basic/Splash";
 import Firstchoice from "./components/Basic/Firstchoice";
+import Description from "./components/Basic/Description";
 import Gender from "./components/trend_question/Gender";
 import Age from "./components/trend_question/Age";
 import Category from "./components/trend_question/Category";
@@ -46,11 +42,7 @@ const Routers = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={`${homeUrl}/`} element={<Splash/>}/>
-                <Route path={`${homeUrl}/Description1`} element={<Description1/>}/>
-                <Route path={`${homeUrl}/Description2`} element={<Description2/>}/>
-                <Route path={`${homeUrl}/Description3`} element={<Description3/>}/>
-                <Route path={`${homeUrl}/Description4`} element={<Description4/>}/>
+                <Route path={`${homeUrl}/`} element={<Description/>}/>
                 <Route path={`${homeUrl}/firstchoice`} element={<Firstchoice/>}/>
                 <Route path={`${homeUrl}/gender`} element={<Gender/>}/>
                 <Route path={`${homeUrl}/age`} element={<Age/>}/>
@@ -63,6 +55,9 @@ const Routers = () => {
                 <Route path={`${homeUrl}/doll`} element={<Doll/>}/>
                 <Route path={`${homeUrl}/stuffedtoy`} element={<StuffedToy/>}/>
                 <Route path={`${homeUrl}/result`} element={<Result/>}/>
+                <Route path={`${homeUrl}/category`} element={<Category/>}/>
+                <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
+                <Route path={`${homeUrl}/price`} element={<Price/>}/>
                 <Route path={`${homeUrl}/pregender`} element={<Pregender/>}/>
                 <Route path={`${homeUrl}/preselect`} element={<Preselect/>}/>
                 <Route path={`${homeUrl}/pregenre`} element={<Pregenre/>}/>

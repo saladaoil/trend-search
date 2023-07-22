@@ -1,3 +1,9 @@
+export const result_Back = () => {
+    return{
+        type: "RESULT_BACK",
+    };
+}
+
 export const other = () => {
     return{
         type: "OTHER",
