@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/trend-search/static/css/main.7f9eeda0.css",
-    "main.js": "/trend-search/static/js/main.2945dc8c.js",
+    "main.css": "/trend-search/static/css/main.1f5516cb.css",
+    "main.js": "/trend-search/static/js/main.db9f0cd2.js",
     "static/js/787.60f7c680.chunk.js": "/trend-search/static/js/787.60f7c680.chunk.js",
     "static/media/Des3 image.png": "/trend-search/static/media/Des3 image.bff191633a70327b3934.png",
     "service-worker.js": "/trend-search/service-worker.js",
@@ -13,12 +13,12 @@
     "static/media/Des2 image.png": "/trend-search/static/media/Des2 image.00612f18e7bc92e9747a.png",
     "static/media/Trend Icon.png": "/trend-search/static/media/Trend Icon.e98862dce9c476e1a2bf.png",
     "index.html": "/trend-search/index.html",
-    "main.7f9eeda0.css.map": "/trend-search/static/css/main.7f9eeda0.css.map",
-    "main.2945dc8c.js.map": "/trend-search/static/js/main.2945dc8c.js.map",
+    "main.1f5516cb.css.map": "/trend-search/static/css/main.1f5516cb.css.map",
+    "main.db9f0cd2.js.map": "/trend-search/static/js/main.db9f0cd2.js.map",
     "787.60f7c680.chunk.js.map": "/trend-search/static/js/787.60f7c680.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7f9eeda0.css",
-    "static/js/main.2945dc8c.js"
+    "static/css/main.1f5516cb.css",
+    "static/js/main.db9f0cd2.js"
   ]
 }
