@@ -1,9 +1,35 @@
+.girlButton {
+  background-color:rgb(220, 27, 27);
+  color:white;
+  border-radius: 10px;
+}
+
+.boyButton {
+  background-color: blue;
+  margin-right: 20px;
+  color:white;
+  border-radius: 10px;
+}
+
+.yesButton{
+  position: center;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
 .BottomRadius{
   border-radius: 10px;
   box-sizing: 3px 3px #000;
 }
 
+button {
+  position: center;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+
 img {
+  max-width: 100%;
   height: auto;
 }
 
@@ -13,9 +39,13 @@ a {
   text-decoration: none;
 }
 
+li{
+  list-style: none;
+}
+
 ul{
-  margin:10;
-  padding:10;
+  margin:0;
+  padding:0;
   margin-right: 2em;
   margin-left: 2em;
 }
@@ -60,4 +90,9 @@ ul {
   margin-top: 0;
 }
 
-
+Img {
+  width: 100%;
+  max-width: 150px;
+  height: auto;
+  cursor: pointer;
+}
