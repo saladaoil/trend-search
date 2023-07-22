@@ -1,19 +1,19 @@
-import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
 import CustomAppBar from './AppBar_first';
 import './help.css'
-import {
+import { 
+  Box, 
+  Text, 
+  Button, 
+  Center,
   Popover,
   PopoverTrigger,
   PopoverContent,
   PopoverHeader,
   PopoverBody,
-  PopoverFooter,
   PopoverArrow,
   PopoverCloseButton,
-  PopoverAnchor,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 
 
 const homeUrl = process.env.PUBLIC_URL;
@@ -69,7 +69,7 @@ const Description = () => {
             <PopoverBody><Text fontSize='30px'>「流行」または「好み」を選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/検索方法選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/検索方法選択画面" target="_blank" rel="noopener noreferrer">
                 <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

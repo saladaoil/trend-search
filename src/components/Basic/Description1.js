@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import { Box, Text, Button, Center, } from '@chakra-ui/react';
 import Stepper from '../images/stepper1.png';
 import Des1 from '../images/Dis1 image.png';
 const homeUrl = process.env.PUBLIC_URL;

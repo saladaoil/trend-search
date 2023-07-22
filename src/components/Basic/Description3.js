@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import { Box, Text, Button, Center, } from '@chakra-ui/react';
 import Stepper from '../images/stepper3.png';
 import Des3 from '../images/Des3 image.png';
 

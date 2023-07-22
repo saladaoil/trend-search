@@ -48,4 +48,4 @@ import {
     )
   }
   
-  render(<Example />)
+  export default Example;

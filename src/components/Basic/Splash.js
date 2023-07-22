@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import './commonstyles.css';
 import TrendSearchIcon from '../images/Trend Icon.png';
 import { useNavigate } from 'react-router-dom';
-import { Box, Heading, Text, Button, Center, Image, Stack } from '@chakra-ui/react';
+import { Box, Center, Image,} from '@chakra-ui/react';
 
 
 const homeUrl = process.env.PUBLIC_URL;
