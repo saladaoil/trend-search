@@ -5,6 +5,7 @@ import { useNavigate, } from "react-router-dom"
 import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import "./styles.css";
 import PreresultHeader from '../../ui/Pre_resultHeader';
+import Footer from '../../ui/Footer';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -81,7 +82,7 @@ const goToPrevPage = () => {
         戻る
       </Button>
 
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
         最初へ
       </Button>
 
@@ -114,19 +115,14 @@ const goToPrevPage = () => {
             </Box>
           ))}
         </VStack>
-
-        {pageNumber > 1 && (
-        <Button onClick={goToPrevPage} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
-          前のページ
-        </Button>
-        )}
-
-        {pageNumber < Math.ceil(toy_dis.length / itemsPerPage) && (
-          <Button onClick={goToNextPage} size="md" style={{ position: "fixed", bottom: "40px", right: "30px" }}>
-            次のページ
-          </Button>
-        )}
-
+        
+        <Footer
+        goToPrevPage={goToPrevPage}
+        goToNextPage={goToNextPage}
+        pageNumber={pageNumber}
+        toy_dis={toy_dis}
+        itemsPerPage={itemsPerPage}
+      />
       </Box>
     </>
   );

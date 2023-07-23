@@ -39,8 +39,8 @@ const Routers = () => {
     return (
         <BrowserRouter>
             <Routes>
-                <Route path={`${homeUrl}/`} element={<Description/>}/>
-                <Route path={`${homeUrl}/firstchoice`} element={<Firstchoice/>}/>
+                {/* <Route path={`${homeUrl}/`} element={<Description/>}/> */}
+                <Route path={`${homeUrl}/`} element={<Firstchoice/>}/>
                 <Route path={`${homeUrl}/gender`} element={<Gender/>}/>
                 <Route path={`${homeUrl}/age`} element={<Age/>}/>
                 <Route path={`${homeUrl}/exercise`} element={<Exercise/>}/>

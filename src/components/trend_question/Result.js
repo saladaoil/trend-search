@@ -147,7 +147,7 @@ const goToPrevPage = () => {
         戻る
       </Button>
 
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
         最初へ
       </Button>
 

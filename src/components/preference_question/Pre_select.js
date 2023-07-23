@@ -41,7 +41,7 @@ const Pre_select = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
         戻る
       </Button>
     </>

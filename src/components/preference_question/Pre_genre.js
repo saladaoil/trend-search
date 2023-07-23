@@ -62,7 +62,7 @@ const Pre_genre = () => {
   return (
     <>
       <PregenreHeader/>   
-      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
+      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px" >
       <ul>
         {/* 現在のページのおもちゃの表示データをマップして表示 */}
         {currentGenre.map(function (genre) {
