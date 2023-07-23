@@ -135,17 +135,27 @@ const Result = () => {
   
   // ページネーションのための状態と関数を定義
   const [pageNumber, setPageNumber] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 6;
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
   // ページ遷移に使用するフック
   
   // 次のページに移動する関数
-  const goToNextPage = () => setPageNumber(pageNumber + 1);
-  
-  // 前のページに移動する関数
-  const goToPrevPage = () => setPageNumber(pageNumber - 1);
+const goToNextPage = () => {
+  // 現在のページが最後のページよりも小さい場合のみ、ページを進める
+  if (pageNumber < Math.ceil(toy_dis.length / itemsPerPage)) {
+    setPageNumber(pageNumber + 1);
+  }
+};
+
+// 前のページに移動する関数
+const goToPrevPage = () => {
+  // 現在のページが最初のページよりも大きい場合のみ、ページを戻す
+  if (pageNumber > 1) {
+    setPageNumber(pageNumber - 1);
+  }
+};
   
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
@@ -156,6 +166,14 @@ const Result = () => {
   return (
     <>
       <Header />
+      <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
+        戻る
+      </Button>
+
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
+        最初
+      </Button>
+
       <Box mt="20px" mb="80px" px="1">
         <VStack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
@@ -185,10 +203,20 @@ const Result = () => {
             </Box>
           ))}
         </VStack>
-        </Box>
-        <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
-        戻る
-      </Button>
+
+        {pageNumber > 1 && (
+        <Button onClick={goToPrevPage} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+          前のページ
+        </Button>
+        )}
+
+        {pageNumber < Math.ceil(toy_dis.length / itemsPerPage) && (
+          <Button onClick={goToNextPage} size="md" style={{ position: "fixed", bottom: "40px", right: "30px" }}>
+            次のページ
+          </Button>
+        )}
+
+      </Box>
     </>
   );
 }

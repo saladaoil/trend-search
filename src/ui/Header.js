@@ -6,7 +6,7 @@ import { Box, Text} from '@chakra-ui/react';
 const Header = () => {
   return (
       <Box as="header" bg="red" py="4" color="white" mt="0">
-        <Text fontSize="3xl" fontWeight="bold" textAlign="center">
+        <Text fontSize="2xl" fontWeight="bold" textAlign="center">
           TrendSearch
         </Text>
       </Box>
