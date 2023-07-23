@@ -2,10 +2,10 @@ import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 import { sport_Yes, sport_No, other } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
+import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "./styles.css";
 import Header from '../../ui/Header';
-import { Flex } from '@chakra-ui/layout';
+
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -32,18 +32,23 @@ const Sport = () => {
 
   return (
     <>
-      <Header title="スポーツが好きですか？" />
-      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-        <Flex direction="row">
-          <Button onClick={() => sport_Yes_handleClick()} size="xl" mt="60" mr="10">
-            はい
-          </Button>
-          <Button onClick={() => sport_No_handleClick()} size="xl" mt="60" >
-            いいえ
-          </Button>
-        </Flex>
+      <Header/>
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+          スポーツが好きですか？
+      </Text>
+      <Stack mt="40" width="100%" maxW="400px">
+        <Flex direction="row" justify="center">
+            <Button onClick={() => sport_Yes_handleClick()} size="xl" mr="10">
+              はい
+            </Button>
+            <Button onClick={() => sport_No_handleClick()} size="xl" >
+              いいえ
+            </Button>
+          </Flex>
+      </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/exercise`)} size="lg" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/exercise`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
         戻る
       </Button>
     </>

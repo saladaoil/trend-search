@@ -38,7 +38,7 @@ const Gender = () => {
       <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
           お孫さんの性別選択
       </Text>
-      <Stack spacing={['4', '8', '10']} mt="10" width="100%" maxW="400px">
+      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
         <Button onClick={() => boy_handleClick()} size="lg">
           男の子
         </Button>
@@ -50,7 +50,7 @@ const Gender = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "30px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
         戻る
       </Button>
     </>
