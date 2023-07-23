@@ -4,6 +4,8 @@ import { exercise_Yes , exercise_No, resetVideogame, resetVehicle, resetCraft, r
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react'
 import "./styles.css";
+import Header from '../../ui/Header'
+import { Flex } from '@chakra-ui/layout'
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -45,7 +47,28 @@ const Exercise = () => {
 
   return (
     <>
-      <h3>性別：{gender[3]}</h3>
+       <Header title="体を動かすのが好きですか？" />
+       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
+        <Flex direction="row">
+          <Button onClick={() => exercise_Yes_handleClick()} size="xl" mt="60" mr="10">
+            はい
+          </Button>
+          <Button onClick={() => exercise_No_handleClick()} size="xl" mt="60" >
+            いいえ
+          </Button>
+        </Flex>
+      </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/age`)} size="lg" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
+    </>
+  );
+}
+
+export default Exercise;
+
+
+{/* <h3>性別：{gender[3]}</h3>
       <h3>学年：{age[2]}</h3>
       <h2>体を動かすのが好きですか？</h2>
       <Button onClick={() => exercise_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
@@ -54,9 +77,4 @@ const Exercise = () => {
       <br/>
       <div>
         <Button onClick={() => navigate(`${homeUrl}/age`)}style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div>
-    </>
-  );
-}
-
-export default Exercise;
+      </div> */}
