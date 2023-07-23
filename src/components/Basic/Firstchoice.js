@@ -1,9 +1,8 @@
 import React from 'react';
 import './commonstyles.css';
 import { useNavigate } from "react-router-dom"
-import { Button } from '@chakra-ui/react';
+import { Button, Flex, Text  } from '@chakra-ui/react';
 import Header from '../../ui/Header';
-import { Flex } from '@chakra-ui/layout';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -12,12 +11,15 @@ const navigate = useNavigate()
 
   return (
     <>
-      <Header title="どちらかを選択してください" />
+      <Header />
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="8" mt="40">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+        どちらかを選択してください
+      </Text>
+        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="8" mt="20">
           流行から選ぶ
         </Button>
-        <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="8" mt="20">
+        <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="8" mt="10">
           好みから選ぶ
         </Button>
       </Flex>

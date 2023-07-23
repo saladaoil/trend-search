@@ -2,10 +2,9 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
+import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "./styles.css";
 import Header from '../../ui/Header';
-import { Flex } from '@chakra-ui/layout';
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -34,19 +33,24 @@ const Gender = () => {
 
   return (
     <>
-      <Header title="性別選択" />
-      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-        <Button onClick={() => boy_handleClick()} size="lg" mb="10" mt="40">
+      <Header/>
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+          お孫さんの性別選択
+      </Text>
+      <Stack spacing={['4', '8', '10']} mt="10" width="100%" maxW="400px">
+        <Button onClick={() => boy_handleClick()} size="lg">
           男の子
         </Button>
-        <Button onClick={() => girl_handleClick()} size="lg" mb="10">
+        <Button onClick={() => girl_handleClick()} size="lg">
           女の子
         </Button>
         <Button onClick={() => skip_handleClick()} size="lg">
           選択しない
         </Button>
+      </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="lg" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "30px", left: "30px" }}>
         戻る
       </Button>
     </>
@@ -54,6 +58,8 @@ const Gender = () => {
 }
 
 export default Gender;
+
+
 
 {/* <br/>
       <h2>孫の性別選択</h2>
