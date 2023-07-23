@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { other, resetCraft, resetDoll, resetOther, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
-import { Button } from '@chakra-ui/react'
+import { Button, Text, Flex, Stack } from '@chakra-ui/react'
 import "../styles.css";
+import Header from '../../../ui/Header';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -92,14 +93,25 @@ const Stuffedtoy = () => {
 
   return (
     <>
-      <h3>性別：{gender[3]}</h3>
-      <h3>学年：{age[2]}</h3>
-      <h2>ぬいぐるみが好きですか？</h2>
-      <Button onClick={() => stuffedtoy_Yes_handleClick()} style={{ fontSize: '1.5em' }} className='yesButton'>はい</Button>
-      <Button onClick={() => stuffedtoy_No_handleClick()} style={{ fontSize: '1.5em' }}>いいえ</Button>
-      <br/>
-      <br/>
-      <Button variant="contained" color="inherit" onClick={() => stuffedtoy_back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
+      <Header/>
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+          ぬいぐるみが好きですか？
+      </Text>
+      <Stack mt="40" width="100%" maxW="400px">
+        <Flex direction="row" justify="center">
+            <Button onClick={() => stuffedtoy_Yes_handleClick()} size="xl" mr="10">
+              はい
+            </Button>
+            <Button onClick={() => stuffedtoy_No_handleClick()} size="xl" >
+              いいえ
+            </Button>
+          </Flex>
+      </Stack>
+      </Flex>
+      <Button onClick={() => stuffedtoy_back_handleClick()} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
 }
