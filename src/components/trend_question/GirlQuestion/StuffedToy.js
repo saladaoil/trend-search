@@ -89,7 +89,7 @@ const Stuffedtoy = () => {
     };
   }, [dispatch]);
 
-  console.log(stuffedtoy)
+
 
   return (
     <>

@@ -93,8 +93,6 @@ const Doll = () => {
 
   
 
-  console.log(doll);
-  console.log(vehcle);
 
   return (
     <>

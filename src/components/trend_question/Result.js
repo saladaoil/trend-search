@@ -149,6 +149,8 @@ const Result = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
+  console.log(stuffedtoy)
+
 
   return (
     <>

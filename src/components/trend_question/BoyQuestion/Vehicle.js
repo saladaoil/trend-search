@@ -102,7 +102,6 @@ const Vehicle = () => {
     };
   }, [dispatch]);
 
-  console.log(vehicle)
 
 
   return (
