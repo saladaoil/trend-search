@@ -135,7 +135,7 @@ const Result = () => {
   
   // ページネーションのための状態と関数を定義
   const [pageNumber, setPageNumber] = useState(1);
-  const itemsPerPage = 6;
+  const itemsPerPage = 5;
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
