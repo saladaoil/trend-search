@@ -13,11 +13,13 @@ const Stuffedtoy = () => {
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
+  const other = useSelector((state) => state.other);
 
   // ページ遷移に使用するフック
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  
   // ナビゲーションのURLマッピング
   const navigateUrls = {
     0: {
@@ -58,29 +60,30 @@ const Stuffedtoy = () => {
 
   //「はい」ボタンがクリックされた時の処理
   const stuffedtoy_Yes_handleClick = () => {
+    dispatch(resetOther())
     dispatch(stuffedtoy_Yes());
   };
-
+  
   //「いいえ」ボタンがクリックされた時の処理
   const stuffedtoy_No_handleClick = () => {
     dispatch(stuffedtoy_No());
     dispatch(other())
   };
-
+  
   //「戻る」ボタンがクリックされた時の処理
   const stuffedtoy_back_handleClick = () => {
     dispatch(stuffedtoy_Back());
     dispatch(resetDoll());
     dispatch(resetCraft());
   };
-
-   // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
+  
+  // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
   useEffect(() => {
     const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy] || navigateUrls[gender[0]];
     navigate(navigateUrl);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
-
+  
   useEffect(() => {
     // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
@@ -89,7 +92,7 @@ const Stuffedtoy = () => {
     };
   }, [dispatch]);
 
-
+  console.log("other" + other)
 
   return (
     <>

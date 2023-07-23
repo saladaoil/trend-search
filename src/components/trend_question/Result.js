@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useDispatch, useSelector,} from 'react-redux';
 import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
-import { Button } from '@chakra-ui/react';
+import { Button, Box, Text, Flex, VStack, Image } from '@chakra-ui/react';
 import "./styles.css";
 import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
+import Header from '../../ui/Header';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -149,41 +150,81 @@ const Result = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-  console.log(stuffedtoy)
-
+  console.log("other" + other)
+  console.log("stuffedtoy" + stuffedtoy)
 
   return (
     <>
-      <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>
-      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
-      <h2>結果</h2>
-      {/* <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button> */}
-      <div>
-        <ul>
-          {/* 現在のページのおもちゃの表示データをマップして表示 */}
-          {currentToyDis.map(function (toy) {
-            return (
-              <li key={`${toy.name}-${toy.price}`}>
-                <a href={toy.page_url} target="_blank" rel="noopener noreferrer">
-                  <h3 className='toyname'>{toy.name}</h3>
-                  <h3>{toy.price}円</h3>
-                  <img src={toy.image_url} alt={toy.name} />
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-        <div className="pagination">
-          {/* ページネーションのボタンを表示 */}
-          {/* <Button variant="contained" color="inherit" onClick={goToPrevPage} disabled={pageNumber === 1}>前のページ</Button> */}
-          {/* <Button variant="contained" color="inherit" onClick={goToNextPage} disabled={currentToyDis.length < itemsPerPage}>次のページ</Button> */}
-        </div>
-      </div>
+      <Header />
+      <Box mt="20px" mb="80px" px="1">
+        <VStack spacing={1} align='stretch'>
+          {currentToyDis.map((toy) => (
+            <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
+              <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>
+                <Flex
+                  key={`${toy.name}-${toy.price}`}
+                  borderWidth='1px'
+                  borderRadius='lg'
+                  boxShadow='md'
+                  alignItems='center'
+                  justifyContent='flex-start'
+                  mb={1}
+                  _hover={{ cursor: 'pointer' }}
+                >
+                  <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
+                  <VStack align='flex-start' px={2}>
+                    <Text fontSize='17' textAlign='left' as='b'>
+                      {toy.name}
+                    </Text>
+                    <Text fontSize='16'>
+                      {toy.price}円
+                    </Text>
+                  </VStack>
+                </Flex>
+              </a>
+            </Box>
+          ))}
+        </VStack>
+        </Box>
+        <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
 }
 
 export default Result;
+
+
+
+{/* <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button> */}
+      // <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
+      // <h2>結果</h2>
+      {/* <Button variant="contained" color="primary" onClick={() => navigate(`${homeUrl}/category`)} style={{ fontSize: '1em' }}>絞り込み</Button> */}
+      // <div>
+      //   <ul>
+      //     {/* 現在のページのおもちゃの表示データをマップして表示 */}
+      //     {currentToyDis.map(function (toy) {
+      //       return (
+      //         <li key={`${toy.name}-${toy.price}`}>
+      //           <a href={toy.page_url} target="_blank" rel="noopener noreferrer">
+      //             <h3 className='toyname'>{toy.name}</h3>
+      //             <h3>{toy.price}円</h3>
+      //             <img src={toy.image_url} alt={toy.name} />
+      //           </a>
+      //         </li>
+      //       );
+      //     })}
+      //   </ul>
+      //   <div className="pagination">
+      //     {/* ページネーションのボタンを表示 */}
+      //     <Button variant="contained" color="inherit" onClick={goToPrevPage} disabled={pageNumber === 1}>前のページ</Button>
+      //     <Button variant="contained" color="inherit" onClick={goToNextPage} disabled={currentToyDis.length < itemsPerPage}>次のページ</Button>
+      //   </div>
+      // </div>
+
+
+
 
 // import React, { useEffect } from 'react'
 // import { useState } from 'react';

@@ -15,6 +15,7 @@ const Doll = () => {
   const age = useSelector((state) => state.age); // 学年
   const doll = useSelector((state) => state.doll); // 人形好きかどうかの回答
   const vehcle = useSelector((state) => state.vehcle);
+  const Other = useSelector((state) => state.other);
 
   // React Routerのnavigate関数とReduxのdispatch関数を取得する
   const navigate = useNavigate();
@@ -92,7 +93,7 @@ const Doll = () => {
   }, [dispatch]);
 
   
-
+  console.log("other" + Other)
 
   return (
     <>
