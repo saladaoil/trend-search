@@ -1,11 +1,9 @@
-// Header.js
-
 import React from 'react';
 import { Box, Text} from '@chakra-ui/react';
 
 const Header = ({text}) => {
   return (
-      <Box as="header" bg="red" py="4" color="white" mt="0">
+      <Box as="header" bg="#1DA1F2" py="4" color="white" mt="0">
         <Text fontSize="2xl" fontWeight="bold" textAlign="center">
           {text}
         </Text>

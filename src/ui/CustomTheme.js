@@ -1,4 +1,4 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, } from '@chakra-ui/react';
 
 const customTheme = extendTheme({
   components: {
@@ -15,9 +15,9 @@ const customTheme = extendTheme({
           px: '32px',
         },
         md: {
-          h: '50px', 
-          fontSize: 'xl', 
-          px: '28px', 
+          h: '50px',
+          fontSize: 'xl',
+          px: '28px',
         },
       },
     },

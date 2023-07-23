@@ -39,10 +39,10 @@ const Gender = () => {
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
-        <Button onClick={() => boy_handleClick()} size="lg">
+        <Button onClick={() => boy_handleClick()} size="lg" colorScheme='messenger'>
           男の子
         </Button>
-        <Button onClick={() => girl_handleClick()} size="lg">
+        <Button onClick={() => girl_handleClick()} size="lg" colorScheme='red'>
           女の子
         </Button>
         <Button onClick={() => skip_handleClick()} size="lg">
@@ -61,20 +61,6 @@ export default Gender;
 
 
 
-{/* <br/>
-      <h2>孫の性別選択</h2>
-      <br/>
-      <Button onClick={() => boy_handleClick()} style={{ fontSize: '2.5em' }} className='boyButton'>男</Button>
-      <Button onClick={() => girl_handleClick()} style={{ fontSize: '2.5em' }} className='girlButton'>女</Button>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
-        <br/>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div> */}
 
 
 

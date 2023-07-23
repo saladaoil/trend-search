@@ -6,6 +6,7 @@ import { Button, Box, Text, Flex, VStack, Image } from '@chakra-ui/react';
 import "./styles.css";
 import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
 import Header from '../../ui/Header';
+import Footer from '../../ui/Footer';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -79,30 +80,6 @@ const Result = () => {
     navigate(navigateUrl);
   };
   
-
-  // const back_handleClick = () => {
-  //   dispatch(result_Back())
-  //   dispatch(resetVehicle())
-  // }
-  
-  // useEffect(() => {
-  //   if (result_back) {
-  //     const navigateUrl =
-  //       navigateUrls.BACK[sport] ||
-  //       navigateUrls.BACK[videogame] ||
-  //       navigateUrls.BACK[vehicle] ||
-  //       navigateUrls.BACK[craft] ||
-  //       navigateUrls.BACK[doll] ||
-  //       navigateUrls.BACK[stuffedtoy] ||
-  //       navigateUrls.BACK[other];
-  
-  //       navigate(navigateUrl);
-  //   }
-  // // eslint-disable-next-line react-hooks/exhaustive-deps
-  // }, [result_back]);
-  
-  
-  
   
   // おもちゃのデータを取得
   const toys = toys_db; 
@@ -171,10 +148,10 @@ const goToPrevPage = () => {
       </Button>
 
       <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
-        最初
+        最初へ
       </Button>
 
-      <Box mt="20px" mb="80px" px="1">
+      <Box mt="20px" px="1">
         <VStack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
             <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
@@ -203,20 +180,14 @@ const goToPrevPage = () => {
             </Box>
           ))}
         </VStack>
-
-        {pageNumber > 1 && (
-        <Button onClick={goToPrevPage} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
-          前のページ
-        </Button>
-        )}
-
-        {pageNumber < Math.ceil(toy_dis.length / itemsPerPage) && (
-          <Button onClick={goToNextPage} size="md" style={{ position: "fixed", bottom: "40px", right: "30px" }}>
-            次のページ
-          </Button>
-        )}
-
       </Box>
+      <Footer
+        goToPrevPage={goToPrevPage}
+        goToNextPage={goToNextPage}
+        pageNumber={pageNumber}
+        toy_dis={toy_dis}
+        itemsPerPage={itemsPerPage}
+      />
     </>
   );
 }

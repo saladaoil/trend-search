@@ -4,7 +4,6 @@ const genre_db = [
     {gender:1,type:1,name:"ウルトラマン", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_ultraman.jpg?autoresize=on",page_url:`${homeUrl}/exercise`},
     {gender:1,type:1,name:"王様戦隊キングオージャー", genre: "王様戦隊キングオージャー", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kingohjya.jpg?autoresize=on"},
     {gender:1,type:1,name:"おさるのジョージ", genre: "おさるのジョージ", image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_osarunogeorge.png?autoresize=on"},
-    {gender:1,type:1,name:"仮面ライダーギーツ",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-brand_geets.jpg?autoresize=on"},
     {gender:1,type:1,name:"鬼滅の刃",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_kimetsu.png?autoresize=on"},
     {gender:1,type:1,name:"ゴー！ゴー！びーくるずー",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_vehiclezoo.jpg?autoresize=on"},
     {gender:1,type:1,name:"ジョブレイバー",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_joblabor_v2.jpg?autoresize=on"},
