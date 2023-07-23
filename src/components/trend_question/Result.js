@@ -165,7 +165,7 @@ const goToPrevPage = () => {
 
   return (
     <>
-      <Header />
+      <Header text="商品一覧"/>
       <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
         戻る
       </Button>

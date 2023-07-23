@@ -71,7 +71,7 @@ const Game = () => {
 
   return (
     <>
-      <Header/>
+      <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
       <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
           ゲームが好きですか？

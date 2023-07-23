@@ -1,9 +1,11 @@
 import React from 'react';
 import { useDispatch } from "react-redux";
-import { boy, girl, all } from "../../actions";
+import { boy, girl, } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
+import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "./styles.css";
+import PregenderHeader from '../../ui/Pre_genderHeader';
+
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -24,28 +26,26 @@ const Pre_gender = () => {
     navigate(`${homeUrl}/pregenre`); // 年齢選択のページに遷移する
   }
 
-  // 選択しないボタンがクリックされた時の処理
-  const skip_handleClick = () => {
-    dispatch(all()); // allアクションをdispatchする
-    navigate(`${homeUrl}/pregenre`); // 年齢選択のページに遷移する
-  }
 
   return (
     <>
-      <br/>
-      <h2>孫の性別選択</h2>
-      <br/>
-      <Button onClick={() => boy_handleClick()} style={{ fontSize: '2.5em' }} className='boyButton'>男</Button>
-      <Button onClick={() => girl_handleClick()} style={{ fontSize: '2.5em' }} className='girlButton'>女</Button>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
-        <br/>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/preselect`)} style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div>
+      <PregenderHeader/>
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+          お孫さんの性別選択
+      </Text>
+      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
+        <Button onClick={() => boy_handleClick()} size="lg">
+          男の子
+        </Button>
+        <Button onClick={() => girl_handleClick()} size="lg">
+          女の子
+        </Button>
+      </Stack>
+      </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
 }

@@ -3,11 +3,11 @@
 import React from 'react';
 import { Box, Text} from '@chakra-ui/react';
 
-const Header = () => {
+const Header = ({text}) => {
   return (
       <Box as="header" bg="red" py="4" color="white" mt="0">
         <Text fontSize="2xl" fontWeight="bold" textAlign="center">
-          TrendSearch
+          {text}
         </Text>
       </Box>
   );

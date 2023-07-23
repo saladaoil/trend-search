@@ -2,9 +2,10 @@ import { useState } from 'react';
 import { useDispatch, useSelector,} from 'react-redux';
 import genre_db from '../../db/Genre_db';
 import { useNavigate, } from "react-router-dom"
-import { Button } from '@chakra-ui/react';
+import { Button, Card, Flex, Text, Stack } from '@chakra-ui/react';
 import "./styles.css";
 import { setGenre } from '../../actions';
+import PregenreHeader from '../../ui/Pre_genreHeader';
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -60,28 +61,25 @@ const Pre_genre = () => {
 
   return (
     <>
-      <Button variant="contained" color="inherit" onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }} className='yesButton'>最初へ</Button>
-      <Button variant="contained" color="inherit" onClick={() => back_handleClick()} style={{ fontSize: '1.5em' }}>戻る</Button>
-      <div>
-        <ul>
-          {/* 現在のページのおもちゃの表示データをマップして表示 */}
-          {currentGenre.map(function (genre) {
-            return (
-              <Button key={`${genre.name}`} onClick={() => result_handleClick(genre)}>
-                <img src={genre.image_url} alt={genre.name} />
-              </Button>
-              
-              // <li key={`${genre.name}-${genre.price}`}>
-              //   <a href={`${homeUrl}/result`} target="_blank" rel="noopener noreferrer" onClick={result_handleClick(genre.name)}>
-              //     <img src={genre.image_url} alt={genre.name} />
-              //   </a> 
-              // </li>
-            ); //aタグのhrefをresult.jsにして遷移できるようにした
-          })}
-        </ul>
-      </div>
+      <PregenreHeader/>   
+      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
+      <ul>
+        {/* 現在のページのおもちゃの表示データをマップして表示 */}
+        {currentGenre.map(function (genre) {
+          return (
+            <Card key={genre.name} m={2} boxShadow="lg"> 
+              <img src={genre.image_url} alt={genre.name} onClick={() => result_handleClick(genre)} />
+            </Card>  
+          );
+        })}
+      </ul>
+      </Stack>
+      <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
 }
 
 export default Pre_genre;
+

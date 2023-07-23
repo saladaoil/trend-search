@@ -2,8 +2,9 @@ import React from 'react';
 import { useDispatch } from "react-redux";
 import { character, brand } from "../../actions";
 import { useNavigate } from "react-router-dom";
-import { Button } from '@chakra-ui/react';
+import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "./styles.css";
+import Header from '../../ui/Header';
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -26,18 +27,23 @@ const Pre_select = () => {
 
   return (
     <>
-      <br/>
-      <h2>キャラクターまたはブランドの選択</h2>
-      <br/>
-      <Button onClick={() => character_handleClick()} style={{ fontSize: '2.5em' }} className='characterButton'>キャラクター</Button>
-      <Button onClick={() => brand_handleClick()} style={{ fontSize: '2.5em' }} className='brandButton'>ブランド</Button>
-      <br/>
-      <br/>
-      <br/>
-      <div>
-        <br/>
-        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div>
+      <Header text="好みから探す"/>
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+          探し方を選択してください
+      </Text>
+      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
+        <Button onClick={() => character_handleClick()} size="lg">
+          キャラクターから探す
+        </Button>
+        <Button onClick={() => brand_handleClick()} size="lg">
+          ブランドから探す
+        </Button>
+      </Stack>
+      </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
 }

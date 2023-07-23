@@ -11,7 +11,7 @@ const navigate = useNavigate()
 
   return (
     <>
-      <Header />
+      <Header text="検索方法選択"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
       <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
         どちらかを選択してください
