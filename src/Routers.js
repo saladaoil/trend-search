@@ -3,10 +3,7 @@ import Firstchoice from "./components/Basic/Firstchoice";
 import Description from "./components/Basic/Description";
 import Gender from "./components/trend_question/Gender";
 import Age from "./components/trend_question/Age";
-import Category from "./components/trend_question/Category";
 import Result from "./components/trend_question/Result";
-import CategoryResult from "./components/trend_question/Category_Result";
-import Price from "./components/trend_question/Price";
 import Exercise from "./components/trend_question/Exercise";
 import Sport from "./components/trend_question/Sport";
 import Game from "./components/trend_question/Game";
@@ -55,9 +52,6 @@ const Routers = () => {
                 <Route path={`${homeUrl}/doll`} element={<Doll/>}/>
                 <Route path={`${homeUrl}/stuffedtoy`} element={<StuffedToy/>}/>
                 <Route path={`${homeUrl}/result`} element={<Result/>}/>
-                <Route path={`${homeUrl}/category`} element={<Category/>}/>
-                <Route path={`${homeUrl}/category_result`} element={<CategoryResult/>}/>
-                <Route path={`${homeUrl}/price`} element={<Price/>}/>
                 <Route path={`${homeUrl}/pregender`} element={<Pregender/>}/>
                 <Route path={`${homeUrl}/preselect`} element={<Preselect/>}/>
                 <Route path={`${homeUrl}/pregenre`} element={<Pregenre/>}/>

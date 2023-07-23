@@ -4,6 +4,8 @@ import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button } from '@chakra-ui/react';
 import "./styles.css";
+import Header from '../../ui/Header';
+import { Flex } from '@chakra-ui/layout';
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -32,7 +34,28 @@ const Gender = () => {
 
   return (
     <>
-      <br/>
+      <Header title="性別選択" />
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
+        <Button onClick={() => boy_handleClick()} size="lg" mb="10" mt="40">
+          男の子
+        </Button>
+        <Button onClick={() => girl_handleClick()} size="lg" mb="10">
+          女の子
+        </Button>
+        <Button onClick={() => skip_handleClick()} size="lg">
+          選択しない
+        </Button>
+      </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="lg" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
+    </>
+  );
+}
+
+export default Gender;
+
+{/* <br/>
       <h2>孫の性別選択</h2>
       <br/>
       <Button onClick={() => boy_handleClick()} style={{ fontSize: '2.5em' }} className='boyButton'>男</Button>
@@ -44,13 +67,8 @@ const Gender = () => {
         <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }} className='buttonRadius'>選択しない</Button>
         <br/>
         <br/>
-        <Button onClick={() => navigate(`${homeUrl}/`)} style={{ fontSize: '1.5em' }}>戻る</Button>
-      </div>
-    </>
-  );
-}
-
-export default Gender;
+        <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '1.5em' }}>戻る</Button>
+      </div> */}
 
 
 

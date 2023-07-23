@@ -3,7 +3,6 @@ import './commonstyles.css';
 import TrendSearchIcon from './TrendSearchIcon.png'
 import { useNavigate } from "react-router-dom"
 import { Button } from '@chakra-ui/react';
-// import TrendSearchIcon from './images/TrendSearchIcon.png'
 
 const homeUrl = process.env.PUBLIC_URL;
 

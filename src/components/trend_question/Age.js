@@ -1,9 +1,9 @@
-import React from 'react'
-import { useSelector, useDispatch } from "react-redux"
-import { kid, lowGrade, middleGrade, highGrade, notSelect_Age, } from "../../actions"
-import { useNavigate } from "react-router-dom"
-import { Button } from '@chakra-ui/react'
-import "./styles.css";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { kid, lowGrade, middleGrade, highGrade, notSelect_Age } from '../../actions';
+import { useNavigate } from 'react-router-dom';
+import { Button, Text, Flex } from '@chakra-ui/react'; // Import Chakra UI components
+import Header from '../../ui/Header';
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -14,63 +14,141 @@ const Age = () => {
 
   const gender = useSelector((state) => state.gender); // 性別を取得する
 
-
   // 幼稚園が選択された時の処理
   const kid_handleClick = () => {
     dispatch(kid()); // 4,6,「幼稚園」という値を取得する
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
-  }
-  
+  };
+
   // 小学生（低学年）が選択された時の処理
   const low_handleClick = () => {
     dispatch(lowGrade()); // 6,8,「低学年」という値を取得する
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
-  }
-  
+  };
+
   // 小学生（中学年）が選択された時の処理
   const middle_handleClick = () => {
     dispatch(middleGrade()); // 8,10,「中学年」という値を取得する
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
-  }
-  
+  };
+
   // 小学生（高学年）が選択された時の処理
   const high_handleClick = () => {
     dispatch(highGrade()); // 10,12.「高学年」という値を取得する
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
-  }
-  
+  };
+
   // 選択しないが選択された時の処理
   const skip_handleClick = () => {
     dispatch(notSelect_Age()); // 1,15,「選択なし」という値を取得する
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
-  }
+  };
 
   return (
     <>
-      <h3>性別：{gender[3]}</h3>
-      <h2>学年選択</h2>
-      <div>
-        <Button onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
-      </div>
-      <br/>
-        <Button onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
-      <br/>
-      <br/>
-        <Button onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
-      <br/>
-      <br/>
-        <Button onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
-      <br/>
-      <br/>
-      <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
-      <br/>
-      <br/>
-      <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
+      <Header title="学年選択" />
+      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
+        <Button onClick={() => kid_handleClick()} size="lg" mb="10" mt="20">
+          幼稚園（3歳～6歳）
+        </Button>
+        <Button onClick={() => low_handleClick()} size="lg" mb="10">
+          低学年（6歳～8歳）
+        </Button>
+        <Button onClick={() => middle_handleClick()} size="lg" mb="10">
+          中学年（8歳～10歳）
+        </Button>
+        <Button onClick={() => high_handleClick()} size="lg"  mb="10">
+          高学年（10歳～12歳）
+        </Button>
+        <Button onClick={() => skip_handleClick()} size="lg">
+          選択しない
+        </Button>
+        {/* <Text fontSize="xl">性別：{gender[3]}</Text> */}
+      </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="lg" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
   );
-}
+};
 
 export default Age;
+
+
+
+// import React from 'react'
+// import { useSelector, useDispatch } from "react-redux"
+// import { kid, lowGrade, middleGrade, highGrade, notSelect_Age, } from "../../actions"
+// import { useNavigate } from "react-router-dom"
+// import { Button } from '@chakra-ui/react'
+// import "./styles.css";
+
+// // ホームのURL
+// const homeUrl = process.env.PUBLIC_URL;
+
+// const Age = () => {
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+
+//   const gender = useSelector((state) => state.gender); // 性別を取得する
+
+
+//   // 幼稚園が選択された時の処理
+//   const kid_handleClick = () => {
+//     dispatch(kid()); // 4,6,「幼稚園」という値を取得する
+//     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+//   }
+  
+//   // 小学生（低学年）が選択された時の処理
+//   const low_handleClick = () => {
+//     dispatch(lowGrade()); // 6,8,「低学年」という値を取得する
+//     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+//   }
+  
+//   // 小学生（中学年）が選択された時の処理
+//   const middle_handleClick = () => {
+//     dispatch(middleGrade()); // 8,10,「中学年」という値を取得する
+//     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+//   }
+  
+//   // 小学生（高学年）が選択された時の処理
+//   const high_handleClick = () => {
+//     dispatch(highGrade()); // 10,12.「高学年」という値を取得する
+//     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+//   }
+  
+//   // 選択しないが選択された時の処理
+//   const skip_handleClick = () => {
+//     dispatch(notSelect_Age()); // 1,15,「選択なし」という値を取得する
+//     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
+//   }
+
+//   return (
+//     <>
+//       <h3>性別：{gender[3]}</h3>
+//       <h2>学年選択</h2>
+//       <div>
+//         <Button onClick={() => kid_handleClick()} style={{ fontSize: '1.5em' }}>幼稚園（3歳～6歳）</Button>
+//       </div>
+//       <br/>
+//         <Button onClick={() => low_handleClick()} style={{ fontSize: '1.5em' }}>低学年（6歳～8歳）</Button>
+//       <br/>
+//       <br/>
+//         <Button onClick={() => middle_handleClick()} style={{ fontSize: '1.5em' }}>中学年（8歳～10歳）</Button>  
+//       <br/>
+//       <br/>
+//         <Button onClick={() => high_handleClick()} style={{ fontSize: '1.5em' }}>高学年（10歳～12歳）</Button>
+//       <br/>
+//       <br/>
+//       <Button onClick={() => skip_handleClick()} style={{ fontSize: '1.5em' }}>選択しない</Button>
+//       <br/>
+//       <br/>
+//       <Button onClick={() => navigate(`${homeUrl}/gender`)}style={{ fontSize: '1.5em' }}>戻る</Button>
+//     </>
+//   );
+// }
+
+// export default Age;
 
 
 
