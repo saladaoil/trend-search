@@ -4,7 +4,7 @@ import { Box, Button,Text,Center } from '@chakra-ui/react';
 const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage }) => {
     const footerStyle = {
         // フッターのスタイル
-        height: "80px",
+        height: "10%",
         backgroundColor: "#FFFFFF",
         display: "flex",
         justifyContent: "space-between",

@@ -143,9 +143,7 @@ const goToPrevPage = () => {
   return (
     <>
 
-            <Header text="商品一覧" top='2%' right='2%'/>
-
-
+            <Header text="商品一覧"/>
       <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
         戻る
       </Button>
@@ -154,7 +152,7 @@ const goToPrevPage = () => {
         最初へ
       </Button>
 
-      <Box mt="80px" mb="80px" px="1">
+      <Box mt="70px" mb="80px" px="1">
                 <VStack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
             <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
@@ -171,11 +169,11 @@ const goToPrevPage = () => {
                 >
                   <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
                   <VStack align='flex-start' px={2}>
-                    <Text fontSize='17' textAlign='left' as='b'>
+                    <Text fontSize='lg' textAlign='left' as='b'>
                       {toy.name}
                     </Text>
-                    <Text fontSize='16'>
-                      {toy.price}円
+                    <Text fontSize='lg' color='firebrick'>
+                      {(toy.price).toLocaleString()}円（税込）
                     </Text>
                   </VStack>
                 </Flex>
