@@ -142,7 +142,10 @@ const goToPrevPage = () => {
 
   return (
     <>
-      <Header text="商品一覧"/>
+
+            <Header text="商品一覧" top='2%' right='2%'/>
+
+
       <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
         戻る
       </Button>
@@ -151,8 +154,8 @@ const goToPrevPage = () => {
         最初へ
       </Button>
 
-      <Box mt="20px" px="1">
-        <VStack spacing={1} align='stretch'>
+      <Box mt="80px" mb="80px" px="1">
+                <VStack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
             <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
               <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>

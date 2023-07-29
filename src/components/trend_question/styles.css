@@ -56,10 +56,12 @@ ul{
   height: 100px;
 }
 
-    
+
 
 body {
   background-color: #f5f5f5;
+  overflow:scroll;
+
 }
 
  

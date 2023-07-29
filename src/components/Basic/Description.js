@@ -1,132 +1,59 @@
-import React from 'react';
-import './commonstyles.css';
-import TrendSearchIcon from './TrendSearchIcon.png'
-import { useNavigate } from "react-router-dom"
-import { Button } from '@chakra-ui/react';
-
+import { useNavigate } from 'react-router-dom';
+import { Box, Text, Button, Center, } from '@chakra-ui/react';
+import Stepper from '../images/stepper1.png';
+import Des1 from '../images/Dis1 image.png';
 const homeUrl = process.env.PUBLIC_URL;
 
-
 const Description = () => {
-
   const navigate = useNavigate();
 
   return (
     <>
-    <h1>TrendSearch</h1>
-    <br/>
-    <br/>
-    <img src={TrendSearchIcon} alt="アイコン" className="icon" />
-    {/* <p>使用方法</p> */}
-    <div>
-      <br/>
-      <br/>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '2em', flexGrow: 25, flexBasis: '25%' }} className="ButtonRadius">開始</Button>
-    </div>
+      <Box position='fixed' top='6%' left='50%' transform='translateX(-50%)'>
+        <Text fontSize='40px' width='300px' as='b'>
+          ようこそ
+        </Text>
+      </Box>
+
+<Box position='fixed' top='18%'style={{ display: 'flex', justifyContent: 'center' }}>
+  {/*<Box bottom='20px' style={{ display: 'flex', justifyContent: 'center' }} >*/}
+
+      <img
+        src={Des1}
+        alt='Dan Abramov'
+        style={{ maxWidth: '75%', height: 'auto' }}
+      />
+    </Box>
+
+      <Center>
+  <Box position='fixed' bottom='25%'>
+    <Text fontSize='27px' width='300px' textAlign='left'>
+      TrendSearchは簡単操作<br />
+      で<b>ピッタリのプレゼント</b><br />
+      を選べるアプリです
+
+
+    </Text>
+  </Box>
+</Center>
+
+<Box position='fixed' bottom='125px' left='50%' transform='translateX(-50%)'>
+        <Center>
+          <img src={Stepper} style={{ width: '40%' }} alt='Stepper' />
+        </Center>
+      </Box>
+
+      <Box position='fixed' bottom='65px' left='50%' transform='translateX(-50%)'>
+        <Button fontSize='30px' height='50px' width='250px' colorscheme='twitter'>
+        <h1 className='BottomRadius' onClick={() => navigate(`${homeUrl}/description2`)}>次へ</h1>
+        </Button>
+      </Box>
+
+      <Box position='fixed' bottom='15px' left='50%' transform='translateX(-50%)'>
+        <h1 className='BottomRadius' onClick={() => navigate(`${homeUrl}/firstchoice`)} style={{ fontSize: '25px' }}>スキップ</h1>
+      </Box>
     </>
   );
-}
+};
 
 export default Description;
-
-
-
-
-
-// import React from 'react';
-// import './styles.css';
-// import TrendSearchIcon from './images/TrendSearchIcon.png'
-// import { useState } from 'react';
-// import { useSelector, useDispatch} from "react-redux"
-// import { boy, girl, all} from "../actions"
-// import { useNavigate } from "react-router-dom"
-// import '../index.css';
-// import { Button } from "@mui/material";
-// import {
-//   Container,
-//   Grid,
-//   makeStyles,
-//   Paper,
-//   Typography,
-//   Select,
-//   MenuItem,
-//   InputLabel,
-// } from "@material-ui/core";
-// import { createTheme } from "@material-ui/core/styles";
-
-// const homeUrl = process.env.PUBLIC_URL;
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     flexGrow: 1
-//   },
-//   paper: {
-//     padding: theme.spacing(1.2),
-//     textAlign: "center",
-//     margin: "auto",
-//     color: "black",
-//   }
-// }));
-// const theme = createTheme({
-//   palette:{
-//     gray:{
-//       light:'A9A9A9',
-//       main:'808080',
-//       dark:'696969',
-//     },
-//   },
-// });
-
-// const Gender = () => {
-
-//   const gender = useSelector((state) => state.gender);
-//   const classes = useStyles();
-
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch();
-//   const skip_handleClick = () => {
-//     dispatch(all());
-//     navigate(`${homeUrl}/firstchoice`);
-//   }
-
-//   const [selectedOption, setSelectedOption] = useState('');
-
-//   const handleChange = (event) => {
-//     const selectedValue = event.target.value;
-//     setSelectedOption(selectedValue);
-//     switch (selectedValue) {
-//       case 'BOY':
-//         dispatch(boy());
-//         break;
-//       case 'GIRL':
-//         dispatch(girl());
-//         break;
-//       case 'ALL':
-//         dispatch(all());
-//         break;
-//       default:
-//         break;
-//     }
-//   };
-//   return (
-//     <div className="app-container">
-//       <header className="header">
-//       </header>
-//       <div className="body">
-//         <img src={TrendSearchIcon} alt="アイコン" className="icon" />
-//         <div className="description">
-//           <h1>TrendSearch</h1>
-//           <p>使用方法</p>
-//         </div>
-//       </div>
-//               <Grid style={{ height: "100%" }}>
-//                 <Typography variant="h6" className={classes.paper}>
-//                   <Button variant="contained" color="error" onClick={() => skip_handleClick()} style={{ fontSize: '1em' }}>開始</Button>
-//                 </Typography>
-//               </Grid>
-      
-//     </div>
-//   );
-// }
-
-// export default Gender;

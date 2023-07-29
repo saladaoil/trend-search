@@ -1,12 +1,11 @@
 import React from 'react';
-import { Box, Button } from '@chakra-ui/react';
+import { Box, Button,Text,Center } from '@chakra-ui/react';
 
 const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage }) => {
     const footerStyle = {
         // フッターのスタイル
         height: "80px",
-        backgroundColor: "#1DA1F2",
-        color: "black",
+        backgroundColor: "#FFFFFF",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
@@ -19,18 +18,41 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
     
 
   return (
-    <Box as="footer" style={footerStyle}>
+    <Box as="footer" style={footerStyle} colorScheme='twitter'>
       {pageNumber > 1 && (
-        <Button onClick={goToPrevPage} size="md">
+        <Button onClick={goToPrevPage} size="sm"variant='outline' colorScheme='twitter'>
           前のページ
         </Button>
       )}
+      
+      {pageNumber === 1 && (
+        <Button onClick={goToPrevPage} size="sm"variant='outline'colorScheme='blackAlpha'>
+前のページ
+      </Button>
+      )}
+
+      <Center>
+      <Box>
+        <Text>{pageNumber}/{Math.ceil(toy_dis.length / itemsPerPage)}</Text>
+      </Box>
+      </Center>
+
 
       {pageNumber < Math.ceil(toy_dis.length / itemsPerPage) && (
-        <Button onClick={goToNextPage} size="md">
+        <Button onClick={goToNextPage} size="sm"variant='outline'colorScheme='twitter'>
           次のページ
         </Button>
+
+        
       )}
+
+{pageNumber === Math.ceil(toy_dis.length / itemsPerPage) && (
+        <Button onClick={goToPrevPage} size="sm"variant='outline'colorScheme='blackAlpha'>
+次のページ
+      </Button>
+      )}
+
+
     </Box>
   );
 };

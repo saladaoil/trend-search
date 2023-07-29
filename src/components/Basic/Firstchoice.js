@@ -13,7 +13,7 @@ const navigate = useNavigate()
     <>
       <Header text="検索方法選択"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
         どちらかを選択してください
       </Text>
         <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="8" mt="20">
@@ -23,6 +23,9 @@ const navigate = useNavigate()
           好みから選ぶ
         </Button>
       </Flex>
+      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+        戻る
+      </Button>
     </>
 
   );

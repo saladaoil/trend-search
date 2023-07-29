@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import { Box, Text, Button, Center, } from '@chakra-ui/react';
 import Stepper from '../images/stepper2.png';
 import Des1 from '../images/Des2 image.png';
-
+import './commonstyles.css';
 
 const homeUrl = process.env.PUBLIC_URL;
 
