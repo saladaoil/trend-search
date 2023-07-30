@@ -1129,6 +1129,16 @@
   dependencies:
     "@chakra-ui/shared-utils" "2.0.5"
 
+"@chakra-ui/button@^2.1.0":
+  "integrity" "sha512-95CplwlRKmmUXkdEp/21VkEWgnwcx2TOBG6NfYlsuLBDHSLlo5FKIiE2oSi4zXc4TLcopGcWPNcm/NDaSC5pvA=="
+  "resolved" "https://registry.npmjs.org/@chakra-ui/button/-/button-2.1.0.tgz"
+  "version" "2.1.0"
+  dependencies:
+    "@chakra-ui/react-context" "2.1.0"
+    "@chakra-ui/react-use-merge-refs" "2.1.0"
+    "@chakra-ui/shared-utils" "2.0.5"
+    "@chakra-ui/spinner" "2.1.0"
+
 "@chakra-ui/button@2.0.18":
   "integrity" "sha512-E3c99+lOm6ou4nQVOTLkG+IdOPMjsQK+Qe7VyP8A/xeAMFONuibrWPRPpprr4ZkB4kEoLMfNuyH2+aEza3ScUA=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/button/-/button-2.0.18.tgz"
@@ -1474,6 +1484,11 @@
   "resolved" "https://registry.npmjs.org/@chakra-ui/react-context/-/react-context-2.0.8.tgz"
   "version" "2.0.8"
 
+"@chakra-ui/react-context@2.1.0":
+  "integrity" "sha512-iahyStvzQ4AOwKwdPReLGfDesGG+vWJfEsn0X/NoGph/SkN+HXtv2sCfYFFR9k7bb+Kvc6YfpLlSuLvKMHi2+w=="
+  "resolved" "https://registry.npmjs.org/@chakra-ui/react-context/-/react-context-2.1.0.tgz"
+  "version" "2.1.0"
+
 "@chakra-ui/react-env@3.0.0":
   "integrity" "sha512-tfMRO2v508HQWAqSADFrwZgR9oU10qC97oV6zGbjHh9ALP0/IcFR+Bi71KRTveDTm85fMeAzZYGj57P3Dsipkw=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/react-env/-/react-env-3.0.0.tgz"
@@ -1553,6 +1568,11 @@
   "integrity" "sha512-zds4Uhsc+AMzdH8JDDkLVet9baUBgtOjPbhC5r3A0ZXjZvGhCztFAVE3aExYiVoMPoHLKbLcqvCWE6ioFKz1lw=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/react-use-merge-refs/-/react-use-merge-refs-2.0.7.tgz"
   "version" "2.0.7"
+
+"@chakra-ui/react-use-merge-refs@2.1.0":
+  "integrity" "sha512-lERa6AWF1cjEtWSGjxWTaSMvneccnAVH4V4ozh8SYiN9fSPZLlSG3kNxfNzdFvMEhM7dnP60vynF7WjGdTgQbQ=="
+  "resolved" "https://registry.npmjs.org/@chakra-ui/react-use-merge-refs/-/react-use-merge-refs-2.1.0.tgz"
+  "version" "2.1.0"
 
 "@chakra-ui/react-use-outside-click@2.1.0":
   "integrity" "sha512-JanCo4QtWvMl9ZZUpKJKV62RlMWDFdPCE0Q64a7eWTOQgWWcpyBW7TOYRunQTqrK30FqkYFJCOlAWOtn+6Rw7A=="
@@ -1706,6 +1726,13 @@
   "integrity" "sha512-T1/aSkVpUIuiYyrjfn1+LsQEG7Onbi1UE9ccS/evgf61Dzy4GgTXQUnDuWFSgpV58owqirqOu6jn/9eCwDlzlg=="
   "resolved" "https://registry.npmjs.org/@chakra-ui/spinner/-/spinner-2.0.13.tgz"
   "version" "2.0.13"
+  dependencies:
+    "@chakra-ui/shared-utils" "2.0.5"
+
+"@chakra-ui/spinner@2.1.0":
+  "integrity" "sha512-hczbnoXt+MMv/d3gE+hjQhmkzLiKuoTo42YhUG7Bs9OSv2lg1fZHW1fGNRFP3wTi6OIbD044U1P9HK+AOgFH3g=="
+  "resolved" "https://registry.npmjs.org/@chakra-ui/spinner/-/spinner-2.1.0.tgz"
+  "version" "2.1.0"
   dependencies:
     "@chakra-ui/shared-utils" "2.0.5"
 
@@ -8735,7 +8762,7 @@
   dependencies:
     "@remix-run/router" "1.3.1"
 
-"react-scripts@5.0.1":
+"react-scripts@^5.0.1":
   "integrity" "sha512-8VAmEm/ZAwQzJ+GOMLbBsTdDKOpuZh7RPs0UymvBR2vRk4iZWCskjbFnxqjrzoIvlNNRZ3QJFx6/qDSi6zSnaQ=="
   "resolved" "https://registry.npmjs.org/react-scripts/-/react-scripts-5.0.1.tgz"
   "version" "5.0.1"

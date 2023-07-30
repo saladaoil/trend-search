@@ -26,8 +26,8 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
       )}
       
       {pageNumber === 1 && (
-        <Button onClick={goToPrevPage} size="sm"variant='outline'colorScheme='blackAlpha'>
-前のページ
+        <Button size="sm"variant='outline'colorScheme='blackAlpha'>
+      前のページ
       </Button>
       )}
 
@@ -47,7 +47,7 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
       )}
 
 {pageNumber === Math.ceil(toy_dis.length / itemsPerPage) && (
-        <Button onClick={goToPrevPage} size="sm"variant='outline'colorScheme='blackAlpha'>
+        <Button size="sm"variant='outline'colorScheme='blackAlpha'>
 次のページ
       </Button>
       )}

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { useDispatch, useSelector,} from 'react-redux';
 import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
@@ -25,6 +25,31 @@ const Result = () => {
   const doll = useSelector((state) => state.doll);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
   const other = useSelector((state) => state.other);
+
+  // State to store selected toy names
+  const [selectedToys, setSelectedToys] = useState([]);
+
+  // Effect to load saved toy names from localStorage on component mount
+  useEffect(() => {
+    const savedToys = JSON.parse(localStorage.getItem('selectedToys')) || [];
+    setSelectedToys(savedToys);
+  }, []);
+
+  // Function to handle saving selected toy names to localStorage
+  const handleSaveToyName = (toyName) => {
+    const updatedToys = [...selectedToys, toyName];
+    setSelectedToys(updatedToys);
+    localStorage.setItem('selectedToys', JSON.stringify(updatedToys));
+  };
+  const handleDeleteToyName = (toyNumber) => {
+    const updatedToys = selectedToys.filter((number) => number !== toyNumber);
+    setSelectedToys(updatedToys);
+    localStorage.setItem('selectedToys', JSON.stringify(updatedToys));
+  };
+  
+  const isToyNumberSaved = (toyNumber) => {
+    return selectedToys.includes(toyNumber);
+  };
 
   // Reduxのstateから必要な値を取得
   const [gender, common_gender ,all_gender] = gender_val;
@@ -80,6 +105,7 @@ const Result = () => {
     navigate(navigateUrl);
   };
   
+  //localStorage.removeItem("selectedToys");
   
   // おもちゃのデータを取得
   const toys = toys_db; 
@@ -106,7 +132,7 @@ const Result = () => {
   
   // フィルタリングされたおもちゃの表示データを作成する
   let toy_dis = toy_filterResult.map(function(toy) {
-    return { name: toy.name, price: toy.price, image_url: toy.image_url, page_url:toy.page_url };
+    return { name: toy.name, price: toy.price, image_url: toy.image_url, page_url:toy.page_url,number:toy.toy_number, };
   });
 
   
@@ -140,45 +166,70 @@ const goToPrevPage = () => {
   console.log("other" + other)
   console.log("stuffedtoy" + stuffedtoy)
 
+    // Function to handle clicking the toy card
+    const handleCardClick = (e, toy) => {
+      // Check if the click target is the button, if so, do nothing
+      if (e.target.tagName === "BUTTON") return;
+  
+      // Open the URL only when clicking the rest of the card (not the button)
+      window.open(toy.page_url, "_blank");
+    };
+  
+
   return (
     <>
-
-            <Header text="商品一覧"/>
+      <Header text={`商品一覧`} />
       <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
         戻る
       </Button>
-
-      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
+  
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
         最初へ
       </Button>
-
+  
       <Box mt="70px" mb="80px" px="1">
-                <VStack spacing={1} align='stretch'>
+        <VStack spacing={1} align='stretch'>
           {currentToyDis.map((toy) => (
-            <Box px={1} pb={1} key={`${toy.name}-${toy.price}`}>
-              <a href={toy.page_url} target='_blank' rel='noopener noreferrer'>
-                <Flex
-                  key={`${toy.name}-${toy.price}`}
-                  borderWidth='1px'
-                  borderRadius='lg'
-                  boxShadow='md'
-                  alignItems='center'
-                  justifyContent='flex-start'
-                  mb={1}
-                  _hover={{ cursor: 'pointer' }}
-                >
-                  <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
-                  <VStack align='flex-start' px={2}>
-                    <Text fontSize='lg' textAlign='left' as='b'>
-                      {toy.name}
-                    </Text>
-                    <Text fontSize='lg' color='firebrick'>
-                      {(toy.price).toLocaleString()}円（税込）
-                    </Text>
-                  </VStack>
-                </Flex>
-              </a>
-            </Box>
+            <Flex
+              key={`${toy.name}-${toy.price}`}
+              borderWidth="1px"
+              borderRadius="lg"
+              boxShadow="md"
+              alignItems="center"
+              justifyContent="flex-start"
+              mb={1}
+              _hover={{ cursor: "pointer" }}
+              position="relative" // Add this line to enable absolute positioning
+              onClick={(e) => handleCardClick(e, toy)} // Use custom click handler for the card
+            >
+                <Image src={toy.image_url} alt={toy.name} boxSize='80px' />
+                <VStack align='flex-start' px={1} mt={1}>
+                  <Text fontSize='lg' textAlign='left' as='b'>
+                    {toy.name}
+                  </Text>
+                  <Text fontSize='lg' color='firebrick'>
+                    {(toy.price).toLocaleString()}円(税込)
+                  </Text>
+                </VStack>
+                <Flex // Use Flexbox to position buttons under the price
+                justifyContent="flex-end"
+                position="absolute" // Position the buttons absolutely
+                bottom="1" // Place the buttons at the bottom of the container
+                right="1" // Align the buttons to the right
+                w="100%" // Make the button container the full width of the card
+              >
+                {!isToyNumberSaved(toy.number) && (
+                  <Button onClick={() => handleSaveToyName(toy.number)} size='sm' colorScheme='blackAlpha'>
+                    後で見る
+                    </Button>
+                )}
+                {isToyNumberSaved(toy.number) && (
+                  <Button onClick={() => handleDeleteToyName(toy.number)} size="sm" colorScheme="gray">
+                    削除
+                  </Button>
+                )}
+              </Flex>
+            </Flex>
           ))}
         </VStack>
       </Box>
@@ -191,6 +242,7 @@ const goToPrevPage = () => {
       />
     </>
   );
+  
 }
 
 export default Result;
