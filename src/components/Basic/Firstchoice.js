@@ -33,7 +33,7 @@ const navigate = useNavigate()
         <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="4" mt="10">
           好みから選ぶ
         </Button>
-        <Button onClick={() => navigate(`${homeUrl}/description2`)} size="md" mb="8" mt="5">
+        <Button onClick={() => navigate(`${homeUrl}/Favorite`)} size="md" mb="8" mt="5">
           お気に入り
         </Button>
       </Flex>

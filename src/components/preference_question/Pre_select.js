@@ -72,7 +72,7 @@ const Pre_select = () => {
           <PopoverArrow />
             <PopoverCloseButton size='lg'/>
             <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>男子または女子向けの{type === 1 && "キャラクター"}{type === 2 && "ブランド"}か選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='30px'>キャラクターまたはブランドを選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/性別選択画面" target="_blank">

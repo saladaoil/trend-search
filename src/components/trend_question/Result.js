@@ -178,14 +178,16 @@ const goToPrevPage = () => {
 
   return (
     <>
-      <Header text={`商品一覧`} />
-      <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px" }}>
+          <Header text={`商品一覧`} />
+
+      <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px", zIndex:"2" }}>
         戻る
       </Button>
-  
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" }}>
+
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" , zIndex:"2" }}>
         最初へ
       </Button>
+
   
       <Box mt="70px" mb="80px" px="1">
         <VStack spacing={1} align='stretch'>
