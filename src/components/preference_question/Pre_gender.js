@@ -31,7 +31,7 @@ const Pre_gender = () => {
     <>
       <PregenderHeader/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
@@ -43,7 +43,7 @@ const Pre_gender = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

@@ -5,6 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "./styles.css";
 import Header from '../../ui/Header';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+  Box
+} from '@chakra-ui/react'
+import '../Basic/help.css'
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -35,7 +46,7 @@ const Gender = () => {
     <>
       <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
@@ -50,7 +61,7 @@ const Gender = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

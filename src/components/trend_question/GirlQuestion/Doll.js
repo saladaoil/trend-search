@@ -5,6 +5,17 @@ import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "../styles.css";
 import Header from '../../../ui/Header';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+  Box
+} from '@chakra-ui/react'
+import '../../Basic/help.css'
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -99,12 +110,12 @@ const Doll = () => {
     <>
       <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
           人形が好きですか？
       </Text>
-      <Stack mt="40" width="100%" maxW="400px">
+      <Stack mt="30%" width="100%" maxW="400px">
         <Flex direction="row" justify="center">
-            <Button onClick={() => doll_Yes_handleClick()} size="xl" mr="10">
+            <Button onClick={() => doll_Yes_handleClick()} size="xl" mr="10%">
               はい
             </Button>
             <Button onClick={() => doll_No_handleClick()} size="xl" >
@@ -113,7 +124,7 @@ const Doll = () => {
           </Flex>
       </Stack>
       </Flex>
-      <Button onClick={() => doll_back_handleClick()} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => doll_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

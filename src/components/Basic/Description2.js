@@ -53,7 +53,7 @@ const SelectedToysPage = () => {
       <h1>選択したおもちゃのリスト</h1>
       {selectedToysData}
       
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

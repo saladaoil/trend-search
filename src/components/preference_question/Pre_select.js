@@ -29,7 +29,7 @@ const Pre_select = () => {
     <>
       <Header text="好みから探す"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
           探し方を選択してください
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
@@ -41,7 +41,7 @@ const Pre_select = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

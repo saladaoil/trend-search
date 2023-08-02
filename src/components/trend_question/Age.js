@@ -4,6 +4,17 @@ import { kid, lowGrade, middleGrade, highGrade, notSelect_Age } from '../../acti
 import { useNavigate } from 'react-router-dom';
 import { Button, Text, Flex, Stack } from '@chakra-ui/react'; // Import Chakra UI components
 import Header from '../../ui/Header';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+  Box
+} from '@chakra-ui/react'
+import '../Basic/help.css'
 
 // ホームのURL
 const homeUrl = process.env.PUBLIC_URL;
@@ -48,21 +59,21 @@ const Age = () => {
     <>
        <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4" >
-        <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
           お孫さんの年齢選択
         </Text>
-        <Stack spacing={['6', '8', '10']} mt="8" width="100%" maxW="400px">
+        <Stack spacing={['6', '8', '8']} mt="5" width="100%" maxW="400px">
           <Button onClick={() => kid_handleClick()} size="md">
-            幼稚園（3歳～6歳）
+            幼稚園(3歳～6歳)
           </Button>
           <Button onClick={() => low_handleClick()} size="md">
-            低学年（6歳～8歳）
+            低学年(6歳～8歳)
           </Button>
           <Button onClick={() => middle_handleClick()} size="md">
-            中学年（8歳～10歳）
+            中学年(8歳～10歳)
           </Button>
           <Button onClick={() => high_handleClick()} size="md">
-            高学年（10歳～12歳）
+            高学年(10歳～12歳)
           </Button>
           <Button onClick={() => skip_handleClick()} size="md">
             選択しない
@@ -70,7 +81,7 @@ const Age = () => {
         </Stack>
         {/* <Text fontSize="xl">性別：{gender[3]}</Text> */}
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/gender`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/gender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>

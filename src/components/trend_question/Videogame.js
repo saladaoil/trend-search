@@ -34,12 +34,12 @@ const Videogame = () => {
     <>
       <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="10">
-          ビデオゲームが好きですか？
+      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
+                  ビデオゲームが好きですか？
       </Text>
-      <Stack mt="40" width="100%" maxW="400px">
-        <Flex direction="row" justify="center">
-            <Button onClick={() => videogame_Yes_handleClick()} size="xl" mr="10">
+      <Stack mt="30%" width="100%" maxW="400px">
+       <Flex direction="row" justify="center">
+            <Button onClick={() => videogame_Yes_handleClick()} size="xl" mr="10%">
               はい
             </Button>
             <Button onClick={() => videogame_No_handleClick()} size="xl" >
@@ -48,7 +48,7 @@ const Videogame = () => {
           </Flex>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/game`)} size="md" style={{ position: "fixed", bottom: "40px", left: "30px" }}>
+      <Button onClick={() => navigate(`${homeUrl}/game`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
         戻る
       </Button>
     </>
