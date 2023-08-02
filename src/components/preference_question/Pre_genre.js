@@ -6,7 +6,19 @@ import { Button, Card, Flex, Text, Stack } from '@chakra-ui/react';
 import "./styles.css";
 import { setGenre } from '../../actions';
 import PregenreHeader from '../../ui/Pre_genreHeader';
-
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+  Box
+} from '@chakra-ui/react'
+import '../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Pre_genre = () => {
@@ -46,7 +58,7 @@ const Pre_genre = () => {
   
   // ページネーションのための状態と関数を定義
   const [pageNumber, setPageNumber] = useState(1);
-  const itemsPerPage = 7;
+  const itemsPerPage = 10;
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
@@ -62,7 +74,7 @@ const Pre_genre = () => {
   return (
     <>
       <PregenreHeader/>   
-      <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px" >
+      <Stack spacing={['8', '8', '10']} mt="8" width="100%"  >
       <ul>
         {/* 現在のページのおもちゃの表示データをマップして表示 */}
         {currentGenre.map(function (genre) {
@@ -74,9 +86,33 @@ const Pre_genre = () => {
         })}
       </ul>
       </Stack>
-      <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
+      <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
         戻る
       </Button>
+      <Box position='fixed' bottom='20px' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='20px' right='5%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+          <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='30px'>{gender === 1 && "男子向け"}{gender === 2 && "女子向け"}の
+          {type === 1 && "キャラクター"}{type === 2 && "ブランド"}一覧から選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/ジャンル選択画面" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
     </>
   );
 }

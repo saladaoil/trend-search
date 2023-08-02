@@ -6,6 +6,18 @@ import { Box, Button, Flex, Image, Text, VStack } from '@chakra-ui/react';
 import "./styles.css";
 import PreresultHeader from '../../ui/Pre_resultHeader';
 import Footer from '../../ui/Footer';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
+} from '@chakra-ui/react'
+import '../Basic/help.css'
 
 const homeUrl = process.env.PUBLIC_URL;
 

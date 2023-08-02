@@ -37,7 +37,7 @@ const navigate = useNavigate()
           お気に入り
         </Button>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }}>
+      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
         戻る
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
