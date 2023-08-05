@@ -7,6 +7,15 @@ import "./styles.css";
 import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
 import Header from '../../ui/Header';
 import Footer from '../../ui/Footer';
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -180,13 +189,57 @@ const goToPrevPage = () => {
     <>
           <Header text={`商品一覧`} />
 
-      <Button onClick={() => back_handleClick()} size="md" style={{ position: "fixed", top: "10px", left: "10px", zIndex:"2" }}>
+          <Box position='fixed' zIndex='2'>
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' top='1%' left='1%' >
+            <Button variant="solid" >
         戻る
       </Button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='3xl'>戻る</Text></PopoverHeader>
 
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", top: "10px", right: "10px" , zIndex:"2" }}>
-        最初へ
-      </Button>
+            <PopoverBody>      <Button onClick={() => back_handleClick()} size="md" >
+      質問に戻る
+      </Button></PopoverBody>
+            <PopoverBody>      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md">
+      はじめから
+      </Button></PopoverBody>
+          </PopoverContent>
+        </Popover>
+      </Box>
+
+      <Box position='fixed' zIndex='2'>
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' top='1%' right='3%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="reslt-radius">
+                <Text as='b' fontSize='lg'> ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>商品をタップし詳細を確認できます</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>「後で見る」からお気に入りに追加できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/商品一覧画面" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
+
+
+
+
 
   
       <Box mt="70px" mb="80px" px="1">

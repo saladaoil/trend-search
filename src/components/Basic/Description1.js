@@ -61,6 +61,8 @@ const Gender = () => {
           <Text fontSize="2xl"  color="black" textAlign="left" mt="1"mp="1">
           「？」マークをタップしてください
           </Text>
+          <Divider />
+
       </Text>
 
       <Stack spacing={['8', '8', '10']} mt="10" width="100%" maxW="400px">

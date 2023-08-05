@@ -6,5 +6,16 @@
     border-radius: 50%;
     color: #fff;
     text-align: center;
+    z-index: 2;
+  }
+
+  .reslt-radius {
+    width: 50px;
+    height: 50px;
+    line-height: 20px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    color: #2196f3;
+    text-align: center;
     
   }

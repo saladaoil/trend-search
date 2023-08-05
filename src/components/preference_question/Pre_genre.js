@@ -101,12 +101,12 @@ const Pre_genre = () => {
           <PopoverContent>
           <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>{gender === 1 && "男子向け"}{gender === 2 && "女子向け"}の
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>{gender === 1 && "男子向け"}{gender === 2 && "女子向け"}の
           {type === 1 && "キャラクター"}{type === 2 && "ブランド"}一覧から選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>選択肢をタップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/ジャンル選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/好みから選ぶ/ジャンル選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

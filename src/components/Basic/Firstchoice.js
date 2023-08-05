@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 import '../Basic/help.css'
 
+
 const homeUrl = process.env.PUBLIC_URL;
 
 const Firstchoice = () => {
@@ -25,7 +26,7 @@ const navigate = useNavigate()
       <Header text="検索方法選択"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
       <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
-        どちらかを選択してください
+        検索方法を選択してください
       </Text>
         <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="4" mt="20">
           流行から選ぶ
@@ -37,8 +38,9 @@ const navigate = useNavigate()
           お気に入り
         </Button>
       </Flex>
+
       <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
-        戻る
+        使い方
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
@@ -52,11 +54,11 @@ const navigate = useNavigate()
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>「流行」または「好み」を選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/検索方法選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

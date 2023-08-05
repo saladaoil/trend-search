@@ -50,12 +50,13 @@ const Pre_gender = () => {
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
-        <Button onClick={() => boy_handleClick()} size="lg">
-          男
+        <Button onClick={() => boy_handleClick()} size="lg" colorScheme='messenger'>
+          男の子
         </Button>
-        <Button onClick={() => girl_handleClick()} size="lg">
-          女
+        <Button onClick={() => girl_handleClick()} size="lg" colorScheme='red'>
+          女の子
         </Button>
+
       </Stack>
       </Flex>
       <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter' >
@@ -74,11 +75,11 @@ const Pre_gender = () => {
           <PopoverContent>
           <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>男子または女子向けの{type === 1 && "キャラクター"}{type === 2 && "ブランド"}か選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>男子または女子向けの{type === 1 && "キャラクター"}{type === 2 && "ブランド"}か選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>選択肢をタップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/性別選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/好みから選ぶ/性別選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

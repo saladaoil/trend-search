@@ -96,11 +96,11 @@ const Age = () => {
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>お孫さんの年齢を回答してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>タップをすることによって選択できます</Text></PopoverBody>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>お孫さんの年齢を回答してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/流行から選ぶ/年齢選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/年齢選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

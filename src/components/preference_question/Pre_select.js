@@ -71,11 +71,11 @@ const Pre_select = () => {
           <PopoverContent>
           <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='35px'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='30px'>キャラクターまたはブランドを選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='30px'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>キャラクターまたはブランドを選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>選択肢をタップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/画面ごとの使い方/好みから選ぶ/性別選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/好みから選ぶ/好み選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

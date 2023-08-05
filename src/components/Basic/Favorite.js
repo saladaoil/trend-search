@@ -3,6 +3,8 @@ import toys_db from '../../db/toy_db';
 import { Box, Flex, VStack, Image, Text, Button } from '@chakra-ui/react';
 import { useNavigate } from "react-router-dom";
 import Header from '../../ui/Header';
+import Footer from '../../ui/Favorite_Footer';
+
 import {
   Modal,
   ModalOverlay,
@@ -12,6 +14,17 @@ import {
   ModalBody,
   ModalCloseButton,
 } from '@chakra-ui/react';
+
+import {
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverArrow,
+  PopoverCloseButton,
+} from '@chakra-ui/react'
+
 
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -45,21 +58,48 @@ const SelectedToysPage = () => {
     window.location.reload();
   };
 
+    //localStorage.removeItem("selectedToys");
+
   return (
     <>
-      <Header text="お気に入り" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1 }} />
+      <Header text="お気に入り" style={{ position: 'fixed', top: 0, left: 0, right: 0 }} />
+      <Footer style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 0 }}/>
 
 
-      <Box mt="70px" mb="80px" px="1">
+      <Box mt="70px" mb="80px" px="1" >
+      <Box position='fixed' bottom='5%' right='5%' zIndex= '2'>
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='2%' right='5%' >
+              <button height='50px' width='80px' colorScheme='twitter' class="border-radius"z-index= '2' >
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
+                <Button colorScheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
         {selectedToyNumbers.length > 0 ? (
           <VStack spacing={1} align='stretch'>
+                <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "2%", left: "5%" }} variant='outline' colorScheme='twitter'  zIndex= '1'>
+                戻る
+              </Button>
+
             {selectedToyNumbers.map((toyNumber, index) => {
               const selectedToy = toys.find((toy) => toy.toy_number === toyNumber);
               return selectedToy ? (
                 <Flex key={`${selectedToy.name}-${selectedToy.price}`} borderWidth='1px' borderRadius='lg' boxShadow='md' mb={1} w="100%" justifyContent="flex-start" position="relative">
-                  <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} fontSize="md">
-                    戻る
-                  </Button>
                   <a href={selectedToy.page_url} target='_blank' rel='noopener noreferrer' style={{ flexGrow: 1, textDecoration: 'none' }}>
                     <Flex alignItems='center' justifyContent='flex-start' _hover={{ cursor: 'pointer' }}>
                       <Image src={selectedToy.image_url} alt={selectedToy.name} boxSize='80px' h='80px' />
@@ -76,7 +116,9 @@ const SelectedToysPage = () => {
                   <Flex justifyContent="flex-end" position="absolute" bottom="1" right="1" w="100%">
                     <Button size='sm' colorScheme='gray' onClick={() => handleDeleteToyName(toyNumber)}>削除</Button>
                   </Flex>
+
                 </Flex>
+                
               ) : null;
             })}
           </VStack>
@@ -93,6 +135,7 @@ const SelectedToysPage = () => {
               戻る
             </Button>
           </Flex>
+          
         )}
       </Box>
 
@@ -131,6 +174,7 @@ const SelectedToysPage = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
     </>
   );
 };
