@@ -29,36 +29,29 @@ import {
 const homeUrl = process.env.PUBLIC_URL;
 
 const SelectedToysPage = () => {
-  // Load the selected toy numbers from localStorage
+
+  //お気に入りの玩具をロードする
   const selectedToyNumbers = JSON.parse(localStorage.getItem('selectedToys')) || [];
 
   const navigate = useNavigate();
 
-  // Fetch toy data from toy_db
   const toys = toys_db;
 
-  // Create state to manage modal visibility and toy deletion
   const [selectedToyToDelete, setSelectedToyToDelete] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Function to handle deleting a selected toy
   const handleDeleteToyName = (toyNumber) => {
     const selectedToy = toys.find((toy) => toy.toy_number === toyNumber);
     setSelectedToyToDelete(selectedToy);
     setIsModalOpen(true);
   };
 
-  // Function to confirm toy deletion and perform the actual deletion
   const confirmDeleteToy = () => {
     const updatedToys = selectedToyNumbers.filter((number) => number !== selectedToyToDelete.toy_number);
     localStorage.setItem('selectedToys', JSON.stringify(updatedToys));
     setIsModalOpen(false);
-    // You may want to update the component state here if you're using React hooks
-    // For simplicity, I'm assuming the page will reload, and the deleted toy will disappear from the list.
     window.location.reload();
   };
-
-    //localStorage.removeItem("selectedToys");
 
   return (
     <>
@@ -70,7 +63,7 @@ const SelectedToysPage = () => {
       <Box position='fixed' bottom='5%' right='5%' zIndex= '2'>
         <Popover>
           <PopoverTrigger>
-            <Box position='fixed' bottom='2%' right='5%' >
+            <Box position='fixed' bottom='1%' right='5%' >
               <button height='50px' width='80px' colorScheme='twitter' class="border-radius"z-index= '2' >
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
@@ -80,10 +73,9 @@ const SelectedToysPage = () => {
             <PopoverArrow />
             <PopoverCloseButton size='lg'/>
             <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>お気に入り一覧から商品を削除する場合は「削除」をタップしてください。</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/お気に入り画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
@@ -92,7 +84,7 @@ const SelectedToysPage = () => {
       </Box>
         {selectedToyNumbers.length > 0 ? (
           <VStack spacing={1} align='stretch'>
-                <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "2%", left: "5%" }} variant='outline' colorScheme='twitter'  zIndex= '1'>
+                <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "1%", left: "5%" }} variant='outline' colorScheme='twitter'  zIndex= '1'>
                 戻る
               </Button>
 

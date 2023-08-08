@@ -29,15 +29,13 @@ const Pre_result = () => {
 
   const [gender] = gender_val;
 
-    // State to store selected toy names
     const [selectedToys, setSelectedToys] = useState([]);
-  // Effect to load saved toy names from localStorage on component mount
   useEffect(() => {
     const savedToys = JSON.parse(localStorage.getItem('selectedToys')) || [];
     setSelectedToys(savedToys);
   }, []);
 
-  // Function to handle saving selected toy names to localStorage
+  //ローカルストレージに追加する
   const handleSaveToyName = (toyName) => {
     const updatedToys = [...selectedToys, toyName];
     setSelectedToys(updatedToys);

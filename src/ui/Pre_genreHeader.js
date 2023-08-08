@@ -7,7 +7,7 @@ const Pre_genreHeader = () => {
     const [gender_val] = gender;
   
     return (
-      <Box as="header" bg="#1DA1F2" py="4" color="white" mt="0">
+    <Box as="header" bg="#1DA1F2" py="3" color="white" position="fixed" top="0" left="0" right="0" zIndex="1">
         <Text fontSize="2xl" fontWeight="bold" textAlign="center">
           {gender_val === 1 && "男子向け"}{gender_val === 2 && "女子向け"}の
           {type === 1 && "キャラクター"}{type === 2 && "ブランド"}

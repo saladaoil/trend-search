@@ -5,7 +5,7 @@ const Footer = () => {
 
   const footerStyle = {
     // フッターのスタイル
-    height: "10%",
+    height: "12%",
     backgroundColor: "#FFFFFF",
     display: "flex",
     justifyContent: "space-between",

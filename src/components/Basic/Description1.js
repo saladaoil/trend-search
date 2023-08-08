@@ -4,7 +4,6 @@ import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack,Divider } from '@chakra-ui/react';
 import Header from '../../ui/Header';
-import Des1 from '../images/Dis1 image.png';
 
 
 // ホームのURL

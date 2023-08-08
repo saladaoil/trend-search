@@ -10,15 +10,10 @@ const AppBartype = () => {
   return (
     <div className="custom-appbar">
       <div className="appbar-content">
-        {/* Add your app bar content here, e.g., navigation items, logo, etc. */}
         <Box position='fixed'>
         <Text fontSize='25px'as='b'>
         {genre}の商品</Text>
-        </Box> 
-
-        
-
-        
+        </Box>   
       </div>
     </div>
   );

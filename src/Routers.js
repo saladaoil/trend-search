@@ -1,8 +1,6 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Description1 from "./components/Basic/Description1";
 import Favorite from "./components/Basic/Favorite";
-import Description3 from "./components/Basic/Description3";
-import Description4 from "./components/Basic/Description4";
 import Splash from "./components/Basic/Splash";
 import Firstchoice from "./components/Basic/Firstchoice";
 import Gender from "./components/trend_question/Gender";
@@ -49,8 +47,6 @@ const Routers = () => {
                 <Route path={`${homeUrl}/`} element={<Splash/>}/>
                 <Route path={`${homeUrl}/Description1`} element={<Description1/>}/>
                 <Route path={`${homeUrl}/favorite`} element={<Favorite/>}/>
-                <Route path={`${homeUrl}/Description3`} element={<Description3/>}/>
-                <Route path={`${homeUrl}/Description4`} element={<Description4/>}/>
                 <Route path={`${homeUrl}/firstchoice`} element={<Firstchoice/>}/>
                 <Route path={`${homeUrl}/gender`} element={<Gender/>}/>
                 <Route path={`${homeUrl}/age`} element={<Age/>}/>

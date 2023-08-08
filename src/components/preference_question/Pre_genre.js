@@ -74,6 +74,8 @@ const Pre_genre = () => {
   return (
     <>
       <PregenreHeader/>   
+      <Box mt="70px">
+
       <Stack spacing={['8', '8', '10']} mt="8" width="100%"  >
       <ul>
         {/* 現在のページのおもちゃの表示データをマップして表示 */}
@@ -86,6 +88,7 @@ const Pre_genre = () => {
         })}
       </ul>
       </Stack>
+      </Box>
       <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
         戻る
       </Button>
@@ -102,9 +105,9 @@ const Pre_genre = () => {
           <PopoverArrow />
             <PopoverCloseButton size='lg'/>
             <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='3xl'>{gender === 1 && "男子向け"}{gender === 2 && "女子向け"}の
-          {type === 1 && "キャラクター"}{type === 2 && "ブランド"}一覧から選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='3xl'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>気になる{gender === 1 && "男子向け"}{gender === 2 && "女子向け"}の
+          {type === 1 && "キャラクター"}{type === 2 && "ブランド"}を選択してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>タップすることで選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/好みから選ぶ/ジャンル選択画面" target="_blank">
                 <Button colorScheme='twitter'>ヘルプページ</Button>

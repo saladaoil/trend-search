@@ -124,6 +124,7 @@ const Stuffedtoy = () => {
       </Stack>
       </Flex>
       <Button onClick={() => stuffedtoy_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+        戻る
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
