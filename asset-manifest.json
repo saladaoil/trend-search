@@ -1,21 +1,17 @@
 {
   "files": {
     "main.css": "/trend-search/static/css/main.4971f01a.css",
-    "main.js": "/trend-search/static/js/main.6653b1c8.js",
+    "main.js": "/trend-search/static/js/main.3a90a072.js",
     "static/js/787.60f7c680.chunk.js": "/trend-search/static/js/787.60f7c680.chunk.js",
-    "static/media/Des3 image.png": "/trend-search/static/media/Des3 image.bff191633a70327b3934.png",
     "service-worker.js": "/trend-search/service-worker.js",
-    "static/media/stepper3.png": "/trend-search/static/media/stepper3.a5ca4a4769dadc6fe435.png",
-    "static/media/stepper4.png": "/trend-search/static/media/stepper4.6731e610d5b3a66485e2.png",
-    "static/media/Dis1 image.png": "/trend-search/static/media/Dis1 image.90db8452063387ed2d72.png",
     "static/media/Trend Icon.png": "/trend-search/static/media/Trend Icon.e98862dce9c476e1a2bf.png",
     "index.html": "/trend-search/index.html",
     "main.4971f01a.css.map": "/trend-search/static/css/main.4971f01a.css.map",
-    "main.6653b1c8.js.map": "/trend-search/static/js/main.6653b1c8.js.map",
+    "main.3a90a072.js.map": "/trend-search/static/js/main.3a90a072.js.map",
     "787.60f7c680.chunk.js.map": "/trend-search/static/js/787.60f7c680.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4971f01a.css",
-    "static/js/main.6653b1c8.js"
+    "static/js/main.3a90a072.js"
   ]
 }
