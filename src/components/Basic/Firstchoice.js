@@ -15,22 +15,86 @@ import {
 } from '@chakra-ui/react'
 import '../Basic/help.css'
 
+import {
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionPanel,
+  AccordionIcon,
+} from '@chakra-ui/react'
+import { useDisclosure } from '@chakra-ui/react'
+
+
+import { Divider } from '@chakra-ui/react'
+
+
 
 const homeUrl = process.env.PUBLIC_URL;
 
 const Firstchoice = () => {
 const navigate = useNavigate()
 
+const { isOpen, onOpen, onClose } = useDisclosure()
+const cancelRef = React.useRef()
+
+
+
   return (
     <>
+
       <Header text="検索方法選択"/>
+      
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
+        <Box>
+        <Text fontSize="2xl" fontWeight="bold" textAlign="center" mt="20" >
         検索方法を選択してください
-      </Text>
-        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="4" mt="20">
+        </Text>
+        <Accordion defaultIndex={[1]} allowMultiple>
+  <AccordionItem>
+    <h2>
+    <AccordionButton  _expanded={{ bg: '#1da1f2', color: 'white' }}>
+        <Box as="span" flex='1' textAlign='left'>
+          検索方法の選び方
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={1}>
+    <h2>
+
+    <Box as="span" flex='1' textAlign='left' position='left'>
+      <Text fontSize='xl'>流行:流行を知りたい人向け</Text>
+      <Text fontSize='xl'>好み:好みを知っている人向け
+
+              </Text> 
+              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/検索方法選択画面" target="_blank">
+                <Button  colorScheme='twitter' size='sm' variant='ghost' mt="1">詳しくはこちら</Button>
+              </a>     
+      </Box>
+      </h2>
+
+
+    </AccordionPanel>
+  </AccordionItem>
+</Accordion>
+
+
+        </Box>
+
+
+        
+
+
+
+
+      
+
+
+
+        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="4" mt="10">
           流行から選ぶ
-        </Button>
+
+                  </Button>
         <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="4" mt="10">
           好みから選ぶ
         </Button>
