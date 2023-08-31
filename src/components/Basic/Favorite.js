@@ -64,7 +64,7 @@ const SelectedToysPage = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='1%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius"z-index= '2' >
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius"z-index= '2' >
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -76,7 +76,7 @@ const SelectedToysPage = () => {
             <PopoverBody><Text fontSize='3xl'>お気に入り一覧から商品を削除する場合は「削除」をタップしてください。</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/基本画面/お気に入り画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
@@ -84,7 +84,7 @@ const SelectedToysPage = () => {
       </Box>
         {selectedToyNumbers.length > 0 ? (
           <VStack spacing={1} align='stretch'>
-                <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "1%", left: "5%" }} variant='outline' colorScheme='twitter'  zIndex= '1'>
+                <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "1%", left: "5%" }} variant='outline' colorscheme='twitter'  zIndex= '1'>
                 戻る
               </Button>
 
@@ -106,7 +106,7 @@ const SelectedToysPage = () => {
                     </Flex>
                   </a>
                   <Flex justifyContent="flex-end" position="absolute" bottom="1" right="1" w="100%">
-                    <Button size='sm' colorScheme='gray' onClick={() => handleDeleteToyName(toyNumber)}>削除</Button>
+                    <Button size='sm' colorscheme='gray' onClick={() => handleDeleteToyName(toyNumber)}>削除</Button>
                   </Flex>
 
                 </Flex>
@@ -120,7 +120,7 @@ const SelectedToysPage = () => {
                   商品はありません
           </Text>
             <Text fontSize="2xl" color="gray" textAlign="left" mt="1%">
-            商品一覧から <Button size='sm' colorScheme='blackAlpha'> 後で見る </Button>を選択して追加できます
+            商品一覧から <Button size='sm' colorscheme='blackAlpha'> 後で見る </Button>を選択して追加できます
             </Text>
 
             <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="lg" mt="15%">
@@ -159,7 +159,7 @@ const SelectedToysPage = () => {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme="red" mr={3} onClick={confirmDeleteToy}>
+            <Button colorscheme="red" mr={3} onClick={confirmDeleteToy}>
               削除
             </Button>
             <Button variant="ghost" onClick={() => setIsModalOpen(false)}>キャンセル</Button>

@@ -68,7 +68,7 @@ const cancelRef = React.useRef()
 
               </Text> 
               <a href="https://sites.google.com/view/trend-help/使い方/基本画面/検索方法選択画面" target="_blank">
-                <Button  colorScheme='twitter' size='sm' variant='ghost' mt="1">詳しくはこちら</Button>
+                <Button  colorscheme='twitter' size='sm' variant='ghost' mt="1">詳しくはこちら</Button>
               </a>     
       </Box>
       </h2>
@@ -103,14 +103,14 @@ const cancelRef = React.useRef()
         </Button>
       </Flex>
 
-      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         使い方
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -123,7 +123,7 @@ const cancelRef = React.useRef()
             <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

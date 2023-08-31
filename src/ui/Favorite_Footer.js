@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   return (
-    <Box as="footer" style={footerStyle} colorScheme='twitter'>
+    <Box as="footer" style={footerStyle} colorscheme='twitter'>
       <Text fontSize="2xl" fontWeight="bold" textAlign="center">
       </Text>
     </Box>

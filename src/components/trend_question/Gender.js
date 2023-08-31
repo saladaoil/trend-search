@@ -50,10 +50,10 @@ const Gender = () => {
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
-        <Button onClick={() => boy_handleClick()} size="lg" colorScheme='messenger'>
+        <Button onClick={() => boy_handleClick()} size="lg" colorscheme='messenger'>
           男の子
         </Button>
-        <Button onClick={() => girl_handleClick()} size="lg" colorScheme='red'>
+        <Button onClick={() => girl_handleClick()} size="lg" colorscheme='red'>
           女の子
         </Button>
         <Button onClick={() => skip_handleClick()} size="lg">
@@ -61,14 +61,14 @@ const Gender = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -81,7 +81,7 @@ const Gender = () => {
             <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/性別選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
