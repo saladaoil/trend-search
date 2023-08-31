@@ -35,16 +35,13 @@ const Result = () => {
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
   const other = useSelector((state) => state.other);
 
-  // State to store selected toy names
   const [selectedToys, setSelectedToys] = useState([]);
 
-  // Effect to load saved toy names from localStorage on component mount
   useEffect(() => {
     const savedToys = JSON.parse(localStorage.getItem('selectedToys')) || [];
     setSelectedToys(savedToys);
   }, []);
 
-  // Function to handle saving selected toy names to localStorage
   const handleSaveToyName = (toyName) => {
     const updatedToys = [...selectedToys, toyName];
     setSelectedToys(updatedToys);
@@ -78,13 +75,16 @@ const Result = () => {
 
 
   const back_handleClick = () => {
-    const sportValue = sport; // vehicleの値を一時的に保持
-    const videogameValue = videogame; // vehicleの値を一時的に保持
-    const vehicleValue = vehicle; // vehicleの値を一時的に保持
-    const craftValue = craft; // vehicleの値を一時的に保持
-    const dollValue = doll; // vehicleの値を一時的に保持
-    const stuffedtoyValue = stuffedtoy; // の値を一時的に保持
-    const otherValue = other; // の値を一時的に保持
+    const sportValue = sport; 
+    const videogameValue = videogame;
+    const vehicleValue = vehicle;
+    const craftValue = craft; 
+    const dollValue = doll;
+    const stuffedtoyValue = stuffedtoy;
+    const otherValue = other; 
+
+    console.log(sportValue)
+    console.log(otherValue)
   
     dispatch(result_Back());
 
@@ -100,8 +100,6 @@ const Result = () => {
   
     resetActions.forEach(action => dispatch(action));
 
-  
-    // resetVehicle()の後にナビゲート先のURLを取得
     const navigateUrl =
       navigateUrls.BACK[sportValue] ||
       navigateUrls.BACK[videogameValue] ||
@@ -114,14 +112,10 @@ const Result = () => {
     navigate(navigateUrl);
   };
   
-  //localStorage.removeItem("selectedToys");
-  
   // おもちゃのデータを取得
   const toys = toys_db; 
   
   // おもちゃをフィルタリングする
-  
-
   let toy_filterResult = toys.filter(function (value) {
     return (
       (value.gender === gender || value.gender === common_gender || value.gender > all_gender) &&
@@ -172,9 +166,6 @@ const goToPrevPage = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-  console.log("other" + other)
-  console.log("stuffedtoy" + stuffedtoy)
-
     // Function to handle clicking the toy card
     const handleCardClick = (e, toy) => {
       // Check if the click target is the button, if so, do nothing
@@ -201,14 +192,19 @@ const goToPrevPage = () => {
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='3xl'>戻る</Text></PopoverHeader>
-
-            <PopoverBody>      <Button onClick={() => back_handleClick()} size="md" >
-      質問に戻る
-      </Button></PopoverBody>
-            <PopoverBody>      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md">
-      はじめから
-      </Button></PopoverBody>
+            <PopoverHeader>
+              <Text fontSize='3xl'>戻る</Text>
+            </PopoverHeader>
+            <PopoverBody>      
+              <Button onClick={() => back_handleClick()} size="md" >
+              質問に戻る
+              </Button>
+            </PopoverBody>
+            <PopoverBody>      
+              <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md">
+                はじめから
+              </Button>
+            </PopoverBody>
           </PopoverContent>
         </Popover>
       </Box>

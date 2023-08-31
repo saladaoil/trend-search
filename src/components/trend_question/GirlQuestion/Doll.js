@@ -104,7 +104,7 @@ const Doll = () => {
   }, [dispatch]);
 
   
-  console.log("other" + Other)
+
 
   return (
     <>

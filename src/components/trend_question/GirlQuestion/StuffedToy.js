@@ -103,7 +103,6 @@ const Stuffedtoy = () => {
     };
   }, [dispatch]);
 
-  console.log("other" + other)
 
   return (
     <>
