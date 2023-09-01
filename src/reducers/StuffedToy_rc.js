@@ -1,11 +1,11 @@
 const stuffedtoyReducer = (state = null, action) => {
     switch(action.type) {
         case "STUFFEDTOY_YES":
-            return state = "ぬいぐるみ";
+            return state = ["stuffedtoy"];
         case "STUFFEDTOY_NO":
-            return state = "その他";
+            return state = ["other", "stuffedtoy_other"];
         case "STUFFEDTOY_BACK":
-            return state = "BACK";
+            return state = ["BACK"];
         case "RESET_STUFFEDTOY":
             return [];
         default:

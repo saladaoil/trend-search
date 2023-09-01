@@ -1,9 +1,9 @@
 const videogameReducer = (state = null, action) => {
     switch(action.type) {
         case "VIDEOGAME_YES":
-            return state = "ビデオゲーム";
+            return state = ["videogame"];
         case "VIDEOGAME_NO":
-            return state = "その他";
+            return state = ["other", "videogame_other"];
         case "RESET_VIDEOGAME":
             return state = [];
         default:

@@ -35,6 +35,8 @@ const Result = () => {
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
   const other = useSelector((state) => state.other);
 
+
+
   const [selectedToys, setSelectedToys] = useState([]);
 
   useEffect(() => {
@@ -63,13 +65,20 @@ const Result = () => {
 
   const navigateUrls = {
     BACK:{
-          スポーツ: `${homeUrl}/sport`,
-          ビデオゲーム: `${homeUrl}/videogame`,
-          乗り物: `${homeUrl}/vehicle`,
-          工作: `${homeUrl}/craft`,
-          人形: `${homeUrl}/doll`,
-          ぬいぐるみ: `${homeUrl}/stuffedtoy`,
-          その他: `${homeUrl}/exercise`,
+          sport: `${homeUrl}/sport`,
+          videogame: `${homeUrl}/videogame`,
+          vehicle: `${homeUrl}/vehicle`,
+          craft: `${homeUrl}/craft`,
+          doll: `${homeUrl}/doll`,
+          stuffedtoy: `${homeUrl}/stuffedtoy`,
+          other:{
+            sport_other: `${homeUrl}/sport`,
+            videogame_other: `${homeUrl}/videogame`,
+            vehicle_other: `${homeUrl}/vehicle`,
+            craft_other: `${homeUrl}/craft`,
+            doll_other: `${homeUrl}/doll`,
+            stuffedtoy_other: `${homeUrl}/stuffedtoy`,
+          }
     } 
   };
 
@@ -81,10 +90,9 @@ const Result = () => {
     const craftValue = craft; 
     const dollValue = doll;
     const stuffedtoyValue = stuffedtoy;
-    const otherValue = other; 
+    // const otherValue = other; 
 
-    console.log(sportValue)
-    console.log(otherValue)
+    console.log(videogameValue)
   
     dispatch(result_Back());
 
@@ -95,7 +103,7 @@ const Result = () => {
       resetCraft(),
       resetDoll(),
       resetStuffedtoy(),
-      resetOther(),
+      // resetOther(),
     ];
   
     resetActions.forEach(action => dispatch(action));
@@ -107,7 +115,12 @@ const Result = () => {
       navigateUrls.BACK[craftValue] ||
       navigateUrls.BACK[dollValue] ||
       navigateUrls.BACK[stuffedtoyValue] ||
-      navigateUrls.BACK[otherValue];
+      navigateUrls.BACK.other[sportValue[1]] ||
+      navigateUrls.BACK.other[videogameValue[1]] ||
+      navigateUrls.BACK.other[vehicleValue[1]] ||
+      navigateUrls.BACK.other[craftValue[1]] ||
+      navigateUrls.BACK.other[dollValue[1]] ||
+      navigateUrls.BACK.other[stuffedtoyValue[1]]
   
     navigate(navigateUrl);
   };
@@ -121,13 +134,13 @@ const Result = () => {
       (value.gender === gender || value.gender === common_gender || value.gender > all_gender) &&
       !(value.min_age > to_age || value.max_age < from_age) &&
       (
-        (value.category && value.category === sport) ||
-        (value.category && value.category === videogame) ||
-        (value.category && value.category === vehicle) ||
-        (value.category && value.category === craft) ||
-        (value.category && value.category === doll) ||
-        (value.category && value.category === stuffedtoy) ||
-        (value.category && value.category === other)
+        (value.category && value.category === sport[0]) ||
+        (value.category && value.category === videogame[0]) ||
+        (value.category && value.category === vehicle[0]) ||
+        (value.category && value.category === craft[0]) ||
+        (value.category && value.category === doll[0]) ||
+        (value.category && value.category === stuffedtoy[0])
+        // (value.category && value.category === other)
       ) 
     );
   });

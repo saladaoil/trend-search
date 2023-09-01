@@ -36,35 +36,35 @@ const Doll = () => {
   const navigateUrls = {
     0: {
       幼稚園: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },
       低学年: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },
       選択なし: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/craft`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/craft`,
         BACK: `${homeUrl}/vehicle`,
       }
     },
     2: {
       幼稚園: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/stuffedtoy`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       }
     },
@@ -89,7 +89,7 @@ const Doll = () => {
 
   // dollのステートが変更されるたびに適切なURLに遷移する
   useEffect(() => {
-    const navigateUrl = navigateUrls[gender[0]][age[2]][doll] || navigateUrls[gender[0]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][doll[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doll]);
@@ -181,35 +181,35 @@ export default Doll;
 //   const navigateUrls = {
 //     0: {
 //       幼稚園: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/vehicle`,
 //       },
 //       低学年: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/vehicle`,
 //       },
 //       選択なし: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/craft`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/craft`,
 //         BACK: `${homeUrl}/vehicle`,
 //       }
 //     },
 //     2: {
 //       幼稚園: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       低学年: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       選択なし: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/stuffedtoy`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/stuffedtoy`,
 //         BACK: `${homeUrl}/game`,
 //       }
 //     },

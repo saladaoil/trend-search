@@ -1,11 +1,11 @@
 const dollReducer = (state = null, action) => {
     switch(action.type) {
         case "DOLL_YES":
-            return state = "人形";
+            return state = ["doll"];
         case "DOLL_NO":
-            return state = "その他";
+            return state = ["other", "doll_other"];
         case "DOLL_BACK":
-            return state = "BACK";
+            return state = ["BACK"];
         case "RESET_DOLL":
             return [];
         default:

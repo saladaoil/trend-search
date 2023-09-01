@@ -38,45 +38,45 @@ const Vehicle = () => {
   const navigateUrls = {
     0: {
       幼稚園: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/doll`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/doll`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },
       中学年: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/stuffedtoy`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },
       高学年: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/stuffedtoy`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/doll`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       }
     },
     1: {
       幼稚園: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        乗り物: `${homeUrl}/result`,
-        その他: `${homeUrl}/craft`,
+        vehicle: `${homeUrl}/result`,
+        other: `${homeUrl}/craft`,
         BACK: `${homeUrl}/game`,
       }
     },
@@ -84,13 +84,13 @@ const Vehicle = () => {
 
   // 「はい」ボタンがクリックされた時の処理
   const vehicle_Yes_handleClick = () => {
-    dispatch(vehicle_Yes()); // Reduxストアのvehicleに"乗り物"という文字列を保持させる
+    dispatch(vehicle_Yes()); // Reduxストアのvehicleに"vehicle"という文字列を保持させる
   };
 
   // 「いいえ」ボタンがクリックされた時の処理
   const vehicle_No_handleClick = () => {
-    dispatch(vehicle_No()); // Reduxストアのvehicleに"その他"という文字列を保持させる(画面遷移に使用する)
-    dispatch(other())       // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(vehicle_No()); // Reduxストアのvehicleに"other"という文字列を保持させる(画面遷移に使用する)
+    dispatch(other())       // Reduxストアのotherに"other"という文字列を保持させる(result.jsのfilterで使用する)
   };
 
   // 「戻る」ボタンがクリックされた時の処理
@@ -100,7 +100,7 @@ const Vehicle = () => {
 
   useEffect(() => {
     // vehicleの状態に応じて適切なURLに遷移する
-    const navigateUrl = navigateUrls[gender[0]][age[2]][vehicle] || navigateUrls[gender[0]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][vehicle[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [vehicle]);
@@ -187,45 +187,45 @@ export default Vehicle;
 //   const navigateUrls = {
 //     0: {
 //       幼稚園: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/doll`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/doll`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       低学年: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/doll`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/doll`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       中学年: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/stuffedtoy`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/stuffedtoy`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       高学年: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/stuffedtoy`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/stuffedtoy`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       選択なし: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/doll`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/doll`,
 //         BACK: `${homeUrl}/game`,
 //       }
 //     },
 //     1: {
 //       幼稚園: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       低学年: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       選択なし: {
-//         乗り物: `${homeUrl}/result`,
-//         その他: `${homeUrl}/craft`,
+//         vehicle: `${homeUrl}/result`,
+//         other: `${homeUrl}/craft`,
 //         BACK: `${homeUrl}/game`,
 //       }
 //     },

@@ -37,7 +37,7 @@ const Videogame = () => {
   // 「いいえ」ボタンがクリックされた時の処理
   const videogame_No_handleClick = () => {
     dispatch(videogame_No()); // videogame_Noアクションをdispatchする
-    dispatch(other())
+    // dispatch(other())
     navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
   }
 
