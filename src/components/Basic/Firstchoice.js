@@ -110,7 +110,7 @@ const cancelRef = React.useRef()
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>

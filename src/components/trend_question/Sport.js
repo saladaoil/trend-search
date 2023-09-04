@@ -37,7 +37,6 @@ const Sport = () => {
   // 「いいえ」ボタンがクリックされた時の処理
   const sport_No_handleClick = () => {
     dispatch(sport_No());
-    dispatch(other())
     navigate(`${homeUrl}/result`);
   }
 
@@ -66,7 +65,7 @@ const Sport = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>

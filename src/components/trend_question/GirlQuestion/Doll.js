@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle, other, resetOther } from "../../../actions";
+import { doll_Yes, doll_No, doll_Back, resetCraft, resetVehicle,} from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "../styles.css";
@@ -21,16 +21,18 @@ const homeUrl = process.env.PUBLIC_URL;
 
 // 人形コンポーネント
 const Doll = () => {
-  // Reduxストアから必要なステートを取得する
-  const gender = useSelector((state) => state.gender); // 性別
-  const age = useSelector((state) => state.age); // 学年
-  const doll = useSelector((state) => state.doll); // 人形好きかどうかの回答
-  const vehcle = useSelector((state) => state.vehcle);
-  const Other = useSelector((state) => state.other);
 
-  // React Routerのnavigate関数とReduxのdispatch関数を取得する
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
+
+  // Reduxストアから必要なステートを取得する
+  const gender = useSelector((state) => state.gender);
+  const age = useSelector((state) => state.age);
+  const doll = useSelector((state) => state.doll);
+
 
   // ナビゲーションのURLマッピング
   const navigateUrls = {
@@ -72,22 +74,21 @@ const Doll = () => {
 
   // 「はい」ボタンがクリックされたときの処理
   const doll_Yes_handleClick = () => {
-    dispatch(doll_Yes()); // doll_Yesアクションをdispatchする
+    dispatch(doll_Yes()); // Reduxストアのdollに"doll"という文字列を保持させる
   };
 
   // 「いいえ」ボタンがクリックされたときの処理
   const doll_No_handleClick = () => {
-    dispatch(doll_No()); // doll_Noアクションをdispatchする
-    dispatch(other())
+    dispatch(doll_No()); // Reduxストアのdollに"doll_other"という文字列を保持させる
   };
 
   // 「戻る」ボタンがクリックされたときの処理
   const doll_back_handleClick = () => {
-    dispatch(doll_Back()); // doll_Backアクションをdispatchする
-    dispatch(resetVehicle()); // resetVehicleアクションをdispatchしてReduxストアの値をリセットする
+    dispatch(doll_Back()); // Reduxストアのdollに"BACK"という文字列を保持させる
+    dispatch(resetVehicle()); // Reduxストアのvehicleをリセットする
   };
 
-  // dollのステートが変更されるたびに適切なURLに遷移する
+  // dollの状態に応じて適切なURLに遷移する
   useEffect(() => {
     const navigateUrl = navigateUrls[gender[0]][age[2]][doll[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
@@ -97,9 +98,8 @@ const Doll = () => {
   // コンポーネントがアンマウントされるときにresetCraftアクションをdispatchしてcraftの値をリセットする
   useEffect(() => {
     return () => {
-      dispatch(resetCraft());
-      dispatch(resetVehicle())
-      dispatch(resetOther())
+      dispatch(resetCraft()); // Reduxストアのcraftをリセットする
+      dispatch(resetVehicle()) // Reduxストアのvehicleをリセットする
     };
   }, [dispatch]);
 
@@ -115,13 +115,13 @@ const Doll = () => {
       </Text>
       <Stack mt="30%" width="100%" maxW="400px">
         <Flex direction="row" justify="center">
-            <Button onClick={() => doll_Yes_handleClick()} size="xl" mr="10%">
-              はい
-            </Button>
-            <Button onClick={() => doll_No_handleClick()} size="xl" >
-              いいえ
-            </Button>
-          </Flex>
+          <Button onClick={() => doll_Yes_handleClick()} size="xl" mr="10%">
+            はい
+          </Button>
+          <Button onClick={() => doll_No_handleClick()} size="xl" >
+            いいえ
+          </Button>
+        </Flex>
       </Stack>
       </Flex>
       <Button onClick={() => doll_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
@@ -131,9 +131,9 @@ const Doll = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </button>
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

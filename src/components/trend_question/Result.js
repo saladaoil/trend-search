@@ -226,7 +226,7 @@ const goToPrevPage = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' top='1%' right='3%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="reslt-radius">
+              <button height='50px' width='80px' colorschem='twitter' className="reslt-radius">
                 <Text as='b' fontSize='lg'> ? </Text>
               </button>
             </Box>
@@ -239,7 +239,7 @@ const goToPrevPage = () => {
             <PopoverBody><Text fontSize='3xl'>「後で見る」からお気に入りに追加できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/基本画面/商品一覧画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorschem='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
@@ -283,12 +283,12 @@ const goToPrevPage = () => {
                 w="100%" // Make the button container the full width of the card
               >
                 {!isToyNumberSaved(toy.number) && (
-                  <Button onClick={() => handleSaveToyName(toy.number)} size='sm' colorScheme='blackAlpha'>
+                  <Button onClick={() => handleSaveToyName(toy.number)} size='sm' colorschem='blackAlpha'>
                     後で見る
                     </Button>
                 )}
                 {isToyNumberSaved(toy.number) && (
-                  <Button onClick={() => handleDeleteToyName(toy.number)} size="sm" colorScheme="gray">
+                  <Button onClick={() => handleDeleteToyName(toy.number)} size="sm" colorschem="gray">
                     削除
                   </Button>
                 )}

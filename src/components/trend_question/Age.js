@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { kid, lowGrade, middleGrade, highGrade, notSelect_Age } from '../../actions';
 import { useNavigate } from 'react-router-dom';
 import { Button, Text, Flex, Stack } from '@chakra-ui/react'; // Import Chakra UI components
@@ -20,46 +20,48 @@ import '../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Age = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  const gender = useSelector((state) => state.gender); // 性別を取得する
+  // 画面遷移を行うための関数
+  const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
+  const dispatch = useDispatch();
 
   // 幼稚園が選択された時の処理
   const kid_handleClick = () => {
-    dispatch(kid()); // 4,6,「幼稚園」という値を取得する
+    dispatch(kid()); // Reduxストアのageに4,6,"幼稚園"という値を保持させる
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   };
 
   // 小学生（低学年）が選択された時の処理
   const low_handleClick = () => {
-    dispatch(lowGrade()); // 6,8,「低学年」という値を取得する
+    dispatch(lowGrade()); // Reduxストアのageに6,8,"低学年"という値を保持させる
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   };
 
   // 小学生（中学年）が選択された時の処理
   const middle_handleClick = () => {
-    dispatch(middleGrade()); // 8,10,「中学年」という値を取得する
+    dispatch(middleGrade()); // Reduxストアのageに8,10,"中学年"という値を保持させる
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   };
 
   // 小学生（高学年）が選択された時の処理
   const high_handleClick = () => {
-    dispatch(highGrade()); // 10,12.「高学年」という値を取得する
+    dispatch(highGrade()); // Reduxストアのageに10,12,"高学年"という値を保持させる
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   };
 
   // 選択しないが選択された時の処理
   const skip_handleClick = () => {
-    dispatch(notSelect_Age()); // 1,15,「選択なし」という値を取得する
+    dispatch(notSelect_Age()); // Reduxストアのageに1,15,"選択なし"という値を保持させる
     navigate(`${homeUrl}/exercise`); // 運動の質問ページに遷移
   };
 
   return (
     <>
-       <Header text="流行から選ぶ"/>
+      <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4" >
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
+        <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="20">
           お孫さんの年齢選択
         </Text>
         <Stack spacing={['6', '8', '8']} mt="5" width="100%" maxW="400px">
@@ -79,7 +81,6 @@ const Age = () => {
             選択しない
           </Button>
         </Stack>
-        {/* <Text fontSize="xl">性別：{gender[3]}</Text> */}
       </Flex>
       <Button onClick={() => navigate(`${homeUrl}/gender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
@@ -88,9 +89,9 @@ const Age = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </button>
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

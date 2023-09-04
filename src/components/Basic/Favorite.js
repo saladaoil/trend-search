@@ -64,7 +64,7 @@ const SelectedToysPage = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='1%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius"z-index= '2' >
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius"z-index= '2' >
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>

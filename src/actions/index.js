@@ -4,17 +4,6 @@ export const result_Back = () => {
     };
 }
 
-export const other = () => {
-    return{
-        type: "OTHER",
-    };
-}
-export const resetOther = () => {
-    return{
-        type: "RESET_OTHER",
-    };
-}
-
 export const boy = () => {
     return{
         type: "BOY",
@@ -55,87 +44,91 @@ export const highGrade = () => {
         type: "AGE4",
     };
 }
+
 export const notSelect_Age = () => {
     return{
         type: "AGE5",
     };
 }
 
-
 export const exercise_Yes = () => {
     return{
         type: "EXERCISE_YES",
     };
 }
+
 export const exercise_No = () => {
     return{
         type: "EXERCISE_NO",
     };
 }
 
-
 export const sport_Yes = () => {
     return{
         type: "SPORT_YES",
     };
 }
+
 export const sport_No = () => {
     return{
         type: "SPORT_NO",
     };
 }
+
 export const resetSport = () => {
     return{
         type: "RESET_SPORT",
     };
 }
 
-
 export const game_Yes = () => {
     return{
         type: "GAME_YES",
     };
 }
+
 export const game_No = () => {
     return{
         type: "GAME_NO",
     };
 }
 
-
 export const videogame_Yes = () => {
     return{
         type: "VIDEOGAME_YES",
     };
 }
+
 export const videogame_No = () => {
     return{
         type: "VIDEOGAME_NO",
     };
 }
+
 export const resetVideogame = () => {
     return{
         type: "RESET_VIDEOGAME",
     };
 }
 
-
-
 export const vehicle_Yes = () => {
     return{
         type: "VEHICLE_YES",
     };
 }
+
 export const vehicle_No = () => {
     return{
         type: "VEHICLE_NO",
     };
 }
+
 export const vehicle_Back = () => {
     return{
         type: "VEHICLE_BACK",
     };
 }
+
 export const resetVehicle = () => {
     return {
       type: "RESET_VEHICLE"
@@ -147,28 +140,31 @@ export const doll_Yes = () => {
         type: "DOLL_YES",
     };
 }
+
 export const doll_No = () => {
     return{
         type: "DOLL_NO",
     };
 }
+
 export const doll_Back = () => {
     return{
         type: "DOLL_BACK",
     };
 }
+
 export const resetDoll = () => {
     return{
         type: "RESET_DOLL",
     };
 }
 
-
 export const craft_Yes = () => {
     return{
         type: "CRAFT_YES",
     };
 }
+
 export const craft_No = () => {
     return{
         type: "CRAFT_NO",
@@ -186,17 +182,12 @@ export const resetCraft = () => {
     };
 }
 
-
 export const stuffedtoy_Yes = () => {
     return{
         type: "STUFFEDTOY_YES",
     };
 }
-// export const stuffedtoy_No = () => {
-//     return{
-//         type: "CATEGORY_NO",
-//     };
-// }
+
 export const stuffedtoy_No = () => {
     return{
         type: "STUFFEDTOY_NO",
