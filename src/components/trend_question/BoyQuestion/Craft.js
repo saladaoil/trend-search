@@ -36,45 +36,45 @@ const Craft = () => {
   const navigateUrls = {
     0: {
       幼稚園:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/doll`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },         
       低学年:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/doll`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/doll`,
         BACK: `${homeUrl}/game`,
       },   
       中学年:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/stuffedtoy`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/stuffedtoy`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし: {
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/stuffedtoy`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/doll`,
       }
     },                 
     1:{ 
       中学年:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし:{
-        工作:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        craft:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },           
     },
@@ -82,13 +82,13 @@ const Craft = () => {
 
   // 「はい」ボタンがクリックされた時の処理
   const craft_Yes_handleClick = () => {
-    dispatch(craft_Yes()); // Reduxストアのcraftに"工作"という文字列を保持させる
+    dispatch(craft_Yes()); // Reduxストアのcraftに"craft"という文字列を保持させる
   };
 
   // 「いいえ」ボタンがクリックされた時の処理
   const craft_No_handleClick = () => {
-    dispatch(craft_No()); // Reduxストアのcraftに"その他"という文字列を保持させる(画面遷移に使用する)
-    dispatch(other());    // Reduxストアのotherに"その他"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(craft_No()); // Reduxストアのcraftに"other"という文字列を保持させる(画面遷移に使用する)
+    dispatch(other());    // Reduxストアのotherに"other"という文字列を保持させる(result.jsのfilterで使用する)
   };
   
   // 「戻る」ボタンがクリックされた時の処理
@@ -100,7 +100,7 @@ const Craft = () => {
 
   useEffect(() => {
     // craftの状態に応じて適切なURLに遷移する
-    const navigateUrl = navigateUrls[gender[0]][age[2]][craft] || navigateUrls[gender[0]][age[2]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][craft[0]] || navigateUrls[gender[0]][age[2]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [craft]);
@@ -133,14 +133,14 @@ const Craft = () => {
           </Flex>
       </Stack>
       </Flex>
-      <Button onClick={() => craft_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+      <Button onClick={() => craft_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -153,7 +153,7 @@ const Craft = () => {
             <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/質問画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

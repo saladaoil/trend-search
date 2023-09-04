@@ -35,35 +35,35 @@ const Stuffedtoy = () => {
   const navigateUrls = {
     0: {
       中学年:{
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       },         
       高学年:{
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       },         
       選択なし: {
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/craft`,
       }
     },                 
     2:{ 
       中学年:{
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },      
       高学年:{
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },           
       選択なし: {
-        ぬいぐるみ:`${homeUrl}/result`,
-        その他:`${homeUrl}/result`,
+        stuffedtoy:`${homeUrl}/result`,
+        other:`${homeUrl}/result`,
         BACK: `${homeUrl}/doll`,
       }
     },
@@ -90,7 +90,7 @@ const Stuffedtoy = () => {
   
   // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
   useEffect(() => {
-    const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy] || navigateUrls[gender[0]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
@@ -103,7 +103,6 @@ const Stuffedtoy = () => {
     };
   }, [dispatch]);
 
-  console.log("other" + other)
 
   return (
     <>
@@ -123,14 +122,14 @@ const Stuffedtoy = () => {
           </Flex>
       </Stack>
       </Flex>
-      <Button onClick={() => stuffedtoy_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+      <Button onClick={() => stuffedtoy_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -143,7 +142,7 @@ const Stuffedtoy = () => {
             <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/質問画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
@@ -179,35 +178,35 @@ export default Stuffedtoy;
 //   const navigateUrls = {
 //     0: {
 //       中学年:{
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/craft`,
 //       },         
 //       高学年:{
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/craft`,
 //       },         
 //       選択なし: {
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/craft`,
 //       }
 //     },                 
 //     2:{ 
 //       中学年:{
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },      
 //       高学年:{
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },           
 //       選択なし: {
-//         ぬいぐるみ:`${homeUrl}/result`,
-//         その他:`${homeUrl}/result`,
+//         stuffedtoy:`${homeUrl}/result`,
+//         other:`${homeUrl}/result`,
 //         BACK: `${homeUrl}/doll`,
 //       }
 //     },

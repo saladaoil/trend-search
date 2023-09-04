@@ -52,6 +52,7 @@ const Firstchoice = () => {
         </Box>
         <Flex direction="column" maxW="450px" >
 
+<<<<<<< HEAD
           <Text fontSize="xl" mt="5" >
             最近の定番をチェック
           </Text>
@@ -64,6 +65,18 @@ const Firstchoice = () => {
           <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mt="1">
             好みから選ぶ
           </Button>
+=======
+    <Box as="span" flex='1' textAlign='left' position='left'>
+      <Text fontSize='xl'>流行:流行を知りたい人向け</Text>
+      <Text fontSize='xl'>好み:好みを知っている人向け
+
+              </Text> 
+              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/検索方法選択画面" target="_blank">
+                <Button  colorscheme='twitter' size='sm' variant='ghost' mt="1">詳しくはこちら</Button>
+              </a>     
+      </Box>
+      </h2>
+>>>>>>> 92dcc93d9bfe99d5743c1b2ec021c257b8738b7c
 
 
           <Text fontSize="xl" mt="8" >
@@ -75,15 +88,19 @@ const Firstchoice = () => {
         </Flex>
       </Flex>
 
+<<<<<<< HEAD
 
       <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+=======
+      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
+>>>>>>> 92dcc93d9bfe99d5743c1b2ec021c257b8738b7c
         使い方
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -96,7 +113,7 @@ const Firstchoice = () => {
             <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>

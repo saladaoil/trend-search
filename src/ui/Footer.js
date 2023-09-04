@@ -18,15 +18,15 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
     
 
   return (
-    <Box as="footer" style={footerStyle} colorScheme='twitter'>
+    <Box as="footer" style={footerStyle} colorscheme='twitter'>
       {pageNumber > 1 && (
-        <Button onClick={goToPrevPage} size="sm"variant='outline' colorScheme='twitter'>
+        <Button onClick={goToPrevPage} size="sm"variant='outline' colorscheme='twitter'>
           前のページ
         </Button>
       )}
       
       {pageNumber === 1 && (
-        <Button size="sm"variant='outline'colorScheme='blackAlpha'>
+        <Button size="sm"variant='outline'colorscheme='blackAlpha'>
       前のページ
       </Button>
       )}
@@ -39,7 +39,7 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
 
 
       {pageNumber < Math.ceil(toy_dis.length / itemsPerPage) && (
-        <Button onClick={goToNextPage} size="sm"variant='outline'colorScheme='twitter'>
+        <Button onClick={goToNextPage} size="sm"variant='outline'colorscheme='twitter'>
           次のページ
         </Button>
 
@@ -47,7 +47,7 @@ const Footer = ({ goToPrevPage, goToNextPage, pageNumber, toy_dis, itemsPerPage 
       )}
 
 {pageNumber === Math.ceil(toy_dis.length / itemsPerPage) && (
-        <Button size="sm"variant='outline'colorScheme='blackAlpha'>
+        <Button size="sm"variant='outline'colorscheme='blackAlpha'>
 次のページ
       </Button>
       )}

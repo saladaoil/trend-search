@@ -50,16 +50,16 @@ const Pre_gender = () => {
           お孫さんの性別選択
       </Text>
       <Stack spacing={['8', '8', '10']} mt="20" width="100%" maxW="400px">
-        <Button onClick={() => boy_handleClick()} size="lg" colorScheme='messenger'>
+        <Button onClick={() => boy_handleClick()} size="lg" colorscheme='messenger'>
           男の子
         </Button>
-        <Button onClick={() => girl_handleClick()} size="lg" colorScheme='red'>
+        <Button onClick={() => girl_handleClick()} size="lg" colorscheme='red'>
           女の子
         </Button>
 
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter' >
+      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter' >
         戻る
       </Button>
 

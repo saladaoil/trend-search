@@ -35,16 +35,15 @@ const Result = () => {
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
   const other = useSelector((state) => state.other);
 
-  // State to store selected toy names
+
+
   const [selectedToys, setSelectedToys] = useState([]);
 
-  // Effect to load saved toy names from localStorage on component mount
   useEffect(() => {
     const savedToys = JSON.parse(localStorage.getItem('selectedToys')) || [];
     setSelectedToys(savedToys);
   }, []);
 
-  // Function to handle saving selected toy names to localStorage
   const handleSaveToyName = (toyName) => {
     const updatedToys = [...selectedToys, toyName];
     setSelectedToys(updatedToys);
@@ -66,25 +65,34 @@ const Result = () => {
 
   const navigateUrls = {
     BACK:{
-          スポーツ: `${homeUrl}/sport`,
-          ビデオゲーム: `${homeUrl}/videogame`,
-          乗り物: `${homeUrl}/vehicle`,
-          工作: `${homeUrl}/craft`,
-          人形: `${homeUrl}/doll`,
-          ぬいぐるみ: `${homeUrl}/stuffedtoy`,
-          その他: `${homeUrl}/exercise`,
+          sport: `${homeUrl}/sport`,
+          videogame: `${homeUrl}/videogame`,
+          vehicle: `${homeUrl}/vehicle`,
+          craft: `${homeUrl}/craft`,
+          doll: `${homeUrl}/doll`,
+          stuffedtoy: `${homeUrl}/stuffedtoy`,
+          other:{
+            sport_other: `${homeUrl}/sport`,
+            videogame_other: `${homeUrl}/videogame`,
+            vehicle_other: `${homeUrl}/vehicle`,
+            craft_other: `${homeUrl}/craft`,
+            doll_other: `${homeUrl}/doll`,
+            stuffedtoy_other: `${homeUrl}/stuffedtoy`,
+          }
     } 
   };
 
 
   const back_handleClick = () => {
-    const sportValue = sport; // vehicleの値を一時的に保持
-    const videogameValue = videogame; // vehicleの値を一時的に保持
-    const vehicleValue = vehicle; // vehicleの値を一時的に保持
-    const craftValue = craft; // vehicleの値を一時的に保持
-    const dollValue = doll; // vehicleの値を一時的に保持
-    const stuffedtoyValue = stuffedtoy; // の値を一時的に保持
-    const otherValue = other; // の値を一時的に保持
+    const sportValue = sport; 
+    const videogameValue = videogame;
+    const vehicleValue = vehicle;
+    const craftValue = craft; 
+    const dollValue = doll;
+    const stuffedtoyValue = stuffedtoy;
+    // const otherValue = other; 
+
+    console.log(videogameValue)
   
     dispatch(result_Back());
 
@@ -95,13 +103,11 @@ const Result = () => {
       resetCraft(),
       resetDoll(),
       resetStuffedtoy(),
-      resetOther(),
+      // resetOther(),
     ];
   
     resetActions.forEach(action => dispatch(action));
 
-  
-    // resetVehicle()の後にナビゲート先のURLを取得
     const navigateUrl =
       navigateUrls.BACK[sportValue] ||
       navigateUrls.BACK[videogameValue] ||
@@ -109,31 +115,32 @@ const Result = () => {
       navigateUrls.BACK[craftValue] ||
       navigateUrls.BACK[dollValue] ||
       navigateUrls.BACK[stuffedtoyValue] ||
-      navigateUrls.BACK[otherValue];
+      navigateUrls.BACK.other[sportValue[1]] ||
+      navigateUrls.BACK.other[videogameValue[1]] ||
+      navigateUrls.BACK.other[vehicleValue[1]] ||
+      navigateUrls.BACK.other[craftValue[1]] ||
+      navigateUrls.BACK.other[dollValue[1]] ||
+      navigateUrls.BACK.other[stuffedtoyValue[1]]
   
     navigate(navigateUrl);
   };
-  
-  //localStorage.removeItem("selectedToys");
   
   // おもちゃのデータを取得
   const toys = toys_db; 
   
   // おもちゃをフィルタリングする
-  
-
   let toy_filterResult = toys.filter(function (value) {
     return (
       (value.gender === gender || value.gender === common_gender || value.gender > all_gender) &&
       !(value.min_age > to_age || value.max_age < from_age) &&
       (
-        (value.category && value.category === sport) ||
-        (value.category && value.category === videogame) ||
-        (value.category && value.category === vehicle) ||
-        (value.category && value.category === craft) ||
-        (value.category && value.category === doll) ||
-        (value.category && value.category === stuffedtoy) ||
-        (value.category && value.category === other)
+        (value.category && value.category === sport[0]) ||
+        (value.category && value.category === videogame[0]) ||
+        (value.category && value.category === vehicle[0]) ||
+        (value.category && value.category === craft[0]) ||
+        (value.category && value.category === doll[0]) ||
+        (value.category && value.category === stuffedtoy[0])
+        // (value.category && value.category === other)
       ) 
     );
   });
@@ -172,9 +179,6 @@ const goToPrevPage = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-  console.log("other" + other)
-  console.log("stuffedtoy" + stuffedtoy)
-
     // Function to handle clicking the toy card
     const handleCardClick = (e, toy) => {
       // Check if the click target is the button, if so, do nothing
@@ -201,14 +205,19 @@ const goToPrevPage = () => {
           <PopoverContent>
             <PopoverArrow />
             <PopoverCloseButton size='lg'/>
-            <PopoverHeader><Text fontSize='3xl'>戻る</Text></PopoverHeader>
-
-            <PopoverBody>      <Button onClick={() => back_handleClick()} size="md" >
-      質問に戻る
-      </Button></PopoverBody>
-            <PopoverBody>      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md">
-      はじめから
-      </Button></PopoverBody>
+            <PopoverHeader>
+              <Text fontSize='3xl'>戻る</Text>
+            </PopoverHeader>
+            <PopoverBody>      
+              <Button onClick={() => back_handleClick()} size="md" >
+              質問に戻る
+              </Button>
+            </PopoverBody>
+            <PopoverBody>      
+              <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md">
+                はじめから
+              </Button>
+            </PopoverBody>
           </PopoverContent>
         </Popover>
       </Box>

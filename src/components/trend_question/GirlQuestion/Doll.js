@@ -36,35 +36,35 @@ const Doll = () => {
   const navigateUrls = {
     0: {
       幼稚園: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },
       低学年: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/vehicle`,
       },
       選択なし: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/craft`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/craft`,
         BACK: `${homeUrl}/vehicle`,
       }
     },
     2: {
       幼稚園: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       低学年: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/result`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/result`,
         BACK: `${homeUrl}/game`,
       },
       選択なし: {
-        人形: `${homeUrl}/result`,
-        その他: `${homeUrl}/stuffedtoy`,
+        doll: `${homeUrl}/result`,
+        other: `${homeUrl}/stuffedtoy`,
         BACK: `${homeUrl}/game`,
       }
     },
@@ -89,7 +89,7 @@ const Doll = () => {
 
   // dollのステートが変更されるたびに適切なURLに遷移する
   useEffect(() => {
-    const navigateUrl = navigateUrls[gender[0]][age[2]][doll] || navigateUrls[gender[0]];
+    const navigateUrl = navigateUrls[gender[0]][age[2]][doll[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [doll]);
@@ -104,7 +104,7 @@ const Doll = () => {
   }, [dispatch]);
 
   
-  console.log("other" + Other)
+
 
   return (
     <>
@@ -124,14 +124,14 @@ const Doll = () => {
           </Flex>
       </Stack>
       </Flex>
-      <Button onClick={() => doll_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+      <Button onClick={() => doll_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
       <Box position='fixed' bottom='20px' right='5%' >
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <button height='50px' width='80px' colorScheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
@@ -144,7 +144,7 @@ const Doll = () => {
             <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
               <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/質問画面" target="_blank">
-                <Button colorScheme='twitter'>ヘルプページ</Button>
+                <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
           </PopoverContent>
@@ -181,35 +181,35 @@ export default Doll;
 //   const navigateUrls = {
 //     0: {
 //       幼稚園: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/vehicle`,
 //       },
 //       低学年: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/vehicle`,
 //       },
 //       選択なし: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/craft`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/craft`,
 //         BACK: `${homeUrl}/vehicle`,
 //       }
 //     },
 //     2: {
 //       幼稚園: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       低学年: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/result`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/result`,
 //         BACK: `${homeUrl}/game`,
 //       },
 //       選択なし: {
-//         人形: `${homeUrl}/result`,
-//         その他: `${homeUrl}/stuffedtoy`,
+//         doll: `${homeUrl}/result`,
+//         other: `${homeUrl}/stuffedtoy`,
 //         BACK: `${homeUrl}/game`,
 //       }
 //     },
