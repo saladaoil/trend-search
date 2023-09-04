@@ -1,7 +1,7 @@
 import React from 'react';
 import './commonstyles.css';
 import { useNavigate } from "react-router-dom"
-import { Button, Flex, Text  } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import Header from '../../ui/Header';
 import {
   Popover,
@@ -32,76 +32,49 @@ import { Divider } from '@chakra-ui/react'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Firstchoice = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-const { isOpen, onOpen, onClose } = useDisclosure()
-const cancelRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const cancelRef = React.useRef()
 
 
 
   return (
     <>
 
-      <Header text="検索方法選択"/>
-      
-      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
+      <Header text="検索方法選択" />
+
+      <Flex direction="column" textAlign='left' align="center" maxW="500px" mx="auto" p="4">
         <Box>
-        <Text fontSize="2xl" fontWeight="bold" textAlign="center" mt="20" >
-        検索方法を選択してください
-        </Text>
-        <Accordion defaultIndex={[1]} allowMultiple>
-  <AccordionItem>
-    <h2>
-    <AccordionButton  _expanded={{ bg: '#1da1f2', color: 'white' }}>
-        <Box as="span" flex='1' textAlign='left'>
-          検索方法の選び方
+          <Text fontSize="2xl" fontWeight="bold" textAlign="center" mt="20" >
+            検索方法を選択してください
+          </Text>
         </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={1}>
-    <h2>
+        <Flex direction="column" maxW="450px" >
 
-    <Box as="span" flex='1' textAlign='left' position='left'>
-      <Text fontSize='xl'>流行:流行を知りたい人向け</Text>
-      <Text fontSize='xl'>好み:好みを知っている人向け
-
-              </Text> 
-              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/検索方法選択画面" target="_blank">
-                <Button  colorScheme='twitter' size='sm' variant='ghost' mt="1">詳しくはこちら</Button>
-              </a>     
-      </Box>
-      </h2>
+          <Text fontSize="xl" mt="5" >
+            最近の定番をチェック
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mt="1">
+            流行から選ぶ
+          </Button>
+          <Text fontSize="xl" mt="5" >
+            好みを知っている方向け
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mt="1">
+            好みから選ぶ
+          </Button>
 
 
-    </AccordionPanel>
-  </AccordionItem>
-</Accordion>
-
-
-        </Box>
-
-
-        
-
-
-
-
-      
-
-
-
-        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="4" mt="10">
-          流行から選ぶ
-
-                  </Button>
-        <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="4" mt="10">
-          好みから選ぶ
-        </Button>
-        <Button onClick={() => navigate(`${homeUrl}/Favorite`)} size="md" mb="8" mt="5">
-          お気に入り
-        </Button>
+          <Text fontSize="xl" mt="8" >
+            「後で見る」を確認
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/Favorite`)} size="md" mb="5">
+            お気に入り
+          </Button>
+        </Flex>
       </Flex>
+
 
       <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
         使い方
@@ -117,7 +90,7 @@ const cancelRef = React.useRef()
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
-            <PopoverCloseButton size='lg'/>
+            <PopoverCloseButton size='lg' />
             <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
             <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
