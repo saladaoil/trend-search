@@ -1,7 +1,7 @@
 import React from 'react';
 import './commonstyles.css';
 import { useNavigate } from "react-router-dom"
-import { Button, Flex, Text  } from '@chakra-ui/react';
+import { Button, Flex, Text } from '@chakra-ui/react';
 import Header from '../../ui/Header';
 import {
   Popover,
@@ -32,36 +32,40 @@ import { Divider } from '@chakra-ui/react'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Firstchoice = () => {
-const navigate = useNavigate()
+  const navigate = useNavigate()
 
-const { isOpen, onOpen, onClose } = useDisclosure()
-const cancelRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const cancelRef = React.useRef()
 
 
 
   return (
     <>
 
-      <Header text="検索方法選択"/>
-      
-      <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">
-        <Box>
-        <Text fontSize="2xl" fontWeight="bold" textAlign="center" mt="20" >
-        検索方法を選択してください
-        </Text>
-        <Accordion defaultIndex={[1]} allowMultiple>
-  <AccordionItem>
-    <h2>
-    <AccordionButton  _expanded={{ bg: '#1da1f2', color: 'white' }}>
-        <Box as="span" flex='1' textAlign='left'>
-          検索方法の選び方
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={1}>
-    <h2>
+      <Header text="検索方法選択" />
 
+      <Flex direction="column" textAlign='left' align="center" maxW="500px" mx="auto" p="4">
+        <Box>
+          <Text fontSize="2xl" fontWeight="bold" textAlign="center" mt="20" >
+            検索方法を選択してください
+          </Text>
+        </Box>
+        <Flex direction="column" maxW="450px" >
+
+<<<<<<< HEAD
+          <Text fontSize="xl" mt="5" >
+            最近の定番をチェック
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mt="1">
+            流行から選ぶ
+          </Button>
+          <Text fontSize="xl" mt="5" >
+            好みを知っている方向け
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mt="1">
+            好みから選ぶ
+          </Button>
+=======
     <Box as="span" flex='1' textAlign='left' position='left'>
       <Text fontSize='xl'>流行:流行を知りたい人向け</Text>
       <Text fontSize='xl'>好み:好みを知っている人向け
@@ -72,38 +76,24 @@ const cancelRef = React.useRef()
               </a>     
       </Box>
       </h2>
+>>>>>>> 92dcc93d9bfe99d5743c1b2ec021c257b8738b7c
 
 
-    </AccordionPanel>
-  </AccordionItem>
-</Accordion>
-
-
-        </Box>
-
-
-        
-
-
-
-
-      
-
-
-
-        <Button onClick={() => navigate(`${homeUrl}/gender`)} size="xl" mb="4" mt="10">
-          流行から選ぶ
-
-                  </Button>
-        <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mb="4" mt="10">
-          好みから選ぶ
-        </Button>
-        <Button onClick={() => navigate(`${homeUrl}/Favorite`)} size="md" mb="8" mt="5">
-          お気に入り
-        </Button>
+          <Text fontSize="xl" mt="8" >
+            「後で見る」を確認
+          </Text>
+          <Button onClick={() => navigate(`${homeUrl}/Favorite`)} size="md" mb="5">
+            お気に入り
+          </Button>
+        </Flex>
       </Flex>
 
+<<<<<<< HEAD
+
+      <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorScheme='twitter'>
+=======
       <Button onClick={() => navigate(`${homeUrl}/description1`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
+>>>>>>> 92dcc93d9bfe99d5743c1b2ec021c257b8738b7c
         使い方
       </Button>
       <Box position='fixed' bottom='5%' right='5%' >
@@ -117,7 +107,7 @@ const cancelRef = React.useRef()
           </PopoverTrigger>
           <PopoverContent>
             <PopoverArrow />
-            <PopoverCloseButton size='lg'/>
+            <PopoverCloseButton size='lg' />
             <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
             <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>

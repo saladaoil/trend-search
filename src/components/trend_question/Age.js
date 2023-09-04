@@ -4,15 +4,7 @@ import { kid, lowGrade, middleGrade, highGrade, notSelect_Age } from '../../acti
 import { useNavigate } from 'react-router-dom';
 import { Button, Text, Flex, Stack } from '@chakra-ui/react'; // Import Chakra UI components
 import Header from '../../ui/Header';
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverArrow,
-  PopoverCloseButton,
-  Box
+import {Popover,PopoverTrigger,PopoverContent,PopoverHeader,PopoverBody,PopoverArrow,PopoverCloseButton,Box
 } from '@chakra-ui/react'
 import '../Basic/help.css'
 

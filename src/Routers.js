@@ -1,5 +1,6 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Description1 from "./components/Basic/Description1";
+import Description2 from "./components/Basic/Description2";
 import Favorite from "./components/Basic/Favorite";
 import Splash from "./components/Basic/Splash";
 import Firstchoice from "./components/Basic/Firstchoice";
@@ -46,6 +47,8 @@ const Routers = () => {
             <Routes>
                 <Route path={`${homeUrl}/`} element={<Splash/>}/>
                 <Route path={`${homeUrl}/Description1`} element={<Description1/>}/>
+                <Route path={`${homeUrl}/Description2`} element={<Description2/>}/>
+
                 <Route path={`${homeUrl}/favorite`} element={<Favorite/>}/>
                 <Route path={`${homeUrl}/firstchoice`} element={<Firstchoice/>}/>
                 <Route path={`${homeUrl}/gender`} element={<Gender/>}/>
