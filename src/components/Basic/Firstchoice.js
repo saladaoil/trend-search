@@ -112,7 +112,7 @@ const Firstchoice = () => {
             <PopoverBody><Text fontSize='3xl'>「流行」または「好み」を選択してください</Text></PopoverBody>
             <PopoverBody><Text fontSize='3xl'>「お気に入り」から後で見るに設定した商品を確認できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/検索方法選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/基本画面/検索方法選択画面" target="_blank">
                 <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>
