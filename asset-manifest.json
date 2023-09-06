@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/trend-search/static/css/main.4971f01a.css",
-    "main.js": "/trend-search/static/js/main.ab547052.js",
+    "main.js": "/trend-search/static/js/main.580dfc97.js",
     "static/js/787.60f7c680.chunk.js": "/trend-search/static/js/787.60f7c680.chunk.js",
     "service-worker.js": "/trend-search/service-worker.js",
     "static/media/Trend Icon.png": "/trend-search/static/media/Trend Icon.e98862dce9c476e1a2bf.png",
     "index.html": "/trend-search/index.html",
     "main.4971f01a.css.map": "/trend-search/static/css/main.4971f01a.css.map",
-    "main.ab547052.js.map": "/trend-search/static/js/main.ab547052.js.map",
+    "main.580dfc97.js.map": "/trend-search/static/js/main.580dfc97.js.map",
     "787.60f7c680.chunk.js.map": "/trend-search/static/js/787.60f7c680.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4971f01a.css",
-    "static/js/main.ab547052.js"
+    "static/js/main.580dfc97.js"
   ]
 }
