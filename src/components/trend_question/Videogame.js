@@ -37,7 +37,6 @@ const Videogame = () => {
   // 「いいえ」ボタンがクリックされた時の処理
   const videogame_No_handleClick = () => {
     dispatch(videogame_No()); // videogame_Noアクションをdispatchする
-    // dispatch(other())
     navigate(`${homeUrl}/result`); // 結果表示のページに遷移する
   }
 
@@ -66,7 +65,7 @@ const Videogame = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>

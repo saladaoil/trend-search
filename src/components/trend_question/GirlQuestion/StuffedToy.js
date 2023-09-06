@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { other, resetCraft, resetDoll, resetOther, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
+import { resetCraft, resetDoll, stuffedtoy_Back, stuffedtoy_No, stuffedtoy_Yes } from "../../../actions"
 import { useNavigate, } from "react-router-dom"
 import { Button, Text, Flex, Stack } from '@chakra-ui/react'
 import "../styles.css";
@@ -20,17 +20,18 @@ import '../../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Stuffedtoy = () => {
-  // Reduxのstateから必要な値を取得するためのフック
+
+  // 画面遷移を行うための関数
+  const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
+  const dispatch = useDispatch();
+
+   // Reduxストアからステートを取得する
   const gender = useSelector((state) => state.gender);
   const age = useSelector((state) => state.age);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
-  const other = useSelector((state) => state.other);
 
-  // ページ遷移に使用するフック
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  
   // ナビゲーションのURLマッピング
   const navigateUrls = {
     0: {
@@ -71,35 +72,32 @@ const Stuffedtoy = () => {
 
   //「はい」ボタンがクリックされた時の処理
   const stuffedtoy_Yes_handleClick = () => {
-    dispatch(resetOther())
-    dispatch(stuffedtoy_Yes());
+    dispatch(stuffedtoy_Yes()); // Reduxストアのstuffedtoyに"stuffedtoy"という文字列を保持させる
   };
   
   //「いいえ」ボタンがクリックされた時の処理
   const stuffedtoy_No_handleClick = () => {
-    dispatch(stuffedtoy_No());
-    dispatch(other())
-  };
+    dispatch(stuffedtoy_No()); // Reduxストアのstuffedtoyに"stuffedtoy_other"という文字列を保持させる
+  }; 
   
   //「戻る」ボタンがクリックされた時の処理
   const stuffedtoy_back_handleClick = () => {
-    dispatch(stuffedtoy_Back());
-    dispatch(resetDoll());
-    dispatch(resetCraft());
+    dispatch(stuffedtoy_Back()); // Reduxストアのstuffedtoyに"BACK"という文字列を保持させる
+    dispatch(resetDoll()); // Reduxストアのdollをリセットする
+    dispatch(resetCraft()); // Reduxストアのcraftをリセットする
   };
   
-  // stuffedtoyのステートが変更されるたびに適切なURLに遷移する
+  // stuffedtoyの状態に応じて適切なURLに遷移する
   useEffect(() => {
     const navigateUrl = navigateUrls[gender[0]][age[2]][stuffedtoy[0]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [stuffedtoy]);
   
+  // クリーンアップ関数
   useEffect(() => {
-    // コンポーネントがアンマウントされるときに実行されるクリーンアップ関数
     return () => {
-      dispatch(resetCraft()); // resetCraftアクションをdispatchしてReduxストアの値をリセットする
-      dispatch(resetOther())
+      dispatch(resetCraft()); // Reduxストアのcraftをリセットする
     };
   }, [dispatch]);
 
@@ -108,11 +106,11 @@ const Stuffedtoy = () => {
     <>
       <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
-          ぬいぐるみが好きですか？
-      </Text>
-      <Stack mt="30%" width="100%" maxW="400px">
-        <Flex direction="row" justify="center">
+        <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
+            ぬいぐるみが好きですか？
+        </Text>
+        <Stack mt="30%" width="100%" maxW="400px">
+          <Flex direction="row" justify="center">
             <Button onClick={() => stuffedtoy_Yes_handleClick()} size="xl" mr="10%">
               はい
             </Button>
@@ -120,7 +118,7 @@ const Stuffedtoy = () => {
               いいえ
             </Button>
           </Flex>
-      </Stack>
+        </Stack>
       </Flex>
       <Button onClick={() => stuffedtoy_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
@@ -129,9 +127,9 @@ const Stuffedtoy = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </button>
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

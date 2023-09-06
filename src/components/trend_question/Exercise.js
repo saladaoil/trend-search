@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
-import { useSelector, useDispatch } from "react-redux"
-import { exercise_Yes , exercise_No, resetVideogame, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetOther, resetSport } from "../../actions"
+import { useDispatch } from "react-redux"
+import { exercise_Yes , exercise_No, resetVideogame, resetVehicle, resetCraft, resetDoll, resetStuffedtoy, resetSport } from "../../actions"
 import { useNavigate } from "react-router-dom"
 import { Button, Text, Flex, Stack } from '@chakra-ui/react'
 import "./styles.css";
@@ -22,35 +22,33 @@ const homeUrl = process.env.PUBLIC_URL;
 
 const Exercise = () => {
 
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
-  // useSelectorフックを使ってReduxストアから状態を取得
-  const gender = useSelector((state) => state.gender); // 性別
-  const age = useSelector((state) => state.age); // 学年
+  // Reduxのアクションをディスパッチするための関数
+  const dispatch = useDispatch();
 
   // 「はい」ボタンがクリックされた時の処理
   const exercise_Yes_handleClick = () => {
-    dispatch(exercise_Yes()); // 1と運動の好み（はい）を取得する （1はresultのfilterで比較する時に使用）
+    dispatch(exercise_Yes()); // Reduxストアのexerciseに1とはい(運動の好み)という値を保持させる 
     navigate(`${homeUrl}/sport`); // スポーツの質問ページに遷移
   }
 
   // 「いいえ」ボタンがクリックされた時の処理
   const exercise_No_handleClick = () => {
-    dispatch(exercise_No()); // 2と運動の好み（いいえ）を取得する　（2はresultのfilterで比較する時に使用）
+    dispatch(exercise_No()); // Reduxストアのexerciseに2といいえ(運動の好み)という値を保持させる 
     navigate(`${homeUrl}/game`); // ゲームの質問ページに遷移
   }
 
   // コンポーネントのアンマウント時に実行される処理
   useEffect(() => {
     return () => {
-      dispatch(resetVideogame()) //videogameの値を空にする
-      dispatch(resetVehicle()); // vehicleの値を空にする
-      dispatch(resetCraft()); // craftの値を空にする
-      dispatch(resetDoll()); // dollの値を空にする
-      dispatch(resetStuffedtoy()); // stuffedtoyの値を空にする
-      dispatch(resetOther())
-      dispatch(resetSport())
+      dispatch(resetVideogame()) // Reduxストアのvideogameをリセットする
+      dispatch(resetVehicle());  // Reduxストアのvehicleをリセットする
+      dispatch(resetCraft());    // Reduxストアのcraftをリセットする
+      dispatch(resetDoll());     // Reduxストアのdollをリセットする
+      dispatch(resetStuffedtoy()); // Reduxストアのstuffedtoyをリセットする
+      dispatch(resetSport())     // Reduxストアのsportをリセットする
     };
   }, [dispatch]);
   
@@ -59,11 +57,11 @@ const Exercise = () => {
     <>
       <Header text="流行から選ぶ"/>
       <Flex direction="column" align="center" maxW="500px" mx="auto" p="4">   
-      <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
-          体を動かすのが好きですか？
-      </Text>
-      <Stack mt="30%" width="100%" maxW="400px">
-        <Flex direction="row" justify="center">
+        <Text fontSize="2xl" fontWeight="bold" color="black" textAlign="center" mt="25%">
+            体を動かすのが好きですか？
+        </Text>
+        <Stack mt="30%" width="100%" maxW="400px">
+          <Flex direction="row" justify="center">
             <Button onClick={() => exercise_Yes_handleClick()} size="xl" mr="10%">
               はい
             </Button>
@@ -71,7 +69,7 @@ const Exercise = () => {
               いいえ
             </Button>
           </Flex>
-      </Stack>
+        </Stack>
       </Flex>
       <Button onClick={() => navigate(`${homeUrl}/age`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
@@ -80,9 +78,9 @@ const Exercise = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </button>
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

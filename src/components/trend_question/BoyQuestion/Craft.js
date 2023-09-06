@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { craft_Back, craft_No, craft_Yes, other, resetDoll, resetOther, resetStuffedtoy, resetVehicle } from "../../../actions";
+import { craft_Back, craft_No, craft_Yes, resetDoll, resetStuffedtoy, resetVehicle } from "../../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack } from '@chakra-ui/react';
 import "../styles.css";
@@ -87,8 +87,7 @@ const Craft = () => {
 
   // 「いいえ」ボタンがクリックされた時の処理
   const craft_No_handleClick = () => {
-    dispatch(craft_No()); // Reduxストアのcraftに"other"という文字列を保持させる(画面遷移に使用する)
-    dispatch(other());    // Reduxストアのotherに"other"という文字列を保持させる(result.jsのfilterで使用する)
+    dispatch(craft_No()); // Reduxストアのcraftに"craft_other"という文字列を保持させる
   };
   
   // 「戻る」ボタンがクリックされた時の処理
@@ -98,8 +97,8 @@ const Craft = () => {
     dispatch(resetDoll());    // Reduxストアのdollをリセットする
   };
 
+  // craftの状態に応じて適切なURLに遷移する
   useEffect(() => {
-    // craftの状態に応じて適切なURLに遷移する
     const navigateUrl = navigateUrls[gender[0]][age[2]][craft[0]] || navigateUrls[gender[0]][age[2]];
     navigate(navigateUrl);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -110,7 +109,6 @@ const Craft = () => {
     return () => {
       dispatch(resetDoll())        // Reduxストアのdollをリセットする
       dispatch(resetStuffedtoy()); // Reduxストアのstuffedtoyをリセットする
-      dispatch(resetOther())       // Reduxストアのotherをリセットする
     };
   }, [dispatch]);
 
@@ -124,13 +122,13 @@ const Craft = () => {
       </Text>
       <Stack mt="30%" width="100%" maxW="400px">
         <Flex direction="row" justify="center">
-            <Button onClick={() => craft_Yes_handleClick()} size="xl" mr="10%">
-              はい
-            </Button>
-            <Button onClick={() => craft_No_handleClick()} size="xl" >
-              いいえ
-            </Button>
-          </Flex>
+          <Button onClick={() => craft_Yes_handleClick()} size="xl" mr="10%">
+            はい
+          </Button>
+          <Button onClick={() => craft_No_handleClick()} size="xl" >
+            いいえ
+          </Button>
+        </Flex>
       </Stack>
       </Flex>
       <Button onClick={() => craft_back_handleClick()} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
@@ -140,9 +138,9 @@ const Craft = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="border-radius">
+              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </button>
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

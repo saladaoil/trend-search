@@ -152,7 +152,7 @@ const goToPrevPage = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' top='1%' right='3%' >
-              <button height='50px' width='80px' colorscheme='twitter' class="reslt-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="reslt-radius">
                 <Text as='b' fontSize='lg'> ? </Text>
               </button>
             </Box>

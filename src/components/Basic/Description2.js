@@ -1,6 +1,4 @@
 import React from 'react';
-import { useDispatch } from "react-redux";
-import { boy, girl, all } from "../../actions";
 import { useNavigate } from "react-router-dom";
 import { Button, Text, Flex, Stack, Divider } from '@chakra-ui/react';
 import Header from '../../ui/Header';
@@ -11,25 +9,6 @@ const homeUrl = process.env.PUBLIC_URL;
 
 const Gender = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
-
-  // 男のボタンがクリックされた時の処理
-  const boy_handleClick = () => {
-    dispatch(boy()); // boyアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
-  }
-
-  // 女のボタンがクリックされた時の処理
-  const girl_handleClick = () => {
-    dispatch(girl()); // girlアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
-  }
-
-  // 選択しないボタンがクリックされた時の処理
-  const skip_handleClick = () => {
-    dispatch(all()); // allアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
-  }
 
   return (
     <>
