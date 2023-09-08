@@ -62,13 +62,13 @@ const Game = () => {
 
     // 「はい」ボタンがクリックされた時の処理
   const game_Yes_handleClick = () => {
-    dispatch(game_Yes()); // Reduxストアのgameに1,"はい(ゲームの好み)にという値を保持させる
+    dispatch(game_Yes()); // Reduxストアのgameに1,"はい"(ゲームの好み)にという値を保持させる
     navigate(`${homeUrl}/videogame`); // ビデオゲームのページに遷移
   }
 
     // 「いいえ」ボタンがクリックされた時の処理
   const game_No_handleClick = () => {
-    dispatch(game_No()); // Reduxストアのgameに1,"はい(ゲームの好み)にという値を保持させる
+    dispatch(game_No()); // Reduxストアのgameに1,"はい"(ゲームの好み)にという値を保持させる
     // genderとageの状態に応じて適切なURLに遷移する
     const navigateUrl = navigateUrls[gender[0]][age[2]] || navigateUrls[gender[0]];
     navigate(navigateUrl);
@@ -111,9 +111,9 @@ const Game = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='5%' right='5%' >
-              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </Button>
+              </button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

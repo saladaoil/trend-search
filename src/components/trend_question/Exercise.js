@@ -28,19 +28,19 @@ const Exercise = () => {
   // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
-  // 「はい」ボタンがクリックされた時の処理
+  //「はい」ボタンがクリックされた時の処理
   const exercise_Yes_handleClick = () => {
-    dispatch(exercise_Yes()); // Reduxストアのexerciseに1とはい(運動の好み)という値を保持させる 
+    dispatch(exercise_Yes()); // Reduxストアのexerciseに1と"はい"(運動の好み)という値を保持させる 
     navigate(`${homeUrl}/sport`); // スポーツの質問ページに遷移
   }
 
-  // 「いいえ」ボタンがクリックされた時の処理
+  //「いいえ」ボタンがクリックされた時の処理
   const exercise_No_handleClick = () => {
-    dispatch(exercise_No()); // Reduxストアのexerciseに2といいえ(運動の好み)という値を保持させる 
+    dispatch(exercise_No()); // Reduxストアのexerciseに2と"いいえ"(運動の好み)という値を保持させる 
     navigate(`${homeUrl}/game`); // ゲームの質問ページに遷移
   }
 
-  // コンポーネントのアンマウント時に実行される処理
+  // クリーンアップ関数
   useEffect(() => {
     return () => {
       dispatch(resetVideogame()) // Reduxストアのvideogameをリセットする

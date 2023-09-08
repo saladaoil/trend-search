@@ -4,7 +4,7 @@ import toys_db from '../../db/toy_db';
 import { useNavigate, } from "react-router-dom"
 import { Button, Box, Text, Flex, VStack, Image } from '@chakra-ui/react';
 import "./styles.css";
-import { resetCraft, resetDoll, resetOther, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
+import { resetCraft, resetDoll, resetSport, resetStuffedtoy, resetVehicle, resetVideogame, result_Back } from '../../actions';
 import Header from '../../ui/Header';
 import Footer from '../../ui/Footer';
 import {
@@ -33,7 +33,6 @@ const Result = () => {
   const craft = useSelector((state) => state.craft);
   const doll = useSelector((state) => state.doll);
   const stuffedtoy = useSelector((state) => state.stuffedtoy);
-  const other = useSelector((state) => state.other);
 
 
 
@@ -49,6 +48,7 @@ const Result = () => {
     setSelectedToys(updatedToys);
     localStorage.setItem('selectedToys', JSON.stringify(updatedToys));
   };
+
   const handleDeleteToyName = (toyNumber) => {
     const updatedToys = selectedToys.filter((number) => number !== toyNumber);
     setSelectedToys(updatedToys);
@@ -79,7 +79,7 @@ const Result = () => {
             doll_other: `${homeUrl}/doll`,
             stuffedtoy_other: `${homeUrl}/stuffedtoy`,
           }
-    } 
+     } 
   };
 
 
@@ -90,7 +90,6 @@ const Result = () => {
     const craftValue = craft; 
     const dollValue = doll;
     const stuffedtoyValue = stuffedtoy;
-    // const otherValue = other; 
 
     console.log(videogameValue)
   
@@ -103,7 +102,6 @@ const Result = () => {
       resetCraft(),
       resetDoll(),
       resetStuffedtoy(),
-      // resetOther(),
     ];
   
     resetActions.forEach(action => dispatch(action));
@@ -140,7 +138,6 @@ const Result = () => {
         (value.category && value.category === craft[0]) ||
         (value.category && value.category === doll[0]) ||
         (value.category && value.category === stuffedtoy[0])
-        // (value.category && value.category === other)
       ) 
     );
   });
@@ -158,7 +155,6 @@ const Result = () => {
   const startIndex = (pageNumber - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   
-  // ページ遷移に使用するフック
   
   // 次のページに移動する関数
 const goToNextPage = () => {
@@ -179,12 +175,8 @@ const goToPrevPage = () => {
   // 現在のページのおもちゃの表示データを取得
   const currentToyDis = toy_dis.slice(startIndex, endIndex);
 
-    // Function to handle clicking the toy card
     const handleCardClick = (e, toy) => {
-      // Check if the click target is the button, if so, do nothing
       if (e.target.tagName === "BUTTON") return;
-  
-      // Open the URL only when clicking the rest of the card (not the button)
       window.open(toy.page_url, "_blank");
     };
   

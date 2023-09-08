@@ -131,9 +131,9 @@ const Doll = () => {
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' bottom='20px' right='5%' >
-              <Button height='50px' width='80px' colorscheme='twitter' className="border-radius">
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
-              </Button>
+              </button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>

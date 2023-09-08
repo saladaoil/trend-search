@@ -21,12 +21,12 @@ import '../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Sport = () => {
+
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
-
-  const gender = useSelector((state) => state.gender);
-  const age = useSelector((state) => state.age);
-
 
   // 「はい」ボタンがクリックされた時の処理
   const sport_Yes_handleClick = () => {

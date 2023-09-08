@@ -21,25 +21,29 @@ import '../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
 const Gender = () => {
+
+  // 画面遷移を行うための関数
   const navigate = useNavigate();
+
+  // Reduxのアクションをディスパッチするための関数
   const dispatch = useDispatch();
 
   // 男のボタンがクリックされた時の処理
   const boy_handleClick = () => {
-    dispatch(boy()); // boyアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
+    dispatch(boy()); // Reduxストアのgenderに1,3,4という値を保持させる
+    navigate(`${homeUrl}/age`);
   }
 
   // 女のボタンがクリックされた時の処理
   const girl_handleClick = () => {
-    dispatch(girl()); // girlアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
+    dispatch(girl()); // Reduxストアのgenderに2,3,4という値を保持させる
+    navigate(`${homeUrl}/age`);
   }
 
   // 選択しないボタンがクリックされた時の処理
   const skip_handleClick = () => {
-    dispatch(all()); // allアクションをdispatchする
-    navigate(`${homeUrl}/age`); // 年齢選択のページに遷移する
+    dispatch(all()); // Reduxストアのgenderに0,0,0という値を保持させる
+    navigate(`${homeUrl}/age`);
   }
 
   return (
