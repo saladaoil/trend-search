@@ -17,7 +17,7 @@ const genre_db = [
     //{gender:1,type:1,name:"パウ・パトロール",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_pawpatrol_v2.png?autoresize=on"},
     //{gender:1,type:1,name:"ベイブレードバースト",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_beyblade-burst.jpg?autoresize=on"},
     {gender:2,type:1,name:"L.O.L.サプライズ！",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_lol.png?autoresize=on"},
-    {gender:2,type:1,name:"すみっコぐらし",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_sumikko.png?autoresize=on"},
+    {gender:2,type:1,name:"すみっコぐらし",image_url:"https://images-ext-1.discordapp.net/external/T1Y0rf37SYKSOliiSjDkA1tcC6iyr9AM6P76PxusjuU/https/net-nengajo.jp/sp/special/sumikko/logo.8b002934.png"},
     {gender:2,type:1,name:"ディズニープリンセス",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_disneyprincess.png?autoresize=on"},
     {gender:2,type:1,name:"ひろがるスカイ！プリキュア",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_spreading-sky_precure.jpg?autoresize=on"},
     {gender:2,type:1,name:"Pretty Holic",image_url:"https://www.toysrus.co.jp/static/top/img/character/logo-character_prettyholic.jpg?autoresize=on"},

@@ -75,7 +75,6 @@ const Pre_genre = () => {
     <>
       <PregenreHeader/>   
       <Box mt="70px">
-
       <Stack spacing={['8', '8', '10']} mt="8" width="100%"  >
       <ul>
         {/* 現在のページのおもちゃの表示データをマップして表示 */}
