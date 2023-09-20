@@ -30,13 +30,13 @@ const Pre_select = () => {
   // キャラクターボタンがクリックされた時の処理
   const character_handleClick = () => {
     dispatch(character()); // characterアクションをdispatchする
-    navigate(`${homeUrl}/pregender`); // 年齢選択のページに遷移する
+    navigate(`${homeUrl}/pregenre`); 
   }
 
   // ブランドボタンがクリックされた時の処理
   const brand_handleClick = () => {
     dispatch(brand()); // brandアクションをdispatchする
-    navigate(`${homeUrl}/pregender`); // 年齢選択のページに遷移する
+    navigate(`${homeUrl}/pregenre`);
   }
 
   return (
@@ -55,27 +55,27 @@ const Pre_select = () => {
         </Button>
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
+      <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
 
-      <Box position='fixed' bottom='20px' right='5%' >
+      <Box position='fixed' bottom='5%' right='5%' >
         <Popover>
           <PopoverTrigger>
-            <Box position='fixed' bottom='20px' right='5%' >
+            <Box position='fixed' bottom='5%' right='5%' >
               <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
                 <Text as='b' fontSize='20px' > ? </Text>
               </button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>
-          <PopoverArrow />
+            <PopoverArrow />
             <PopoverCloseButton size='lg'/>
             <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
-            <PopoverBody><Text fontSize='3xl'>キャラクターまたはブランドを選択してください</Text></PopoverBody>
-            <PopoverBody><Text fontSize='3xl'>選択肢をタップすることで選択できます</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>お孫さんの性別を回答してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
             <PopoverHeader>
-              <a href="https://sites.google.com/view/trend-help/使い方/好みから選ぶ/好み選択画面" target="_blank">
+              <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/性別選択画面" target="_blank">
                 <Button colorscheme='twitter'>ヘルプページ</Button>
               </a>
             </PopoverHeader>

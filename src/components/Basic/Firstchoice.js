@@ -60,7 +60,7 @@ const Firstchoice = () => {
           <Text fontSize="xl" mt="5" >
             好みを知っている方向け
           </Text>
-          <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="xl" mt="1">
+          <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="xl" mt="1">
             好みから選ぶ
           </Button>
           <Text fontSize="xl" mt="8" >

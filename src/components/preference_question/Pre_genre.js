@@ -2,22 +2,10 @@ import { useState } from 'react';
 import { useDispatch, useSelector,} from 'react-redux';
 import genre_db from '../../db/Genre_db';
 import { useNavigate, } from "react-router-dom"
-import { Button, Card, Flex, Text, Stack } from '@chakra-ui/react';
+import { Text, Button, Card, Stack, Box, Popover, PopoverTrigger, PopoverContent, PopoverArrow, PopoverCloseButton, PopoverHeader, PopoverBody } from '@chakra-ui/react';
 import "./styles.css";
 import { setGenre } from '../../actions';
 import PregenreHeader from '../../ui/Pre_genreHeader';
-import {
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-  PopoverAnchor,
-  Box
-} from '@chakra-ui/react'
 import '../Basic/help.css'
 const homeUrl = process.env.PUBLIC_URL;
 
@@ -35,20 +23,14 @@ const Pre_genre = () => {
 
   // Reduxのstateから必要な値を取得
   const [gender] = gender_val;
-
+  
+  // おもちゃをフィルタリングする
   let genre_filterResult = genres.filter(function (value) {
     return (
       (value.gender && value.gender === gender) &&
       (value.type && value.type === type)
     );
   });
-
-
-  const back_handleClick = () => {
-    navigate(`${homeUrl}/pregender`)
-  };
-  
-  // おもちゃをフィルタリングする
 
   // フィルタリングされたおもちゃの表示データを作成する
   let genre_dis = genre_filterResult.map(function(genre) {
@@ -88,10 +70,33 @@ const Pre_genre = () => {
       </ul>
       </Stack>
       </Box>
-      <Button onClick={() => navigate(`${homeUrl}/pregender`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
+      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter'>
         戻る
       </Button>
 
+      <Box position='fixed' bottom='5%' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='5%' right='5%' >
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>お孫さんの性別を回答してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/性別選択画面" target="_blank">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
     </>
   );
 }

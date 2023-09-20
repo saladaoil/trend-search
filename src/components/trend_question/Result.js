@@ -183,15 +183,14 @@ const goToPrevPage = () => {
 
   return (
     <>
-          <Header text={`商品一覧`} />
-
-          <Box position='fixed' zIndex='2'>
+      <Header text={`商品一覧`} />
+      <Box position='fixed' zIndex='2'>
         <Popover>
           <PopoverTrigger>
             <Box position='fixed' top='1%' left='1%' >
-            <Button variant="solid" >
-        戻る
-      </Button>
+              <Button variant="solid" >
+                戻る
+              </Button>
             </Box>
           </PopoverTrigger>
           <PopoverContent>
@@ -202,7 +201,7 @@ const goToPrevPage = () => {
             </PopoverHeader>
             <PopoverBody>      
               <Button onClick={() => back_handleClick()} size="md" >
-              質問に戻る
+                質問に戻る
               </Button>
             </PopoverBody>
             <PopoverBody>      
@@ -237,11 +236,6 @@ const goToPrevPage = () => {
           </PopoverContent>
         </Popover>
       </Box>
-
-
-
-
-
   
       <Box mt="70px" mb="80px" px="1">
         <VStack spacing={1} align='stretch'>
@@ -277,7 +271,7 @@ const goToPrevPage = () => {
                 {!isToyNumberSaved(toy.number) && (
                   <Button onClick={() => handleSaveToyName(toy.number)} size='sm' colorschem='blackAlpha'>
                     後で見る
-                    </Button>
+                  </Button>
                 )}
                 {isToyNumberSaved(toy.number) && (
                   <Button onClick={() => handleDeleteToyName(toy.number)} size="sm" colorschem="gray">

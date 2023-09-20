@@ -32,15 +32,14 @@ const Pre_gender = () => {
   // 男のボタンがクリックされた時の処理
   const boy_handleClick = () => {
     dispatch(boy()); // boyアクションをdispatchする
-    navigate(`${homeUrl}/pregenre`); // 年齢選択のページに遷移する
+    navigate(`${homeUrl}/preselect`); // 年齢選択のページに遷移する
   }
 
   // 女のボタンがクリックされた時の処理
   const girl_handleClick = () => {
     dispatch(girl()); // girlアクションをdispatchする
-    navigate(`${homeUrl}/pregenre`); // 年齢選択のページに遷移する
+    navigate(`${homeUrl}/preselect`); // 年齢選択のページに遷移する
   }
-
 
   return (
     <>
@@ -59,11 +58,33 @@ const Pre_gender = () => {
 
       </Stack>
       </Flex>
-      <Button onClick={() => navigate(`${homeUrl}/preselect`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter' >
+      <Button onClick={() => navigate(`${homeUrl}/firstchoice`)} size="md" style={{ position: "fixed", bottom: "5%", left: "5%" }} variant='outline' colorscheme='twitter' >
         戻る
       </Button>
 
- 
+      <Box position='fixed' bottom='5%' right='5%' >
+        <Popover>
+          <PopoverTrigger>
+            <Box position='fixed' bottom='5%' right='5%' >
+              <button height='50px' width='80px' colorscheme='twitter' className="border-radius">
+                <Text as='b' fontSize='20px' > ? </Text>
+              </button>
+            </Box>
+          </PopoverTrigger>
+          <PopoverContent>
+            <PopoverArrow />
+            <PopoverCloseButton size='lg'/>
+            <PopoverHeader><Text fontSize='3xl'><b>ヘルプ</b></Text></PopoverHeader>
+            <PopoverBody><Text fontSize='3xl'>お孫さんの性別を回答してください</Text></PopoverBody>
+            <PopoverBody><Text fontSize='3xl'>タップをすることによって選択できます</Text></PopoverBody>
+            <PopoverHeader>
+              <a href="https://sites.google.com/view/trend-help/使い方/流行から選ぶ/性別選択画面" target="_blank">
+                <Button colorscheme='twitter'>ヘルプページ</Button>
+              </a>
+            </PopoverHeader>
+          </PopoverContent>
+        </Popover>
+      </Box>
     </>
   );
 }
